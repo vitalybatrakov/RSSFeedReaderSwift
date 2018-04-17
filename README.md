@@ -4,7 +4,7 @@ The simple app that fetches and displays RSS feeds.
 
 App is written in Swift.
 
-Kingfisher, FastEasyMapping and RSParser are used.
+Kingfisher, FastEasyMapping and FeedKit are used.
 
 ## <a name="description"/> UI Description
 

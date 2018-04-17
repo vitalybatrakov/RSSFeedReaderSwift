@@ -12,6 +12,9 @@
 		BC676A5D20261938009C527D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A5B20261938009C527D /* Main.storyboard */; };
 		BC676A6220261938009C527D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6120261938009C527D /* Assets.xcassets */; };
 		BC676A6520261938009C527D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6320261938009C527D /* LaunchScreen.storyboard */; };
+		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
+		BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75B2085BC0900F1703D /* Kingfisher.framework */; };
+		BCA5A75F2085BC0900F1703D /* FastEasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		BC676A6120261938009C527D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC676A6420261938009C527D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC676A6620261938009C527D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
+		BCA5A75B2085BC0900F1703D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastEasyMapping.framework; path = Carthage/Build/iOS/FastEasyMapping.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */,
+				BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */,
+				BCA5A75F2085BC0900F1703D /* FastEasyMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +49,7 @@
 			children = (
 				BC676A5620261938009C527D /* RSSReaderSwift */,
 				BC676A5520261938009C527D /* Products */,
+				BCA5A7592085BC0800F1703D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +104,16 @@
 				BC676A6620261938009C527D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BCA5A7592085BC0800F1703D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */,
+				BCA5A75A2085BC0900F1703D /* FeedKit.framework */,
+				BCA5A75B2085BC0900F1703D /* Kingfisher.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,6 +327,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReaderSwift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -322,6 +346,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReaderSwift/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

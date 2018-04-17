@@ -126,6 +126,7 @@
 				BC676A5020261938009C527D /* Sources */,
 				BC676A5120261938009C527D /* Frameworks */,
 				BC676A5220261938009C527D /* Resources */,
+				BCA5A7602085FABB00F1703D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -182,6 +183,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCA5A7602085FABB00F1703D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/FastEasyMapping.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/FeedKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC676A5020261938009C527D /* Sources */ = {

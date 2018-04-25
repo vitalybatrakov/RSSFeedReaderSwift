@@ -7,8 +7,7 @@
 //
 
 import Foundation
-import FeedKit
 
 protocol FeedService {
-    func getFeeds(with complition: (RSSFeed) -> Void)
+    func getFeeds(with complition: ([Feed]) -> Void)
 }

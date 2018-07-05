@@ -1,0 +1,447 @@
+BCSymbolMap Version: 2.0
+-[FEMSerializer _serializeObject:usingMapping:]
+-[FEMSerializer serializeObject:usingMapping:]
+-[FEMSerializer _serializeCollection:usingMapping:]
+-[FEMSerializer serializeCollection:usingMapping:]
+-[FEMSerializer setValueOnRepresentation:fromObject:withFieldMapping:]
+-[FEMSerializer setValue:forKeyPath:inRepresentation:]
+-[FEMSerializer setRelationshipObjectOn:usingMapping:fromObject:]
+-[FEMSerializer includeNulls]
+-[FEMSerializer setIncludeNulls:]
++[FEMSerializer(Shortcut) serializeObject:usingMapping:]
++[FEMSerializer(Shortcut) serializeCollection:usingMapping:]
+_OBJC_IVAR_$_FEMSerializer._includeNulls
+Apple LLVM version 8.1.0 (clang-802.0.42)
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Serializer/FEMSerializer.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Serializer/FEMSerializer.h
+-[FEMRelationshipAssignmentContext initWithStore:]
+-[FEMRelationshipAssignmentContext deleteRelationshipObject:]
+-[FEMRelationshipAssignmentContext store]
+-[FEMRelationshipAssignmentContext destinationObject]
+-[FEMRelationshipAssignmentContext setDestinationObject:]
+-[FEMRelationshipAssignmentContext relationship]
+-[FEMRelationshipAssignmentContext setRelationship:]
+-[FEMRelationshipAssignmentContext sourceRelationshipValue]
+-[FEMRelationshipAssignmentContext setSourceRelationshipValue:]
+-[FEMRelationshipAssignmentContext targetRelationshipValue]
+-[FEMRelationshipAssignmentContext setTargetRelationshipValue:]
+-[FEMRelationshipAssignmentContext delegate]
+-[FEMRelationshipAssignmentContext setDelegate:]
+-[FEMRelationshipAssignmentContext .cxx_destruct]
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._store
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._destinationObject
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._relationship
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._sourceRelationshipValue
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._targetRelationshipValue
+_OBJC_IVAR_$_FEMRelationshipAssignmentContext._delegate
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Assignment Policy/FEMRelationshipAssignmentContext.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Assignment Policy/FEMRelationshipAssignmentContext.h
+_FEMObjectCacheSourceStub_block_invoke
+-[FEMObjectCache initWithSource:]
+-[FEMObjectCache init]
+-[FEMObjectCache fetchExistingObjectsForMapping:]
+-[FEMObjectCache cachedObjectsForMapping:]
+-[FEMObjectCache objectForKey:mapping:]
+-[FEMObjectCache setObject:forKey:mapping:]
+-[FEMObjectCache objectsForMapping:]
+-[FEMObjectCache .cxx_destruct]
+-[FEMObjectCache(CoreData) initWithContext:presentedPrimaryKeys:]
+___65-[FEMObjectCache(CoreData) initWithContext:presentedPrimaryKeys:]_block_invoke
+___copy_helper_block_
+___destroy_helper_block_
+___block_descriptor_tmp
+___block_literal_global
+_OBJC_IVAR_$_FEMObjectCache._source
+_OBJC_IVAR_$_FEMObjectCache._lookupObjectsMap
+___block_descriptor_tmp.64
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Cache/FEMObjectCache.m
+__destroy_helper_block_
+__copy_helper_block_
+__65-[FEMObjectCache(CoreData) initWithContext:presentedPrimaryKeys:]_block_invoke
+FEMObjectCacheSourceStub_block_invoke
+_FEMAssignmentPolicyAssign_block_invoke
+_FEMAssignmentPolicyObjectMerge_block_invoke_2
+_FEMAssignmentPolicyCollectionMerge_block_invoke_3
+_FEMAssignmentPolicyObjectReplace_block_invoke_4
+_FEMAssignmentPolicyCollectionReplace_block_invoke_5
+___block_descriptor_tmp.3
+___block_literal_global.4
+___block_descriptor_tmp.7
+___block_literal_global.8
+___block_descriptor_tmp.13
+___block_literal_global.14
+___block_descriptor_tmp.19
+___block_literal_global.20
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Assignment Policy/FEMAssignmentPolicy.m
+FEMAssignmentPolicyCollectionReplace_block_invoke_5
+FEMAssignmentPolicyObjectReplace_block_invoke_4
+FEMAssignmentPolicyCollectionMerge_block_invoke_3
+FEMAssignmentPolicyObjectMerge_block_invoke_2
+FEMAssignmentPolicyAssign_block_invoke
+-[FEMAttribute initWithProperty:keyPath:map:reverseMap:]
++[FEMAttribute mappingOfProperty:toKeyPath:map:reverseMap:]
+-[FEMAttribute initWithProperty:keyPath:]
+-[FEMAttribute copyWithZone:]
+-[FEMAttribute description]
+-[FEMAttribute mapValue:]
+-[FEMAttribute reverseMapValue:]
+-[FEMAttribute property]
+-[FEMAttribute setProperty:]
+-[FEMAttribute keyPath]
+-[FEMAttribute setKeyPath:]
+-[FEMAttribute .cxx_destruct]
++[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:map:]
++[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:]
++[FEMAttribute(Shortcut) mappingOfProperty:]
++[FEMAttribute(Shortcut) mappingOfProperty:map:]
++[FEMAttribute(Shortcut) mappingOfProperty:reverseMap:]
++[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:dateFormat:]
+___65+[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:dateFormat:]_block_invoke
+___65+[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:dateFormat:]_block_invoke.114
+___copy_helper_block_.117
+___destroy_helper_block_.118
++[FEMAttribute(Shortcut) mappingOfURLProperty:toKeyPath:]
+___57+[FEMAttribute(Shortcut) mappingOfURLProperty:toKeyPath:]_block_invoke
+___57+[FEMAttribute(Shortcut) mappingOfURLProperty:toKeyPath:]_block_invoke_2
+_OBJC_IVAR_$_FEMAttribute._map
+_OBJC_IVAR_$_FEMAttribute._reverseMap
+_OBJC_IVAR_$_FEMAttribute._property
+_OBJC_IVAR_$_FEMAttribute._keyPath
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_FEMProperty
+l_OBJC_LABEL_PROTOCOL_$_FEMProperty
+l_OBJC_PROTOCOL_$_NSCopying
+l_OBJC_LABEL_PROTOCOL_$_NSCopying
+___block_descriptor_tmp.119
+___block_descriptor_tmp.124
+___block_descriptor_tmp.128
+___block_literal_global.129
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMAttribute.m
+__57+[FEMAttribute(Shortcut) mappingOfURLProperty:toKeyPath:]_block_invoke_2
+__57+[FEMAttribute(Shortcut) mappingOfURLProperty:toKeyPath:]_block_invoke
+__65+[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:dateFormat:]_block_invoke.114
+__65+[FEMAttribute(Shortcut) mappingOfProperty:toKeyPath:dateFormat:]_block_invoke
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMProperty.h
+-[FEMManagedObjectStore initWithContext:]
+-[FEMManagedObjectStore beginTransaction:]
+-[FEMManagedObjectStore commitTransaction]
++[FEMManagedObjectStore requiresPrefetch]
+-[FEMManagedObjectStore newObjectForMapping:]
+-[FEMManagedObjectStore objectForPrimaryKey:mapping:]
+-[FEMManagedObjectStore addObject:forPrimaryKey:mapping:]
+-[FEMManagedObjectStore objectsForMapping:]
+-[FEMManagedObjectStore assignmentContext:deletedObject:]
+-[FEMManagedObjectStore context]
+-[FEMManagedObjectStore saveContextOnCommit]
+-[FEMManagedObjectStore setSaveContextOnCommit:]
+-[FEMManagedObjectStore .cxx_destruct]
+_OBJC_IVAR_$_FEMManagedObjectStore._context
+_OBJC_IVAR_$_FEMManagedObjectStore._cache
+_OBJC_IVAR_$_FEMManagedObjectStore._saveContextOnCommit
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Store/FEMManagedObjectStore.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Store/FEMManagedObjectStore.h
+validateMapping
+-[FEMMapping initWithObjectClass:]
+-[FEMMapping initWithObjectClass:rootPath:]
+-[FEMMapping initWithEntityName:]
+-[FEMMapping initWithEntityName:rootPath:]
+-[FEMMapping copyWithZone:]
+-[FEMMapping addPropertyMapping:toMap:]
+-[FEMMapping addAttribute:]
+-[FEMMapping attributeForProperty:]
+-[FEMMapping addRelationship:]
+-[FEMMapping relationshipForProperty:]
+-[FEMMapping attributes]
+-[FEMMapping relationships]
+-[FEMMapping setEntityName:]
+-[FEMMapping setObjectClass:]
+-[FEMMapping primaryKeyAttribute]
+-[FEMMapping description]
+-[FEMMapping flattenInCollection:]
+-[FEMMapping flatten]
+-[FEMMapping objectClass]
+-[FEMMapping entityName]
+-[FEMMapping uniqueIdentifier]
+-[FEMMapping rootPath]
+-[FEMMapping setRootPath:]
+-[FEMMapping primaryKey]
+-[FEMMapping setPrimaryKey:]
+-[FEMMapping attributeMap]
+-[FEMMapping setAttributeMap:]
+-[FEMMapping relationshipMap]
+-[FEMMapping setRelationshipMap:]
+-[FEMMapping .cxx_destruct]
+-[FEMMapping(Shortcut) addAttributesFromDictionary:]
+___52-[FEMMapping(Shortcut) addAttributesFromDictionary:]_block_invoke
+-[FEMMapping(Shortcut) addAttributesFromArray:]
+-[FEMMapping(Shortcut) addAttributeWithProperty:keyPath:]
+-[FEMMapping(Shortcut) addRelationshipMapping:forProperty:keyPath:]
+-[FEMMapping(Shortcut) addRecursiveRelationshipMappingForProperty:keypath:]
+-[FEMMapping(Shortcut) addToManyRelationshipMapping:forProperty:keyPath:]
+-[FEMMapping(Shortcut) addRecursiveToManyRelationshipForProperty:keypath:]
+_OBJC_IVAR_$_FEMMapping._attributeMap
+_OBJC_IVAR_$_FEMMapping._relationshipMap
+_OBJC_IVAR_$_FEMMapping._objectClass
+_OBJC_IVAR_$_FEMMapping._uniqueIdentifier
+_OBJC_IVAR_$_FEMMapping._entityName
+_OBJC_IVAR_$_FEMMapping._rootPath
+_OBJC_IVAR_$_FEMMapping._primaryKey
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMMapping.m
+__52-[FEMMapping(Shortcut) addAttributesFromDictionary:]_block_invoke
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMMapping.h
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Utility/FEMTypeIntrospection.m
+FEMPropertyTypeStringRepresentation
+FEMObjectPropertyTypeIsScalar
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Utility/FEMRepresentationUtility.m
+FEMRepresentationCollectPresentedPrimaryKeys
+_FEMRepresentationCollectPresentedPrimaryKeys
+FEMRepresentationValueForAttribute
+_FEMRepresentationCollectObjectPrimaryKeys
+FEMRepresentationRootForKeyPath
+-[FEMObjectRef initWithValue:]
+-[FEMObjectRef setUseWeakOwnership:]
+-[FEMObjectRef value]
+-[FEMObjectRef useWeakOwnership]
+-[FEMObjectRef .cxx_destruct]
+_OBJC_IVAR_$_FEMObjectRef._strongValue
+_OBJC_IVAR_$_FEMObjectRef._useWeakOwnership
+_OBJC_IVAR_$_FEMObjectRef._weakValue
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Private/Utility/FEMObjectRef.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Private/Utility/FEMObjectRef.h
+-[FEMDeserializer initWithStore:]
+-[FEMDeserializer init]
+-[FEMDeserializer initWithContext:]
+-[FEMDeserializer setDelegate:]
+-[FEMDeserializer applyAttributesToObject:representation:mapping:allocated:]
+-[FEMDeserializer applyRelationshipsToObject:representation:mapping:]
+-[FEMDeserializer _objectFromRepresentation:mapping:allocateIfNeeded:]
+-[FEMDeserializer _collectionFromRepresentation:mapping:allocateIfNeeded:]
+-[FEMDeserializer beginTransactionForMapping:representation:]
+-[FEMDeserializer commitTransaction]
+-[FEMDeserializer objectFromRepresentation:mapping:]
+-[FEMDeserializer fillObject:fromRepresentation:mapping:]
+-[FEMDeserializer collectionFromRepresentation:mapping:]
+-[FEMDeserializer store]
+-[FEMDeserializer delegate]
+-[FEMDeserializer .cxx_destruct]
++[FEMDeserializer(Extension) objectFromRepresentation:mapping:context:]
++[FEMDeserializer(Extension) objectFromRepresentation:mapping:]
++[FEMDeserializer(Extension) fillObject:fromRepresentation:mapping:]
++[FEMDeserializer(Extension) collectionFromRepresentation:mapping:context:]
++[FEMDeserializer(Extension) collectionFromRepresentation:mapping:]
+_OBJC_IVAR_$_FEMDeserializer._store
+_OBJC_IVAR_$_FEMDeserializer._delegate
+_OBJC_IVAR_$_FEMDeserializer._delegateFlags
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Deserializer/FEMDeserializer.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Deserializer/FEMDeserializer.h
+-[FEMRelationship initWithProperty:mapping:]
+-[FEMRelationship initWithProperty:keyPath:mapping:]
+-[FEMRelationship initWithProperty:keyPath:mapping:assignmentPolicy:]
+-[FEMRelationship copyWithZone:]
+-[FEMRelationship setMapping:forKeyPath:]
+-[FEMRelationship description]
+-[FEMRelationship isRecursive]
+-[FEMRelationship setMapping:]
+-[FEMRelationship mapping]
+-[FEMRelationship setOwner:]
+-[FEMRelationship property]
+-[FEMRelationship setProperty:]
+-[FEMRelationship keyPath]
+-[FEMRelationship setKeyPath:]
+-[FEMRelationship isToMany]
+-[FEMRelationship setToMany:]
+-[FEMRelationship owner]
+-[FEMRelationship weak]
+-[FEMRelationship setWeak:]
+-[FEMRelationship assignmentPolicy]
+-[FEMRelationship setAssignmentPolicy:]
+-[FEMRelationship mappingRef]
+-[FEMRelationship setMappingRef:]
+-[FEMRelationship .cxx_destruct]
+_OBJC_IVAR_$_FEMRelationship._owner
+_OBJC_IVAR_$_FEMRelationship._property
+_OBJC_IVAR_$_FEMRelationship._keyPath
+_OBJC_IVAR_$_FEMRelationship._toMany
+_OBJC_IVAR_$_FEMRelationship._weak
+_OBJC_IVAR_$_FEMRelationship._assignmentPolicy
+_OBJC_IVAR_$_FEMRelationship._mappingRef
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMRelationship.m
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Mapping/FEMRelationship.h
+-[FEMObjectStore beginTransaction:]
+-[FEMObjectStore commitTransaction]
++[FEMObjectStore requiresPrefetch]
+-[FEMObjectStore newObjectForMapping:]
+-[FEMObjectStore newAssignmentContext]
+-[FEMObjectStore addObject:forPrimaryKey:mapping:]
+-[FEMObjectStore objectsForMapping:]
+-[FEMObjectStore objectForPrimaryKey:mapping:]
+-[FEMObjectStore assignmentContext:deletedObject:]
+l_OBJC_PROTOCOL_$_FEMRelationshipAssignmentContextDelegate
+l_OBJC_LABEL_PROTOCOL_$_FEMRelationshipAssignmentContextDelegate
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Store/FEMObjectStore.m
+-[NSArray(FEMPropertyRepresentation) fem_propertyRepresentation:]
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Private/Extensions/Foundation/NSArray+FEMPropertyRepresentation.m
+-[NSArray(FEMExcludableCollection) collectionByExcludingObjects:]
+-[NSMutableArray(FEMExcludableCollection) collectionByExcludingObjects:]
+-[NSSet(FEMExcludableCollection) collectionByExcludingObjects:]
+-[NSMutableSet(FEMExcludableCollection) collectionByExcludingObjects:]
+-[NSOrderedSet(FEMExcludableCollection) collectionByExcludingObjects:]
+-[NSMutableOrderedSet(FEMExcludableCollection) collectionByExcludingObjects:]
+l_OBJC_PROTOCOL_$_FEMExcludableCollection
+l_OBJC_LABEL_PROTOCOL_$_FEMExcludableCollection
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Private/Extensions/Collection/FEMExcludableCollection.m
+-[NSArray(FEMMergeableCollection) collectionByMergingObjects:]
+-[NSMutableArray(FEMMergeableCollection) collectionByMergingObjects:]
+-[NSSet(FEMMergeableCollection) collectionByMergingObjects:]
+-[NSMutableSet(FEMMergeableCollection) collectionByMergingObjects:]
+-[NSOrderedSet(FEMMergeableCollection) collectionByMergingObjects:]
+-[NSMutableOrderedSet(FEMMergeableCollection) collectionByMergingObjects:]
+l_OBJC_PROTOCOL_$_FEMMergeableCollection
+l_OBJC_LABEL_PROTOCOL_$_FEMMergeableCollection
+/Users/zen/Developer/ios/FEM/FastEasyMapping/FastEasyMapping/Source/Private/Extensions/Collection/FEMMergeableCollection.m
+/Users/zen/Library/Developer/Xcode/DerivedData/FastEasyMapping-cvnmbtysfvncvifcrhrvnlrlhlcs/Build/Intermediates/FastEasyMapping.build/Release-iphoneos/FastEasyMapping iOS.build/DerivedSources/FastEasyMapping_vers.c
+__ZL15__ARCLite__loadv
+__ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+__ZL22add_image_hook_swiftV1PK11mach_headerl
+__ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+__ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+__ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+__ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+__ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+__ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+__ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+__ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+__ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+__ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+__ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+__ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+__ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+__ZL32__arclite_object_getIndexedIvarsP11objc_object
+__ZL23__arclite_objc_getClassPKc
+__ZL27__arclite_objc_getMetaClassPKc
+__ZL31__arclite_objc_getRequiredClassPKc
+__ZL26__arclite_objc_lookUpClassPKc
+__ZL26__arclite_objc_getProtocolPKc
+__ZL23__arclite_class_getNameP10objc_class
+__ZL26__arclite_protocol_getNameP8Protocol
+__ZL37__arclite_objc_copyClassNamesForImagePKcPj
+__ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+__ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+__ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+__ZL14initialize_impP11objc_objectP13objc_selector
+__ZL18allocateMaybeSwiftP18glue_swift_class_tm
+__ZL22copySwiftV1MangledNamePKcb
+__ZL13demangledNamePKcb
+__ZL16scanMangledFieldRPKcS0_S1_Ri
+__ZL30arclite_uninitialized_functionv
+__ZL12cxxConstructP11objc_object
+__ZL20fixStringForCoreDataP11objc_object
+_OBJC_METACLASS_$___ARCLite__
+__ZL24OBJC_CLASS_$___ARCLite__
+__ZL31OBJC_METACLASS_RO_$___ARCLite__
+__non_lazy_classes
+__ZL27OBJC_CLASS_RO_$___ARCLite__
+__ZL11_class_name
+__ZL32OBJC_$_CLASS_METHODS___ARCLite__
+__ZL17_load_method_name
+__ZL17_load_method_type
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+__ZL30NSUndoManagerProxy_targetClass
+__ZL29original_NSManagedObject_init
+__ZL40original_NSManagedObject_allocWithEntity
+__ZL35original_NSManagedObject_allocBatch
+__ZL25NSMutableDictionary_class
+__ZL22NSConstantString_class
+__ZL14NSString_class
+__ZL36original_NSKKMS_fastIndexForKnownKey
+__ZL27original_NSKKMS_indexForKey
+__ZL28original_NSKKsD_objectForKey
+__ZL34original_NSKKsD_removeObjectForKey
+__ZL32original_NSKKsD_setObject_forKey
+__ZL40original_NSKKsD_addEntriesFromDictionary
+__ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZL31original_objc_allocateClassPair
+__ZL31original_object_getIndexedIvars
+__ZL22original_objc_getClass
+__ZL26original_objc_getMetaClass
+__ZL30original_objc_getRequiredClass
+__ZL25original_objc_lookUpClass
+__ZL25original_objc_getProtocol
+__ZL22original_class_getName
+__ZL25original_protocol_getName
+__ZL36original_objc_copyClassNamesForImage
+__ZL12demangleLock
+__ZL9Demangled
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -fembed-bitcode=all -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -Wno-error=incomplete-umbrella -Wno-error=incomplete-umbrella -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~534/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=278.4
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66
+fixStringForCoreData
+cxxConstruct
+arclite_uninitialized_function
+scanMangledField
+isdigit
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/usr/include/ctype.h
+__isctype
+demangledName
+copySwiftV1DemangledName
+copySwiftV1MangledName
+allocateMaybeSwift
+word_align
+isSwift
+initialize_imp
+transcribeProperties
+property_list_nth
+transcribeProtocols
+transcribeMethods
+data
+method_list_nth
+__arclite_objc_copyClassNamesForImage
+__arclite_protocol_getName
+__arclite_class_getName
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+__arclite_objc_getClass
+__arclite_object_getIndexedIvars
+__arclite_objc_allocateClassPair
+metaclass
+__arclite_objc_readClassPair
+transcribeIvars
+ivar_list_nth
+max
+alignment
+ro
+fastFlags
+__arclite_NSKKsD_addEntriesFromDictionary
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+__arclite_NSManagedObject_init
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+add_image_hook_swiftV1
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+patch_t<const char *(Protocol *)>
+patch_t<const char *(Class)>
+patch_t<Protocol *(const char *)>
+patch_t<Class (const char *)>
+patch_t<void *(id)>
+patch_t<Class (Class, const char *, unsigned long)>
+patch_t<Class (Class, const objc_image_info *)>
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+__ARCLite__load
+install_swiftV1
+install_dict_nil_value
+addOrReplaceMethod
+keyedGetter

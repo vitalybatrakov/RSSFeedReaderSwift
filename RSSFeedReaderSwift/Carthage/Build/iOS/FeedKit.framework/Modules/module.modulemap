@@ -1,0 +1,11 @@
+framework module FeedKit {
+  umbrella header "FeedKit.h"
+
+  export *
+  module * { export * }
+}
+
+module FeedKit.Swift {
+    header "FeedKit-Swift.h"
+    requires objc
+}

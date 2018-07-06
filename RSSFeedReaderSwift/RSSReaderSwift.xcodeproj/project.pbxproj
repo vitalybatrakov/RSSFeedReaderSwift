@@ -11,7 +11,6 @@
 		BC239658208F5BD3006275D7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239657208F5BD3006275D7 /* Feed.swift */; };
 		BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239659208F5BDD006275D7 /* FeedItem.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
-		BC676A5A20261938009C527D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5920261938009C527D /* ViewController.swift */; };
 		BC676A5D20261938009C527D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A5B20261938009C527D /* Main.storyboard */; };
 		BC676A6220261938009C527D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6120261938009C527D /* Assets.xcassets */; };
 		BC676A6520261938009C527D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6320261938009C527D /* LaunchScreen.storyboard */; };
@@ -21,6 +20,7 @@
 		BCB21B45208E0C4200FD865D /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B44208E0C4200FD865D /* FeedService.swift */; };
 		BCB21B47208F504000FD865D /* FeedStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B46208F504000FD865D /* FeedStorage.swift */; };
 		BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */; };
+		BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,6 @@
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC676A5720261938009C527D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BC676A5920261938009C527D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BC676A5C20261938009C527D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC676A6120261938009C527D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BC676A6420261938009C527D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		BCB21B44208E0C4200FD865D /* FeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		BCB21B46208F504000FD865D /* FeedStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStorage.swift; sourceTree = "<group>"; };
 		BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceImpl.swift; sourceTree = "<group>"; };
+		BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			children = (
 				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
 				BC676A5B20261938009C527D /* Main.storyboard */,
-				BC676A5920261938009C527D /* ViewController.swift */,
+				BCE5A58320EF755A00CAE9F0 /* Modules */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -132,6 +132,22 @@
 				BC239654208F5A74006275D7 /* FeedStorageImpl.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		BCE5A58320EF755A00CAE9F0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BCE5A58420EF758800CAE9F0 /* FeedList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BCE5A58420EF758800CAE9F0 /* FeedList */ = {
+			isa = PBXGroup;
+			children = (
+				BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */,
+			);
+			path = FeedList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,7 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC676A5A20261938009C527D /* ViewController.swift in Sources */,
+				BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedStorageImpl.swift in Sources */,
 				BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */,
 				BC239658208F5BD3006275D7 /* Feed.swift in Sources */,

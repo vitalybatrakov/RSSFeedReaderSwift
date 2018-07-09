@@ -12,7 +12,7 @@ import FeedKit
 class FeedServiceImpl: FeedService {
     
     func getFeeds(with complition: @escaping ([Feed]) -> Void) {
-        let feedURL = URL(string: "http://images.apple.com/main/rss/hotnews/hotnews.rss")!
+        let feedURL = URL(string: "https://habrahabr.ru/rss/interesting/")!//"http://images.apple.com/main/rss/hotnews/hotnews.rss")!
         let parser = FeedParser(URL: feedURL)
         parser?.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             guard let feed = result.rssFeed, result.isSuccess else {

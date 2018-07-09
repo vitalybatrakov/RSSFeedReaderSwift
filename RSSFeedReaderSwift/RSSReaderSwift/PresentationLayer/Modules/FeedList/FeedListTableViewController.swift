@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class FeedListTableViewController: UITableViewController {
     
@@ -53,6 +54,9 @@ extension FeedListTableViewController {
         let feedItem = feeds[indexPath.section].items[indexPath.row]
         cell.detailTextLabel?.text = feedItem.body
         cell.textLabel?.text = feedItem.title
+        if let imageUrl = feedItem.imageUrl {
+            cell.imageView?.kf.setImage(with: URL(string: imageUrl))
+        }
         return cell
     }
     

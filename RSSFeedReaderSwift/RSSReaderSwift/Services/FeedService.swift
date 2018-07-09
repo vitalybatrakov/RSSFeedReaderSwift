@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FeedService {
-    func getFeeds(with complition: ([Feed]) -> Void)
+    func getFeeds(with complition: @escaping ([Feed]) -> Void)
 }

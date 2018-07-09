@@ -14,10 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        window?.rootViewController = createRootNavigationController()
+        window?.makeKeyAndVisible()
         return true
+    }
+    
+    func createRootNavigationController() -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let navigationController = storyboard.instantiateViewController(withIdentifier: "FeedNavigationController") as! UINavigationController
+        setupServices(for: navigationController.viewControllers.first as! FeedListTableViewController)
+        return navigationController
+    }
+    
+    func setupServices(for fltvc: FeedListTableViewController) {
+        fltvc.feedService = FeedServiceImpl()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

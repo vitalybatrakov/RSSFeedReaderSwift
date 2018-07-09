@@ -9,9 +9,15 @@
 import UIKit
 
 class FeedListTableViewController: UITableViewController {
+    
+    var feedService: FeedService!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        feedService.getFeeds { (feeds) in
+            
+        }
     }
 
     // MARK: - Table view data source

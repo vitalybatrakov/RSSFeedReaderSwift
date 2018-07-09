@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Feeds-->
         <scene sceneID="tl8-sw-cwS">
             <objects>
-                <tableViewController id="qMV-pc-E85" customClass="FeedListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FeedListTableViewController" id="qMV-pc-E85" customClass="FeedListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uff-78-x7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="qMV-pc-E85" id="1Bp-YN-PUw"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="s9h-wg-1cl"/>
+                    <navigationItem key="navigationItem" title="Feeds" id="s9h-wg-1cl"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Adl-qO-6nC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -41,7 +41,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Jum-1g-OlY">
             <objects>
-                <navigationController id="S3X-os-gCz" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FeedNavigationController" id="S3X-os-gCz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BAs-jP-Cle">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

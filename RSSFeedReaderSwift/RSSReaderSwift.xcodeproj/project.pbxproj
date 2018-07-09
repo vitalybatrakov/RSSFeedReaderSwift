@@ -100,6 +100,7 @@
 				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
 				BC676A5B20261938009C527D /* Main.storyboard */,
 				BCE5A58320EF755A00CAE9F0 /* Modules */,
+				BC8EC21620EF7DEA008560F9 /* Utils */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -111,6 +112,13 @@
 				BC676A6620261938009C527D /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BC8EC21620EF7DEA008560F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		BCA5A7592085BC0800F1703D /* Frameworks */ = {

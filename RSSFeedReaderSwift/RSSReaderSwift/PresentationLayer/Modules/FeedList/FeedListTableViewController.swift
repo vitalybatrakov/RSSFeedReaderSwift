@@ -17,13 +17,7 @@ class FeedListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTableView()
         fetchFeeds()
-    }
-    
-    private func setupTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
     }
     
     private func fetchFeeds() {
@@ -34,10 +28,6 @@ class FeedListTableViewController: UITableViewController {
             }
         }
     }
-
-}
-
-extension FeedListTableViewController {
     
     // MARK: - Table view data source
     
@@ -50,16 +40,20 @@ extension FeedListTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId", for: indexPath) as! FeedListTableViewCell
         let feedItem = feeds[indexPath.section].items[indexPath.row]
-        cell.detailTextLabel?.text = feedItem.body
-        cell.textLabel?.text = feedItem.title
-        if let imageUrl = feedItem.imageUrl {
-            cell.imageView?.kf.indicatorType = .activity
-            let image = UIImage(named: "placeholder-128")
-            cell.imageView?.kf.setImage(with: URL(string: imageUrl), placeholder: image)
-        }
+        configure(cell: cell, with: feedItem)
         return cell
     }
     
+    private func configure(cell: FeedListTableViewCell, with feedItem: FeedItem) {
+        cell.detailsLabel?.text = feedItem.body
+        cell.titleLabel?.text = feedItem.title
+        if let imageUrl = feedItem.imageUrl {
+            cell.imgView?.kf.indicatorType = .activity
+            let image = UIImage(named: "placeholder-128")
+            cell.imgView?.kf.setImage(with: URL(string: imageUrl), placeholder: image)
+        }
+    }
+
 }

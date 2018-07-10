@@ -55,7 +55,9 @@ extension FeedListTableViewController {
         cell.detailTextLabel?.text = feedItem.body
         cell.textLabel?.text = feedItem.title
         if let imageUrl = feedItem.imageUrl {
-            cell.imageView?.kf.setImage(with: URL(string: imageUrl))
+            cell.imageView?.kf.indicatorType = .activity
+            let image = UIImage(named: "placeholder-128")
+            cell.imageView?.kf.setImage(with: URL(string: imageUrl), placeholder: image)
         }
         return cell
     }

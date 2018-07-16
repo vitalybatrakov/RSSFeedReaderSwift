@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FeedSource {
+struct FeedSource: Codable {
     let title: String
     let url: String
 }

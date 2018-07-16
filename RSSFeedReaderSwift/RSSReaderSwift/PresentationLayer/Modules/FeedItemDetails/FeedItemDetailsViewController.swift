@@ -32,3 +32,16 @@ class FeedItemDetailsViewController: UIViewController {
     }
     
 }
+
+extension FeedItemDetailsViewController {
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "WebPageSegue" {
+            let viewController = segue.destination as! WebPageViewController
+            viewController.pageUrl = URL(string: feedItem.link)
+        }
+    }
+    
+}

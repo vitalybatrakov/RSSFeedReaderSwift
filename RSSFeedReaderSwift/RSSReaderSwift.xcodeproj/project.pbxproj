@@ -17,6 +17,7 @@
 		BC676A6220261938009C527D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6120261938009C527D /* Assets.xcassets */; };
 		BC676A6520261938009C527D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6320261938009C527D /* LaunchScreen.storyboard */; };
 		BC7B68FA20FC996B0047D5AE /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68F920FC996B0047D5AE /* FeedSource.swift */; };
+		BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */; };
 		BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */; };
 		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
 		BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75B2085BC0900F1703D /* Kingfisher.framework */; };
@@ -40,6 +41,7 @@
 		BC676A6420261938009C527D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC676A6620261938009C527D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC7B68F920FC996B0047D5AE /* FeedSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSource.swift; sourceTree = "<group>"; };
+		BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		BCA5A75B2085BC0900F1703D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -139,6 +141,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BC7B68FB20FC9D840047D5AE /* WebPage */ = {
+			isa = PBXGroup;
+			children = (
+				BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */,
+			);
+			path = WebPage;
+			sourceTree = "<group>";
+		};
 		BC8EC21620EF7DEA008560F9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		BCE5A58320EF755A00CAE9F0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BC7B68FB20FC9D840047D5AE /* WebPage */,
 				BC5D040320F4E03A00075D2E /* FeedItemDetails */,
 				BC5D040220F4E03200075D2E /* SourceList */,
 				BCE5A58420EF758800CAE9F0 /* FeedList */,
@@ -284,6 +295,7 @@
 				BC239658208F5BD3006275D7 /* Feed.swift in Sources */,
 				BC7B68FA20FC996B0047D5AE /* FeedSource.swift in Sources */,
 				BC5D040520F4E06000075D2E /* SourceListTableViewController.swift in Sources */,
+				BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */,
 				BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */,
 				BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,

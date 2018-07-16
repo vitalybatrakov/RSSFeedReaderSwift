@@ -162,7 +162,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="128"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htd-nv-ynM">
-                                <rect key="frame" x="87" y="392.5" width="182" height="30"/>
+                                <rect key="frame" x="144" y="392.5" width="87" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Eev-xB-ByO"/>
                                 </constraints>
@@ -187,9 +187,8 @@
                             <constraint firstItem="e0S-A2-SUa" firstAttribute="height" secondItem="tuu-sG-Dj5" secondAttribute="height" id="5SC-Kv-rig"/>
                             <constraint firstItem="e0S-A2-SUa" firstAttribute="top" secondItem="gO6-ij-h9C" secondAttribute="bottom" constant="8" id="6O6-3w-wNQ"/>
                             <constraint firstItem="e0S-A2-SUa" firstAttribute="trailing" secondItem="cSa-UB-Jzz" secondAttribute="trailingMargin" id="8w9-vZ-qT0"/>
-                            <constraint firstItem="htd-nv-ynM" firstAttribute="leading" secondItem="cSa-UB-Jzz" secondAttribute="leadingMargin" constant="71" id="A7B-wJ-9v9"/>
                             <constraint firstItem="e0S-A2-SUa" firstAttribute="leading" secondItem="cSa-UB-Jzz" secondAttribute="leadingMargin" id="Spu-ID-WDi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="htd-nv-ynM" secondAttribute="trailing" constant="90" id="V3U-3S-FHU"/>
+                            <constraint firstItem="htd-nv-ynM" firstAttribute="centerX" secondItem="cSa-UB-Jzz" secondAttribute="centerX" id="U9M-Ae-4nM"/>
                             <constraint firstItem="gO6-ij-h9C" firstAttribute="trailing" secondItem="cSa-UB-Jzz" secondAttribute="trailingMargin" id="WOm-kR-E4I"/>
                             <constraint firstItem="gO6-ij-h9C" firstAttribute="top" secondItem="tuu-sG-Dj5" secondAttribute="bottom" constant="8" id="a12-Kg-g1Z"/>
                             <constraint firstItem="tuu-sG-Dj5" firstAttribute="top" secondItem="5CX-XK-03t" secondAttribute="bottom" constant="8" id="dBs-yC-FTT"/>
@@ -212,7 +211,7 @@
         <!--Web Page View Controller-->
         <scene sceneID="qoh-9y-B8f">
             <objects>
-                <viewController id="5pr-go-VHl" customClass="WebPageViewController" sceneMemberID="viewController">
+                <viewController id="5pr-go-VHl" customClass="WebPageViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xeb-X6-Rv4"/>
                         <viewControllerLayoutGuide type="bottom" id="UyU-q8-xAr"/>

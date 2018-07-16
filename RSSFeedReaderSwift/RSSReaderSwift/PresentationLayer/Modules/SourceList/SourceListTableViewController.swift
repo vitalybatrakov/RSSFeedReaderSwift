@@ -9,6 +9,8 @@
 import UIKit
 
 class SourceListTableViewController: UITableViewController {
+    
+    var feedSourceStorage: FeedSourceStorage!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,5 +1,5 @@
 //
-//  FeedStorageImpl.swift
+//  FeedSourceStorageImpl.swift
 //  RSSReaderSwift
 //
 //  Created by Vitaliy Batrakov on 24.04.2018.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-class FeedStorageImpl: FeedStorage {
+class FeedSourceStorageImpl: FeedSourceStorage {
     
-    func getFeeds() -> [Feed] {
-        // TODO
+    func getSources() -> [FeedSource] {
         return []
     }
     
-    func save(feeds: Feed) {
-        // TODO
+    func save(sources: [FeedSource]) {
+        
     }
+    
 }

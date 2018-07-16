@@ -12,6 +12,7 @@ import Kingfisher
 class FeedListTableViewController: UITableViewController {
     
     var feedService: FeedService!
+    var feedSourceStorage: FeedSourceStorage!
     
     var feeds = [Feed]()
 
@@ -68,6 +69,11 @@ extension FeedListTableViewController {
             let viewController = segue.destination as! FeedItemDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 viewController.feedItem = feeds[indexPath.section].items[indexPath.row]
+            }
+        case "SourceListSegue":
+            let viewController = segue.destination as! SourceListTableViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                viewController.feedSourceStorage = self.feedSourceStorage
             }
         default:
             break

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FeedStorage {
-    func getFeeds() -> [Feed]
-    func save(feeds: Feed)
+protocol FeedSourceStorage {
+    func getSources() -> [FeedSource]
+    func save(sources: [FeedSource])
 }

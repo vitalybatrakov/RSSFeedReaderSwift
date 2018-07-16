@@ -22,7 +22,6 @@
 		BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */; };
 		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
 		BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75B2085BC0900F1703D /* Kingfisher.framework */; };
-		BCA5A75F2085BC0900F1703D /* FastEasyMapping.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */; };
 		BCB21B45208E0C4200FD865D /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B44208E0C4200FD865D /* FeedService.swift */; };
 		BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B46208F504000FD865D /* FeedSourceStorage.swift */; };
 		BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */; };
@@ -61,7 +60,6 @@
 			files = (
 				BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */,
 				BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */,
-				BCA5A75F2085BC0900F1703D /* FastEasyMapping.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +273,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/FastEasyMapping.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/FeedKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);

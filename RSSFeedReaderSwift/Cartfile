@@ -1,3 +1,2 @@
 github "onevcat/Kingfisher" ~> 4.0
-github "Yalantis/FastEasyMapping" ~> 1.2
 github "nmdias/FeedKit" ~> 6.0

@@ -14,9 +14,21 @@ class FeedItemDetailsViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     
+    var feedItem: FeedItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupViewWithFeedItem()
+    }
+    
+    private func setupViewWithFeedItem() {
+        titleLabel.text = feedItem.title
+        descriptionLabel.text = feedItem.body
+        if let imageUrl = feedItem.imageUrl {
+            imageView.kf.indicatorType = .activity
+            let image = UIImage(named: "placeholder-128")
+            imageView.kf.setImage(with: URL(string: imageUrl), placeholder: image)
+        }
     }
     
 }

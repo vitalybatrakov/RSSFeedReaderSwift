@@ -69,7 +69,7 @@
                                     <outlet property="detailsLabel" destination="Jvn-J4-zHS" id="fgq-Lf-NRE"/>
                                     <outlet property="imgView" destination="YvT-Xm-U7O" id="sIw-Me-hnP"/>
                                     <outlet property="titleLabel" destination="bqM-5u-Ehr" id="tfE-he-Awu"/>
-                                    <segue destination="FZT-gK-nnh" kind="show" id="RiW-eI-lKc"/>
+                                    <segue destination="FZT-gK-nnh" kind="show" identifier="FeedDetailsSegue" id="RiW-eI-lKc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -81,7 +81,7 @@
                     <navigationItem key="navigationItem" title="Feeds" id="s9h-wg-1cl">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qfe-Ri-pDc">
                             <connections>
-                                <segue destination="uQI-i7-spl" kind="show" id="xc7-jf-4Yg"/>
+                                <segue destination="uQI-i7-spl" kind="show" identifier="SourceListSegue" id="xc7-jf-4Yg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

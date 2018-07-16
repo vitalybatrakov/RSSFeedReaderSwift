@@ -57,3 +57,21 @@ class FeedListTableViewController: UITableViewController {
     }
 
 }
+
+extension FeedListTableViewController {
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "FeedDetailsSegue":
+            let viewController = segue.destination as! FeedItemDetailsViewController
+            if let indexPath = tableView.indexPathForSelectedRow {
+                viewController.feedItem = feeds[indexPath.section].items[indexPath.row]
+            }
+        default:
+            break
+        }
+    }
+    
+}

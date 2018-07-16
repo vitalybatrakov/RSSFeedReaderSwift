@@ -46,7 +46,6 @@
 		BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		BCA5A75B2085BC0900F1703D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FastEasyMapping.framework; path = Carthage/Build/iOS/FastEasyMapping.framework; sourceTree = "<group>"; };
 		BCB21B44208E0C4200FD865D /* FeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		BCB21B46208F504000FD865D /* FeedSourceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorage.swift; sourceTree = "<group>"; };
 		BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceImpl.swift; sourceTree = "<group>"; };
@@ -160,7 +159,6 @@
 		BCA5A7592085BC0800F1703D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BCA5A75C2085BC0900F1703D /* FastEasyMapping.framework */,
 				BCA5A75A2085BC0900F1703D /* FeedKit.framework */,
 				BCA5A75B2085BC0900F1703D /* Kingfisher.framework */,
 			);

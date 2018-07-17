@@ -19,6 +19,7 @@
 		BC7B68FA20FC996B0047D5AE /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68F920FC996B0047D5AE /* FeedSource.swift */; };
 		BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */; };
 		BC7B68FF20FCB7BD0047D5AE /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FE20FCB7BD0047D5AE /* UserDefaultsExtension.swift */; };
+		BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */; };
 		BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */; };
 		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
 		BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75B2085BC0900F1703D /* Kingfisher.framework */; };
@@ -43,6 +44,7 @@
 		BC7B68F920FC996B0047D5AE /* FeedSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSource.swift; sourceTree = "<group>"; };
 		BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		BC7B68FE20FCB7BD0047D5AE /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceViewController.swift; sourceTree = "<group>"; };
 		BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		BCA5A75B2085BC0900F1703D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				BC676A5720261938009C527D /* AppDelegate.swift */,
 				BC239656208F5BBA006275D7 /* Models */,
 				BCB21B43208E0B5B00FD865D /* Services */,
+				BC8EC21620EF7DEA008560F9 /* Utils */,
 				BC676A8820308972009C527D /* PresentationLayer */,
 				BC676A8C203089DE009C527D /* Resources */,
 			);
@@ -126,7 +129,6 @@
 				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
 				BC676A5B20261938009C527D /* Main.storyboard */,
 				BCE5A58320EF755A00CAE9F0 /* Modules */,
-				BC8EC21620EF7DEA008560F9 /* Utils */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -146,6 +148,14 @@
 				BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */,
 			);
 			path = WebPage;
+			sourceTree = "<group>";
+		};
+		BC7B690020FDD50C0047D5AE /* AddSource */ = {
+			isa = PBXGroup;
+			children = (
+				BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */,
+			);
+			path = AddSource;
 			sourceTree = "<group>";
 		};
 		BC8EC21620EF7DEA008560F9 /* Utils */ = {
@@ -179,10 +189,11 @@
 		BCE5A58320EF755A00CAE9F0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				BC7B68FB20FC9D840047D5AE /* WebPage */,
-				BC5D040320F4E03A00075D2E /* FeedItemDetails */,
-				BC5D040220F4E03200075D2E /* SourceList */,
 				BCE5A58420EF758800CAE9F0 /* FeedList */,
+				BC5D040320F4E03A00075D2E /* FeedItemDetails */,
+				BC7B68FB20FC9D840047D5AE /* WebPage */,
+				BC5D040220F4E03200075D2E /* SourceList */,
+				BC7B690020FDD50C0047D5AE /* AddSource */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -288,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */,
+				BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */,
 				BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */,
 				BC239658208F5BD3006275D7 /* Feed.swift in Sources */,

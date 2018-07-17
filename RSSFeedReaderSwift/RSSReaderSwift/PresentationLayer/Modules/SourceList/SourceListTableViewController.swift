@@ -23,6 +23,10 @@ class SourceListTableViewController: UITableViewController {
         sources = feedSourceStorage.getSources()
     }
 
+    @IBAction func editButtonPressed(_ sender: Any) {
+        tableView.isEditing = !tableView.isEditing
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,7 +45,6 @@ class SourceListTableViewController: UITableViewController {
         cell.textLabel?.text = source.title
     }
     
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -76,15 +79,17 @@ class SourceListTableViewController: UITableViewController {
         return true
     }
     */
+}
 
-    /*
+extension SourceListTableViewController {
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AddSourceSegue" {
+            let viewController = segue.destination as! AddSourceViewController
+            // TODO: inject dependencies
+        }
     }
-    */
-
+    
 }

@@ -33,7 +33,7 @@
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
 		BC239657208F5BD3006275D7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListTableViewController.swift; sourceTree = "<group>"; };
+		BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListTableViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC676A5720261938009C527D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };

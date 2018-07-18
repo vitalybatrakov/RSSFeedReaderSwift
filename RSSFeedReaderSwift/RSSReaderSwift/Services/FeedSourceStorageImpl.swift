@@ -11,7 +11,8 @@ import Foundation
 class FeedSourceStorageImpl: FeedSourceStorage {
     
     private let sourceListKey = "FeedSourceListKey"
-    private let defaultSource = FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/")
+    private let defaultSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
+                                  FeedSource(title: "TechCrunch", url: "https://techcrunch.com/feed/")]
     
     func getSources() -> [FeedSource] {
         do {
@@ -21,7 +22,7 @@ class FeedSourceStorageImpl: FeedSourceStorage {
         } catch {
             print(error.localizedDescription)
         }
-        return [defaultSource]
+        return defaultSources
     }
     
     func save(sources: [FeedSource]) {

@@ -133,7 +133,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="TqR-c7-9Eh">
                                 <connections>
-                                    <segue destination="TBD-Ac-JvI" kind="presentation" identifier="AddSourceSegue" id="G7e-rn-4Y1"/>
+                                    <segue destination="TBD-Ac-JvI" kind="presentation" identifier="AddSourceSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="G7e-rn-4Y1"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="xf2-P4-Hdr">
@@ -146,7 +146,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qO0-Sp-JfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1530" y="264"/>
+            <point key="canvasLocation" x="1508" y="262"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Jum-1g-OlY">
@@ -265,8 +265,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Tg-uk-FmP">
                                 <rect key="frame" x="37.5" y="123.5" width="300" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIx-nG-vCY">
-                                        <rect key="frame" x="10" y="15" width="280" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add source" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIx-nG-vCY">
+                                        <rect key="frame" x="103.5" y="15" width="93" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="epd-3W-dmC"/>
                                         </constraints>
@@ -277,8 +277,8 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="kAddSourceTitle"/>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yo-9G-Tno">
-                                        <rect key="frame" x="10" y="51" width="280" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter feed URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yo-9G-Tno">
+                                        <rect key="frame" x="92.5" y="51" width="115.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -293,7 +293,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="kAddSourceAdd"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="addButtonDidTapped:" destination="TBD-Ac-JvI" eventType="touchUpInside" id="WiL-4Q-ZGF"/>
+                                            <action selector="addButtonTapped:" destination="TBD-Ac-JvI" eventType="touchUpInside" id="X6d-wL-laL"/>
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-pJ-GCi">
@@ -309,7 +309,7 @@
                                             <userDefinedRuntimeAttribute type="string" keyPath="locKey" value="kAddSourceCancel"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="cancelButtonDidTapped:" destination="TBD-Ac-JvI" eventType="touchUpInside" id="i8v-PG-1Bw"/>
+                                            <action selector="cancelButtonTapped:" destination="TBD-Ac-JvI" eventType="touchUpInside" id="UeS-Ok-6tp"/>
                                         </connections>
                                     </button>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5aw-b6-kiV">
@@ -323,14 +323,12 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="CIx-nG-vCY" secondAttribute="trailing" constant="10" id="2eQ-Ck-lJo"/>
                                     <constraint firstItem="lov-tg-MFC" firstAttribute="top" secondItem="4cg-pJ-GCi" secondAttribute="bottom" constant="10" id="3Ax-io-R1d"/>
                                     <constraint firstItem="5aw-b6-kiV" firstAttribute="top" secondItem="lov-tg-MFC" secondAttribute="bottom" constant="-5" id="A94-jP-Voi"/>
                                     <constraint firstItem="4cg-pJ-GCi" firstAttribute="leading" secondItem="7Tg-uk-FmP" secondAttribute="leading" constant="10" id="Em2-st-lMA"/>
                                     <constraint firstItem="p4Q-bm-9FS" firstAttribute="leading" secondItem="lov-tg-MFC" secondAttribute="trailing" constant="10" id="HWC-E8-Mga"/>
                                     <constraint firstItem="p4Q-bm-9FS" firstAttribute="top" secondItem="4cg-pJ-GCi" secondAttribute="bottom" constant="10" id="J9g-mJ-9cS"/>
                                     <constraint firstAttribute="width" constant="300" id="MGz-3c-nfI"/>
-                                    <constraint firstItem="CIx-nG-vCY" firstAttribute="leading" secondItem="7Tg-uk-FmP" secondAttribute="leading" constant="10" id="NQD-HD-8yZ"/>
                                     <constraint firstItem="lov-tg-MFC" firstAttribute="leading" secondItem="7Tg-uk-FmP" secondAttribute="leading" constant="20" id="QPa-vE-pEn"/>
                                     <constraint firstAttribute="height" constant="180" id="QoE-K8-hju"/>
                                     <constraint firstItem="4cg-pJ-GCi" firstAttribute="top" secondItem="9Yo-9G-Tno" secondAttribute="bottom" constant="10" id="ayK-ZP-nRG"/>
@@ -340,11 +338,9 @@
                                     <constraint firstAttribute="trailing" secondItem="4cg-pJ-GCi" secondAttribute="trailing" constant="10" id="kww-Du-9DB"/>
                                     <constraint firstAttribute="trailing" secondItem="p4Q-bm-9FS" secondAttribute="trailing" constant="20" id="md7-Dx-zBD"/>
                                     <constraint firstItem="5aw-b6-kiV" firstAttribute="centerX" secondItem="7Tg-uk-FmP" secondAttribute="centerX" id="pMN-r1-JzE"/>
-                                    <constraint firstItem="9Yo-9G-Tno" firstAttribute="leading" secondItem="7Tg-uk-FmP" secondAttribute="leading" constant="10" id="qdc-Vm-Uby"/>
                                     <constraint firstAttribute="bottom" secondItem="5aw-b6-kiV" secondAttribute="bottom" constant="13" id="r81-76-6Fw"/>
                                     <constraint firstItem="CIx-nG-vCY" firstAttribute="top" secondItem="7Tg-uk-FmP" secondAttribute="top" constant="15" id="s4L-HF-8LC"/>
                                     <constraint firstItem="p4Q-bm-9FS" firstAttribute="width" secondItem="lov-tg-MFC" secondAttribute="width" id="s5z-hU-w8g"/>
-                                    <constraint firstAttribute="trailing" secondItem="9Yo-9G-Tno" secondAttribute="trailing" constant="10" id="uJ1-JE-AEo"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -360,8 +356,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="progressIndicator" destination="5aw-b6-kiV" id="DJ0-LK-8y3"/>
-                        <outlet property="sourceTextField" destination="4cg-pJ-GCi" id="Gdb-B1-cAH"/>
+                        <outlet property="progessIndicator" destination="5aw-b6-kiV" id="vAc-nk-Hqk"/>
+                        <outlet property="sourceTextField" destination="4cg-pJ-GCi" id="tgB-7Z-PYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BDz-yA-uCF" userLabel="First Responder" sceneMemberID="firstResponder"/>

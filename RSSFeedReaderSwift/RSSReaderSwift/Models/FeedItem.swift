@@ -16,7 +16,7 @@ struct FeedItem {
     
     init(title: String, body: String, link: String) {
         self.title = title
-        self.body = body
+        self.body = body.withoutHtmlTags
         self.link = link
         self.imageUrl = imageUrl(from: body)
     }

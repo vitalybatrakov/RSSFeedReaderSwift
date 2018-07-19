@@ -11,30 +11,49 @@ import FeedKit
 
 class FeedServiceImpl: FeedService {
     
-    func getFeeds(with complition: @escaping ([Feed]) -> Void) {
-        let feedURL = URL(string: "https://habrahabr.ru/rss/interesting/")!
-        getFeed(with: feedURL) { feed in
-            complition([feed])
+    private var feedSourceStorage: FeedSourceStorage!
+    
+    init(with feedSourceStorage: FeedSourceStorage) {
+        self.feedSourceStorage = feedSourceStorage
+    }
+    
+    func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
+        let sources = feedSourceStorage.getSources()
+        var results = [Result<Feed>]()
+        let dispatchGroup = DispatchGroup()
+        for source in sources {
+            dispatchGroup.enter()
+            guard let url = URL(string: source.url) else { continue }
+            getFeed(with: url) { result in
+                results.append(result)
+                dispatchGroup.leave()
+            }
+        }
+        dispatchGroup.notify(queue: .main) {
+            complition(results)
         }
     }
     
-    func getFeed(with url: URL, complition: @escaping (Feed) -> Void) {
-        let parser = FeedParser(URL: url)
-        parser?.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
+    func getFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
+        guard let parser = FeedParser(URL: url) else {
+            complition(.error("Invalid url"))
+            return
+        }
+        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             guard let feed = result.rssFeed, result.isSuccess else {
-                print(result.error as Any)
+                let message = result.error?.localizedDescription ?? "Unknown feed parse error"
+                complition(.error(message))
                 return
             }
             self.process(feed: feed, with: complition)
         }
     }
     
-    private func process(feed: RSSFeed, with complition: @escaping (Feed) -> Void) {
-        DispatchQueue.main.async {
-            guard let feedTitle = feed.title,
-                  let feedItems = self.mapFeedItems(from: feed) else { return }
-            complition(Feed(title: feedTitle, items: feedItems))
-        }
+    private func process(feed: RSSFeed, with complition: @escaping (Result<Feed>) -> Void) {
+        guard let feedTitle = feed.title,
+              let feedItems = self.mapFeedItems(from: feed) else { return }
+        let feed = Feed(title: feedTitle, items: feedItems)
+        complition(.success(feed))
     }
     
     private func mapFeedItems(from feed: RSSFeed) -> [FeedItem]? {

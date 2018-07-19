@@ -58,11 +58,18 @@ class AddSourceViewController: UIViewController {
     
     private func addSource() {
         guard let text = sourceTextField.text, let url = URL(string: text) else { return }
-        feedService.getFeed(with: url, complition: { feed in
-            let source = FeedSource(title: feed.title, url: text)
-            self.feedSourceStorage.add(source: source)
-            self.dismiss(animated: true, completion: nil)
+        feedService.getFeed(with: url, complition: { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let feed):
+                    let source = FeedSource(title: feed.title, url: text)
+                    self.feedSourceStorage.add(source: source)
+                    self.dismiss(animated: true, completion: nil)
+                case .error(let message):
+                    self.showAlert(title: "Error", msg: message)
+                    self.hideProgressIndicator()
+                }
+            }
         })
     }
-    
 }

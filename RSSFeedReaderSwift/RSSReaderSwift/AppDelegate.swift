@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupServices(for fltvc: FeedListTableViewController) {
-        fltvc.feedService = FeedServiceImpl()
         fltvc.feedSourceStorage = FeedSourceStorageImpl()
+        fltvc.feedService = FeedServiceImpl(with: fltvc.feedSourceStorage)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -22,15 +22,26 @@ class FeedListTableViewController: UITableViewController {
     }
     
     private func fetchFeeds() {
-        feedService.getFeeds { (feeds) in
+        feedService.getFeeds { (results) in
             DispatchQueue.main.async {
-                self.feeds = feeds
+                self.feeds = results.map {
+                    switch $0 {
+                    case .success(let feed):
+                        return feed
+                    case .error(let message):
+                        return Feed(title: message, items: [])
+                    }
+                }
                 self.tableView.reloadData()
             }
         }
     }
     
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return feeds[section].title
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return feeds.count

@@ -10,7 +10,8 @@
 		BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */; };
 		BC239658208F5BD3006275D7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239657208F5BD3006275D7 /* Feed.swift */; };
 		BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239659208F5BDD006275D7 /* FeedItem.swift */; };
-		BC4BC00D2100B1EB0063211B /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC00C2100B1EA0063211B /* StringExtension.swift */; };
+		BC4BC00D2100B1EB0063211B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC00C2100B1EA0063211B /* String+Extension.swift */; };
+		BC4BC0102100BA990063211B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC00F2100BA990063211B /* UIViewController+Extension.swift */; };
 		BC5D040520F4E06000075D2E /* SourceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */; };
 		BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
@@ -19,7 +20,7 @@
 		BC676A6520261938009C527D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC676A6320261938009C527D /* LaunchScreen.storyboard */; };
 		BC7B68FA20FC996B0047D5AE /* FeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68F920FC996B0047D5AE /* FeedSource.swift */; };
 		BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */; };
-		BC7B68FF20FCB7BD0047D5AE /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FE20FCB7BD0047D5AE /* UserDefaultsExtension.swift */; };
+		BC7B68FF20FCB7BD0047D5AE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Extension.swift */; };
 		BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */; };
 		BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */; };
 		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
@@ -34,7 +35,8 @@
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
 		BC239657208F5BD3006275D7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		BC4BC00C2100B1EA0063211B /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BC4BC00C2100B1EA0063211B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		BC4BC00F2100BA990063211B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListTableViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +47,7 @@
 		BC676A6620261938009C527D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC7B68F920FC996B0047D5AE /* FeedSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSource.swift; sourceTree = "<group>"; };
 		BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
-		BC7B68FE20FCB7BD0047D5AE /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceViewController.swift; sourceTree = "<group>"; };
 		BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 				BC7B68F920FC996B0047D5AE /* FeedSource.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BC4BC00E2100BA510063211B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC4BC00F2100BA990063211B /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BC5D040220F4E03200075D2E /* SourceList */ = {
@@ -118,7 +128,7 @@
 				BC676A5720261938009C527D /* AppDelegate.swift */,
 				BC239656208F5BBA006275D7 /* Models */,
 				BCB21B43208E0B5B00FD865D /* Services */,
-				BC8EC21620EF7DEA008560F9 /* Utils */,
+				BC8EC21620EF7DEA008560F9 /* Extensions */,
 				BC676A8820308972009C527D /* PresentationLayer */,
 				BC676A8C203089DE009C527D /* Resources */,
 			);
@@ -131,6 +141,7 @@
 				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
 				BC676A5B20261938009C527D /* Main.storyboard */,
 				BCE5A58320EF755A00CAE9F0 /* Modules */,
+				BC4BC00E2100BA510063211B /* Extensions */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -160,13 +171,13 @@
 			path = AddSource;
 			sourceTree = "<group>";
 		};
-		BC8EC21620EF7DEA008560F9 /* Utils */ = {
+		BC8EC21620EF7DEA008560F9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BC7B68FE20FCB7BD0047D5AE /* UserDefaultsExtension.swift */,
-				BC4BC00C2100B1EA0063211B /* StringExtension.swift */,
+				BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Extension.swift */,
+				BC4BC00C2100B1EA0063211B /* String+Extension.swift */,
 			);
-			path = Utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		BCA5A7592085BC0800F1703D /* Frameworks */ = {
@@ -305,17 +316,18 @@
 				BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */,
 				BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */,
-				BC4BC00D2100B1EB0063211B /* StringExtension.swift in Sources */,
+				BC4BC00D2100B1EB0063211B /* String+Extension.swift in Sources */,
 				BC239658208F5BD3006275D7 /* Feed.swift in Sources */,
 				BC7B68FA20FC996B0047D5AE /* FeedSource.swift in Sources */,
 				BC5D040520F4E06000075D2E /* SourceListTableViewController.swift in Sources */,
 				BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */,
 				BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */,
 				BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */,
+				BC4BC0102100BA990063211B /* UIViewController+Extension.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,
 				BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */,
 				BC676A5820261938009C527D /* AppDelegate.swift in Sources */,
-				BC7B68FF20FCB7BD0047D5AE /* UserDefaultsExtension.swift in Sources */,
+				BC7B68FF20FCB7BD0047D5AE /* UserDefaults+Extension.swift in Sources */,
 				BCB21B45208E0C4200FD865D /* FeedService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

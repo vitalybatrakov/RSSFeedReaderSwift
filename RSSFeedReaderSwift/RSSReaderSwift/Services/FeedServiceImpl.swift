@@ -13,7 +13,13 @@ class FeedServiceImpl: FeedService {
     
     func getFeeds(with complition: @escaping ([Feed]) -> Void) {
         let feedURL = URL(string: "https://habrahabr.ru/rss/interesting/")!
-        let parser = FeedParser(URL: feedURL)
+        getFeed(with: feedURL) { feed in
+            complition([feed])
+        }
+    }
+    
+    func getFeed(with url: URL, complition: @escaping (Feed) -> Void) {
+        let parser = FeedParser(URL: url)
         parser?.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             guard let feed = result.rssFeed, result.isSuccess else {
                 print(result.error as Any)
@@ -23,11 +29,11 @@ class FeedServiceImpl: FeedService {
         }
     }
     
-    private func process(feed: RSSFeed, with complition: @escaping ([Feed]) -> Void) {
+    private func process(feed: RSSFeed, with complition: @escaping (Feed) -> Void) {
         DispatchQueue.main.async {
             guard let feedTitle = feed.title,
                   let feedItems = self.mapFeedItems(from: feed) else { return }
-            complition([Feed(title: feedTitle, items: feedItems)])
+            complition(Feed(title: feedTitle, items: feedItems))
         }
     }
     

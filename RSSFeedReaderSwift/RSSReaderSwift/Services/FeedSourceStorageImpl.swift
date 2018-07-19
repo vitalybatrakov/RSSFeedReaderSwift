@@ -33,4 +33,10 @@ class FeedSourceStorageImpl: FeedSourceStorage {
         }
     }
     
+    func add(source: FeedSource) {
+        var sources = getSources()
+        sources.append(source)
+        save(sources: sources)
+    }
+    
 }

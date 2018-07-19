@@ -72,7 +72,8 @@ extension FeedListTableViewController {
             }
         case "SourceListSegue":
             let viewController = segue.destination as! SourceListTableViewController
-            viewController.feedSourceStorage = self.feedSourceStorage
+            viewController.feedSourceStorage = feedSourceStorage
+            viewController.feedService = feedService
         default:
             break
         }

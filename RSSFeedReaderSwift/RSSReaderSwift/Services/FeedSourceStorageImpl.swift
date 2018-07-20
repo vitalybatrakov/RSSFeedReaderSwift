@@ -12,7 +12,7 @@ class FeedSourceStorageImpl: FeedSourceStorage {
     
     private let sourceListKey = "FeedSourceListKey"
     private let defaultSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
-                                  FeedSource(title: "TechCrunch", url: "https://techcrunch.com/feed/")]
+                                  FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
     
     func getSources() -> [FeedSource] {
         do {

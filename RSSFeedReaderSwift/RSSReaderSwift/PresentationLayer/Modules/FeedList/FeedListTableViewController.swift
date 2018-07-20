@@ -15,6 +15,7 @@ class FeedListTableViewController: UITableViewController {
     var feedSourceStorage: FeedSourceStorage!
     
     var feeds = [Feed]()
+    let placeholderImage = UIImage(named: "placeholder-128")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,8 +64,9 @@ class FeedListTableViewController: UITableViewController {
         cell.titleLabel?.text = feedItem.title
         if let imageUrl = feedItem.imageUrl {
             cell.imgView?.kf.indicatorType = .activity
-            let image = UIImage(named: "placeholder-128")
-            cell.imgView?.kf.setImage(with: URL(string: imageUrl), placeholder: image)
+            cell.imgView?.kf.setImage(with: URL(string: imageUrl), placeholder: placeholderImage)
+        } else {
+            cell.imgView.image = placeholderImage
         }
     }
 

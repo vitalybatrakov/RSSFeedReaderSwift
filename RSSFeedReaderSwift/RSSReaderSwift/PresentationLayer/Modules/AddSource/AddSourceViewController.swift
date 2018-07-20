@@ -12,16 +12,13 @@ class AddSourceViewController: UIViewController {
     
     var feedSourceStorage: FeedSourceStorage!
     var feedService: FeedService!
+    var onAddNewSource: (() -> Void)!
     
     @IBOutlet var sourceTextField: UITextField!
     @IBOutlet var progessIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         sourceTextField.becomeFirstResponder()
     }
 
@@ -64,7 +61,7 @@ class AddSourceViewController: UIViewController {
                 case .success(let feed):
                     let source = FeedSource(title: feed.title, url: text)
                     self.feedSourceStorage.add(source: source)
-                    self.dismiss(animated: true, completion: nil)
+                    self.dismiss(animated: true, completion: { self.onAddNewSource() })
                 case .error(let message):
                     self.showAlert(title: "Error", msg: message)
                     self.hideProgressIndicator()

@@ -85,6 +85,9 @@ extension FeedListTableViewController {
             let viewController = segue.destination as! SourceListTableViewController
             viewController.feedSourceStorage = feedSourceStorage
             viewController.feedService = feedService
+            viewController.onBackAction = {
+                self.fetchFeeds()
+            }
         default:
             break
         }

@@ -51,7 +51,7 @@ class FeedServiceImpl: FeedService {
     
     private func process(feed: RSSFeed, with complition: @escaping (Result<Feed>) -> Void) {
         guard let feedTitle = feed.title,
-              let feedItems = self.mapFeedItems(from: feed) else { return }
+              let feedItems = mapFeedItems(from: feed) else { return }
         let feed = Feed(title: feedTitle, items: feedItems)
         complition(.success(feed))
     }

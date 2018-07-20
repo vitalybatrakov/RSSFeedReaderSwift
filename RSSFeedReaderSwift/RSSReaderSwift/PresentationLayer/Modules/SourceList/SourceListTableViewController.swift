@@ -12,6 +12,7 @@ class SourceListTableViewController: UITableViewController {
     
      var feedSourceStorage: FeedSourceStorage!
      var feedService: FeedService!
+     var onBackAction: (() -> Void)!
     
      var sources = [FeedSource]()
      
@@ -19,9 +20,21 @@ class SourceListTableViewController: UITableViewController {
          super.viewDidLoad()
          updateSources()
      }
-    
+
      private func updateSources() {
          sources = feedSourceStorage.getSources()
+     }
+     
+     override func willMove(toParentViewController parent: UIViewController?) {
+         super.willMove(toParentViewController: parent)
+         if parent == nil {
+             onBackAction()
+         }
+     }
+     
+     private func updateTable() {
+          updateSources()
+          tableView.reloadData()
      }
 
      @IBAction func editButtonPressed(_ sender: Any) {
@@ -73,6 +86,9 @@ extension SourceListTableViewController {
             let viewController = segue.destination as! AddSourceViewController
             viewController.feedSourceStorage = feedSourceStorage
             viewController.feedService = feedService
+            viewController.onAddNewSource = {
+               self.updateTable()
+            }
         }
     }
     

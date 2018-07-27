@@ -29,8 +29,19 @@
 		BCB21B45208E0C4200FD865D /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B44208E0C4200FD865D /* FeedService.swift */; };
 		BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B46208F504000FD865D /* FeedSourceStorage.swift */; };
 		BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */; };
+		BCD6851E210ABFA300B404AD /* RSSReaderSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6851D210ABFA300B404AD /* RSSReaderSwiftTests.swift */; };
 		BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCD68520210ABFA300B404AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BC676A4C20261938009C527D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC676A5320261938009C527D;
+			remoteInfo = RSSReaderSwift;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
@@ -57,6 +68,9 @@
 		BCB21B44208E0C4200FD865D /* FeedService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedService.swift; sourceTree = "<group>"; };
 		BCB21B46208F504000FD865D /* FeedSourceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorage.swift; sourceTree = "<group>"; };
 		BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceImpl.swift; sourceTree = "<group>"; };
+		BCD6851B210ABFA200B404AD /* RSSReaderSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSReaderSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCD6851D210ABFA300B404AD /* RSSReaderSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReaderSwiftTests.swift; sourceTree = "<group>"; };
+		BCD6851F210ABFA300B404AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +81,13 @@
 			files = (
 				BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */,
 				BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD68518210ABFA200B404AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				BC676A5620261938009C527D /* RSSReaderSwift */,
+				BCD6851C210ABFA300B404AD /* RSSReaderSwiftTests */,
 				BC676A5520261938009C527D /* Products */,
 				BCA5A7592085BC0800F1703D /* Frameworks */,
 			);
@@ -120,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				BC676A5420261938009C527D /* RSSReaderSwift.app */,
+				BCD6851B210ABFA200B404AD /* RSSReaderSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,6 +226,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		BCD6851C210ABFA300B404AD /* RSSReaderSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCD6851D210ABFA300B404AD /* RSSReaderSwiftTests.swift */,
+				BCD6851F210ABFA300B404AD /* Info.plist */,
+			);
+			path = RSSReaderSwiftTests;
+			sourceTree = "<group>";
+		};
 		BCE5A58320EF755A00CAE9F0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,19 +277,42 @@
 			productReference = BC676A5420261938009C527D /* RSSReaderSwift.app */;
 			productType = "com.apple.product-type.application";
 		};
+		BCD6851A210ABFA200B404AD /* RSSReaderSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCD68524210ABFA300B404AD /* Build configuration list for PBXNativeTarget "RSSReaderSwiftTests" */;
+			buildPhases = (
+				BCD68517210ABFA200B404AD /* Sources */,
+				BCD68518210ABFA200B404AD /* Frameworks */,
+				BCD68519210ABFA200B404AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCD68521210ABFA300B404AD /* PBXTargetDependency */,
+			);
+			name = RSSReaderSwiftTests;
+			productName = RSSReaderSwiftTests;
+			productReference = BCD6851B210ABFA200B404AD /* RSSReaderSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		BC676A4C20261938009C527D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = vbat;
 				TargetAttributes = {
 					BC676A5320261938009C527D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					BCD6851A210ABFA200B404AD = {
+						CreatedOnToolsVersion = 9.4.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BC676A5320261938009C527D;
 					};
 				};
 			};
@@ -275,6 +330,7 @@
 			projectRoot = "";
 			targets = (
 				BC676A5320261938009C527D /* RSSReaderSwift */,
+				BCD6851A210ABFA200B404AD /* RSSReaderSwiftTests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +343,13 @@
 				BC676A6520261938009C527D /* LaunchScreen.storyboard in Resources */,
 				BC676A6220261938009C527D /* Assets.xcassets in Resources */,
 				BC676A5D20261938009C527D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCD68519210ABFA200B404AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +399,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCD68517210ABFA200B404AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCD6851E210ABFA300B404AD /* RSSReaderSwiftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCD68521210ABFA300B404AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BC676A5320261938009C527D /* RSSReaderSwift */;
+			targetProxy = BCD68520210ABFA300B404AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BC676A5B20261938009C527D /* Main.storyboard */ = {
@@ -507,6 +586,40 @@
 			};
 			name = Release;
 		};
+		BCD68522210ABFA300B404AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RSSReaderSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSReaderSwift.app/RSSReaderSwift";
+			};
+			name = Debug;
+		};
+		BCD68523210ABFA300B404AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RSSReaderSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSReaderSwift.app/RSSReaderSwift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -524,6 +637,15 @@
 			buildConfigurations = (
 				BC676A8020261938009C527D /* Debug */,
 				BC676A8120261938009C527D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCD68524210ABFA300B404AD /* Build configuration list for PBXNativeTarget "RSSReaderSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCD68522210ABFA300B404AD /* Debug */,
+				BCD68523210ABFA300B404AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

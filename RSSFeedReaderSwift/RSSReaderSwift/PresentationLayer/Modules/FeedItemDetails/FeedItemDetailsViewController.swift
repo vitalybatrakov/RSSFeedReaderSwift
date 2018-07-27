@@ -30,7 +30,6 @@ class FeedItemDetailsViewController: UIViewController {
             imageView.kf.setImage(with: URL(string: imageUrl), placeholder: image)
         }
     }
-    
 }
 
 extension FeedItemDetailsViewController {
@@ -43,5 +42,4 @@ extension FeedItemDetailsViewController {
             viewController.pageUrl = URL(string: feedItem.link)
         }
     }
-    
 }

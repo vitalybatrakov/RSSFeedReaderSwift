@@ -90,6 +90,5 @@ extension SourceListTableViewController {
                self.updateTable()
             }
         }
-    }
-    
+     }
 }

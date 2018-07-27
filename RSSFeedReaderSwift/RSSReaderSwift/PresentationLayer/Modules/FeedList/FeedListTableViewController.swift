@@ -69,7 +69,6 @@ class FeedListTableViewController: UITableViewController {
             cell.imgView.image = placeholderImage
         }
     }
-
 }
 
 extension FeedListTableViewController {
@@ -94,5 +93,4 @@ extension FeedListTableViewController {
             break
         }
     }
-    
 }

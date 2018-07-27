@@ -38,5 +38,4 @@ class FeedSourceStorageImpl: FeedSourceStorage {
         sources.append(source)
         save(sources: sources)
     }
-    
 }

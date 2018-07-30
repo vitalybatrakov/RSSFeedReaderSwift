@@ -10,13 +10,19 @@ import Foundation
 
 class FeedSourceStorageImpl: FeedSourceStorage {
     
+    private var storage: Storage!
+    
     private let sourceListKey = "FeedSourceListKey"
     private let defaultSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
                                   FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
     
+    init(with storage: Storage) {
+        self.storage = storage
+    }
+    
     func getSources() -> [FeedSource] {
         do {
-            if let sources = try UserDefaults.standard.get(objectType: [FeedSource].self, forKey: sourceListKey) {
+            if let sources = try storage.get(objectType: [FeedSource].self, forKey: sourceListKey) {
                 return sources
             }
         } catch {
@@ -27,7 +33,7 @@ class FeedSourceStorageImpl: FeedSourceStorage {
     
     func save(sources: [FeedSource]) {
         do {
-            try UserDefaults.standard.set(object: sources, forKey: sourceListKey)
+            try storage.set(object: sources, forKey: sourceListKey)
         } catch {
             print(error.localizedDescription)
         }

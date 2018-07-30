@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FeedItem {
+struct FeedItem: Equatable {
     let title: String
     let body: String
     let link: String
@@ -21,12 +21,12 @@ struct FeedItem {
         self.imageUrl = imageUrl(from: body)
     }
     
-    private func imageUrl(from description: String) -> String? {
+    private func imageUrl(from body: String) -> String? {
         do {
             let regex = try NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?", options: .caseInsensitive)
-            let result = regex.firstMatch(in: description, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, description.count))
+            let result = regex.firstMatch(in: body, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, body.count))
             return result.map {
-                String(description[Range($0.range(at: 2), in: description)!])
+                String(body[Range($0.range(at: 2), in: body)!])
             }
         } catch let error {
             print("invalid regex: \(error.localizedDescription)")

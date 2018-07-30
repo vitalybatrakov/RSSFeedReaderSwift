@@ -7,14 +7,15 @@
 //
 
 import Foundation
-import FeedKit
 
 class FeedServiceImpl: FeedService {
     
     private var feedSourceStorage: FeedSourceStorage!
+    private var feedParser: URLFeedParser!
     
-    init(with feedSourceStorage: FeedSourceStorage) {
+    init(with feedSourceStorage: FeedSourceStorage, feedParser: URLFeedParser) {
         self.feedSourceStorage = feedSourceStorage
+        self.feedParser = feedParser
     }
     
     func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
@@ -35,34 +36,7 @@ class FeedServiceImpl: FeedService {
     }
     
     func getFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
-        guard let parser = FeedParser(URL: url) else {
-            complition(.error("Invalid url"))
-            return
-        }
-        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
-            guard let feed = result.rssFeed, result.isSuccess else {
-                let message = result.error?.localizedDescription ?? "Unknown feed parse error"
-                complition(.error(message))
-                return
-            }
-            self.process(feed: feed, with: complition)
-        }
+        feedParser.parseFeed(with: url, complition: complition)
     }
-    
-    private func process(feed: RSSFeed, with complition: @escaping (Result<Feed>) -> Void) {
-        guard let feedTitle = feed.title,
-              let feedItems = mapFeedItems(from: feed) else { return }
-        let feed = Feed(title: feedTitle, items: feedItems)
-        complition(.success(feed))
-    }
-    
-    private func mapFeedItems(from feed: RSSFeed) -> [FeedItem]? {
-        return feed.items?.compactMap({ (item) -> FeedItem? in
-            guard let title = item.title,
-                let description = item.description,
-                let link = item.link else { return nil }
-            
-            return FeedItem(title: title, body: description, link: link)
-        })
-    }
+
 }

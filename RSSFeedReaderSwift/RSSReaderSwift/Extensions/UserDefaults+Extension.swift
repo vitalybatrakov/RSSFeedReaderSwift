@@ -8,7 +8,12 @@
 
 import Foundation
 
-extension UserDefaults {
+protocol Storage {
+    func set<T: Codable>(object: T, forKey: String) throws
+    func get<T: Codable>(objectType: T.Type, forKey: String) throws -> T?
+}
+
+extension UserDefaults: Storage {
     
     public func set<T: Codable>(object: T, forKey: String) throws {
         let jsonData = try JSONEncoder().encode(object)

@@ -11,19 +11,6 @@ import XCTest
 
 class FeedSourceStorageTests: XCTestCase {
     
-    class UserDefaultsMock : UserDefaults {
-        
-        convenience init() {
-            self.init(suiteName: "Mock User Defaults")!
-        }
-        
-        override init?(suiteName suitename: String?) {
-            UserDefaults().removePersistentDomain(forName: suitename!)
-            super.init(suiteName: suitename)
-        }
-        
-    }
-    
     func testGetSources() {
         let feedSourceStorage = FeedSourceStorageImpl(with: UserDefaultsMock())
         let sources = feedSourceStorage.getSources()

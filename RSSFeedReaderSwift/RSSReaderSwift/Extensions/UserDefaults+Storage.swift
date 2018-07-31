@@ -1,5 +1,5 @@
 //
-//  UserDefaultsExtension.swift
+//  UserDefaults+Storage.swift
 //  RSSReaderSwift
 //
 //  Created by Vitaly Batrakov on 16.07.2018.

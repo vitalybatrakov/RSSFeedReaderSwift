@@ -16,7 +16,7 @@ struct FeedItem: Equatable {
     
     init(title: String, body: String, link: String) {
         self.title = title
-        self.body = body.withoutHtmlTags
+        self.body = body.withoutHTMLTags
         self.link = link
         self.imageUrl = imageUrl(from: body)
     }

@@ -19,6 +19,10 @@
 		BC534F3C21100B1B00F9C407 /* UserDefaults+StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */; };
 		BC534F3E21100DC300F9C407 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */; };
 		BC534F402110117200F9C407 /* StringWithoutHTMLTagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */; };
+		BC534F4721101E9200F9C407 /* FeedListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */; };
+		BC534F4A2110216A00F9C407 /* FeedSourceStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F492110216A00F9C407 /* FeedSourceStorageMock.swift */; };
+		BC534F4C211021B000F9C407 /* FeedServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4B211021B000F9C407 /* FeedServiceMock.swift */; };
+		BC534F4E211023F400F9C407 /* URLFeedParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4D211023F400F9C407 /* URLFeedParserMock.swift */; };
 		BC5D040520F4E06000075D2E /* SourceListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */; };
 		BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
@@ -65,6 +69,10 @@
 		BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+StorageTests.swift"; sourceTree = "<group>"; };
 		BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWithoutHTMLTagsTests.swift; sourceTree = "<group>"; };
+		BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		BC534F492110216A00F9C407 /* FeedSourceStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageMock.swift; sourceTree = "<group>"; };
+		BC534F4B211021B000F9C407 /* FeedServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceMock.swift; sourceTree = "<group>"; };
+		BC534F4D211023F400F9C407 /* URLFeedParserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFeedParserMock.swift; sourceTree = "<group>"; };
 		BC5D040420F4E06000075D2E /* SourceListTableViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListTableViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +137,52 @@
 				BC4BC00F2100BA990063211B /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BC534F412110190100F9C407 /* FeedListTests */ = {
+			isa = PBXGroup;
+			children = (
+				BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */,
+			);
+			path = FeedListTests;
+			sourceTree = "<group>";
+		};
+		BC534F422110190D00F9C407 /* AddSourceTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddSourceTests;
+			sourceTree = "<group>";
+		};
+		BC534F432110191C00F9C407 /* SourceListTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SourceListTests;
+			sourceTree = "<group>";
+		};
+		BC534F442110192600F9C407 /* WebPageTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebPageTests;
+			sourceTree = "<group>";
+		};
+		BC534F452110193E00F9C407 /* FeedItemDetailsTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeedItemDetailsTests;
+			sourceTree = "<group>";
+		};
+		BC534F482110215300F9C407 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				BC534F492110216A00F9C407 /* FeedSourceStorageMock.swift */,
+				BC534F4B211021B000F9C407 /* FeedServiceMock.swift */,
+				BC534F4D211023F400F9C407 /* URLFeedParserMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		BC5D040220F4E03200075D2E /* SourceList */ = {
@@ -251,8 +305,8 @@
 			children = (
 				BCD68525210AC80E00B404AD /* ModelsTests */,
 				BCD68528210AC83E00B404AD /* ServicesTests */,
-				BCD68527210AC83500B404AD /* Extensions */,
-				BCD68526210AC82500B404AD /* PresentationLayer */,
+				BCD68527210AC83500B404AD /* ExtensionsTests */,
+				BCD68526210AC82500B404AD /* PresentationLayerTests */,
 				BCD6851F210ABFA300B404AD /* Info.plist */,
 			);
 			path = RSSReaderSwiftTests;
@@ -267,26 +321,32 @@
 			path = ModelsTests;
 			sourceTree = "<group>";
 		};
-		BCD68526210AC82500B404AD /* PresentationLayer */ = {
+		BCD68526210AC82500B404AD /* PresentationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC534F412110190100F9C407 /* FeedListTests */,
+				BC534F452110193E00F9C407 /* FeedItemDetailsTests */,
+				BC534F442110192600F9C407 /* WebPageTests */,
+				BC534F432110191C00F9C407 /* SourceListTests */,
+				BC534F422110190D00F9C407 /* AddSourceTests */,
 			);
-			path = PresentationLayer;
+			path = PresentationLayerTests;
 			sourceTree = "<group>";
 		};
-		BCD68527210AC83500B404AD /* Extensions */ = {
+		BCD68527210AC83500B404AD /* ExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
 				BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */,
 				BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */,
 				BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */,
 			);
-			path = Extensions;
+			path = ExtensionsTests;
 			sourceTree = "<group>";
 		};
 		BCD68528210AC83E00B404AD /* ServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC534F482110215300F9C407 /* Mocks */,
 				BCD6852B210AE02E00B404AD /* FeedServiceTests.swift */,
 				BC534F35210EF87600F9C407 /* FeedSourceStorageTests.swift */,
 				BC534F39210F0FB400F9C407 /* URLFeedParserTests.swift */,
@@ -465,12 +525,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD6852A210AC8C200B404AD /* FeedItemTests.swift in Sources */,
+				BC534F4721101E9200F9C407 /* FeedListTableViewControllerTests.swift in Sources */,
 				BC534F36210EF87600F9C407 /* FeedSourceStorageTests.swift in Sources */,
+				BC534F4C211021B000F9C407 /* FeedServiceMock.swift in Sources */,
+				BC534F4E211023F400F9C407 /* URLFeedParserMock.swift in Sources */,
 				BC534F402110117200F9C407 /* StringWithoutHTMLTagsTests.swift in Sources */,
 				BC534F3C21100B1B00F9C407 /* UserDefaults+StorageTests.swift in Sources */,
 				BC534F3E21100DC300F9C407 /* UserDefaultsMock.swift in Sources */,
 				BC534F38210F0AE900F9C407 /* ResultTests.swift in Sources */,
 				BC534F3A210F0FB400F9C407 /* URLFeedParserTests.swift in Sources */,
+				BC534F4A2110216A00F9C407 /* FeedSourceStorageMock.swift in Sources */,
 				BCD6852C210AE02E00B404AD /* FeedServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

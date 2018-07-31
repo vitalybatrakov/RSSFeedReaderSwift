@@ -17,28 +17,6 @@ class FeedServiceTests: XCTestCase {
     let expectedFeedSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
                                FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
     
-    class FeedSourceStorageMock: FeedSourceStorage {
-        var expectedFeedSources: [FeedSource]!
-        
-        func getSources() -> [FeedSource] {
-            return expectedFeedSources
-        }
-        
-        func save(sources: [FeedSource]) {}
-        
-        func add(source: FeedSource) {}
-        
-    }
-    
-    class URLFeedParserMock: URLFeedParser {
-        var expectedFeed: Feed!
-        
-        func parseFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
-            complition(.success(expectedFeed))
-        }
-
-    }
-    
     override func setUp() {
         super.setUp()
         let feedParserMock = URLFeedParserMock()

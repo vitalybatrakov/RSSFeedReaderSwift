@@ -14,8 +14,8 @@ class FeedListTableViewController: UITableViewController {
     var feedService: FeedService!
     var feedSourceStorage: FeedSourceStorage!
     
-    var feeds = [Feed]()
-    let placeholderImage = UIImage(named: "placeholder-128")
+    private var feeds = [Feed]()
+    private let placeholderImage = UIImage(named: "placeholder-128")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +24,16 @@ class FeedListTableViewController: UITableViewController {
     
     private func fetchFeeds() {
         feedService.getFeeds { (results) in
-            DispatchQueue.main.async {
-                self.feeds = results.map {
-                    switch $0 {
-                    case .success(let feed):
-                        return feed
-                    case .error(let message):
-                        return Feed(title: message, items: [])
-                    }
+            
+            self.feeds = results.map {
+                switch $0 {
+                case .success(let feed):
+                    return feed
+                case .error(let message):
+                    return Feed(title: message, items: [])
                 }
+            }
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }

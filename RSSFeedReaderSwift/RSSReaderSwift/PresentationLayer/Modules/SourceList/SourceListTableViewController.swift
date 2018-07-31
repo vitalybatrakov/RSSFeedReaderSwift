@@ -14,7 +14,7 @@ class SourceListTableViewController: UITableViewController {
      var feedService: FeedService!
      var onBackAction: (() -> Void)!
     
-     var sources = [FeedSource]()
+     private var sources = [FeedSource]()
      
      override func viewDidLoad() {
          super.viewDidLoad()

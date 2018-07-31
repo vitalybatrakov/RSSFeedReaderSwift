@@ -14,7 +14,7 @@
         <!--Feeds-->
         <scene sceneID="tl8-sw-cwS">
             <objects>
-                <tableViewController storyboardIdentifier="FeedListTableViewController" id="qMV-pc-E85" customClass="FeedListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="FeedListTableViewControllerID" id="qMV-pc-E85" customClass="FeedListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Uff-78-x7P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +88,7 @@
         <!--Sources-->
         <scene sceneID="UzY-em-W2s">
             <objects>
-                <tableViewController title="Sources" id="uQI-i7-spl" customClass="SourceListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SourceListTableViewControllerID" title="Sources" id="uQI-i7-spl" customClass="SourceListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQo-CI-yfm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -162,7 +162,7 @@
         <!--Feed Item Details View Controller-->
         <scene sceneID="Cit-ZI-iAO">
             <objects>
-                <viewController storyboardIdentifier="FeedDetailViewController" id="FZT-gK-nnh" customClass="FeedItemDetailsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedDetailsViewControllerID" id="FZT-gK-nnh" customClass="FeedItemDetailsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5CX-XK-03t"/>
                         <viewControllerLayoutGuide type="bottom" id="4sa-Jp-nYR"/>

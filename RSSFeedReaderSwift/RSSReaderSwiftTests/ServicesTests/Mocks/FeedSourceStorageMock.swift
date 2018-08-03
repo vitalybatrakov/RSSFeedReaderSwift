@@ -11,13 +11,21 @@ import Foundation
 
 class FeedSourceStorageMock: FeedSourceStorage {
     var expectedFeedSources: [FeedSource]!
+    var getSourcesCalled = false
+    var saveSourceCalled = false
+    var addSourceCalled = false
     
     func getSources() -> [FeedSource] {
+        getSourcesCalled = true
         return expectedFeedSources
     }
     
-    func save(sources: [FeedSource]) {}
+    func save(sources: [FeedSource]) {
+        saveSourceCalled = true
+    }
     
-    func add(source: FeedSource) {}
+    func add(source: FeedSource) {
+        addSourceCalled = true
+    }
     
 }

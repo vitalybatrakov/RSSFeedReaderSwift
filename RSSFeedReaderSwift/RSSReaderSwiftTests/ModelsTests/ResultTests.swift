@@ -39,4 +39,11 @@ class ResultTests: XCTestCase {
         XCTAssertNotEqual(other, sut)
     }
     
+    func testSuccessAndErrorEqualityIsFalse() {
+        let sut = Result<Feed>.success(Feed(title: "Test", items: []))
+        let other = Result<Feed>.error("Test")
+        XCTAssertNotEqual(sut, other)
+        XCTAssertNotEqual(other, sut)
+    }
+    
 }

@@ -24,7 +24,6 @@ class FeedListTableViewController: UITableViewController {
     
     private func fetchFeeds() {
         feedService.getFeeds { (results) in
-            
             self.feeds = results.map {
                 switch $0 {
                 case .success(let feed):

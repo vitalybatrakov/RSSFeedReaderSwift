@@ -13,16 +13,15 @@ class FeedListTableViewControllerTests: XCTestCase {
     
     var sut: FeedListTableViewController!
     var feedServiceMock: FeedServiceMock!
-    
+    var expectedFeed: Feed!
     let expectedFeedSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
                                FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
     let expectedFeedItem = FeedItem(title: "Test item title", body: "Test body", link: "Test link")
-    var expectedFeed: Feed!
 
     override func setUp() {
         super.setUp()
         expectedFeed = Feed(title: "Test title", items: [expectedFeedItem])
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         sut = storyboard.instantiateViewController(withIdentifier: "FeedListTableViewControllerID") as! FeedListTableViewController
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
@@ -32,45 +31,22 @@ class FeedListTableViewControllerTests: XCTestCase {
         feedServiceMock = FeedServiceMock()
         sut.feedService = feedServiceMock
         feedServiceMock.expectedFeed = expectedFeed
-        feedServiceMock.expectedErrorMessage = "TestError"
+        feedServiceMock.isNeedToSucceed = true
+        feedServiceMock.expectedErrorMessage = "TestError" 
         let feedSourceStorage = FeedSourceStorageMock()
         feedSourceStorage.expectedFeedSources = expectedFeedSources
         sut.feedSourceStorage = feedSourceStorage
     }
     
-    func testViewDidLoadFeedsSuccess() {
-        feedServiceMock.isNeedToSucceed = true
-        sut.feedService.getFeeds(with: { (results) in
-            guard let result =  results.first else {
-                XCTFail("Results is empty")
-                return
-            }
-            switch result {
-            case .success(let feed):
-                XCTAssertEqual(feed, self.feedServiceMock.expectedFeed)
-            case .error(let error):
-                XCTFail("Unexpected failure with error: \(error)")
-            }
-        })
-    }
-    
-    func testViewDidLoadFeedsWithError() {
-        feedServiceMock.isNeedToSucceed = false
-        sut.feedService.getFeeds(with: { (results) in
-            guard let result =  results.first else {
-                XCTFail("Results is empty")
-                return
-            }
-            switch result {
-            case .success:
-                XCTFail("Unexpected complition with success")
-            case .error(let error):
-                XCTAssertEqual(error, self.feedServiceMock.expectedErrorMessage)
-            }
-        })
+    func testViewDidLoadFeedsCompleted() {
+        XCTAssertTrue(feedServiceMock.isGetFeedsCompleted)
     }
     
     // MARK: TableView dataSource tests
+    
+    func testTableViewHasDataSource() {
+        XCTAssertNotNil(sut.tableView.dataSource)
+    }
     
     func testSectionHeaderTitles() {
         let title = sut.tableView(sut.tableView, titleForHeaderInSection: 0)
@@ -92,22 +68,30 @@ class FeedListTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cell.titleLabel.text, expectedFeedItem.title)
         XCTAssertEqual(cell.detailsLabel.text, expectedFeedItem.body.withoutHTMLTags)
     }
+    
+    // MARK: TableView delegate tests
+    
+    func testTableViewHasDelegate() {
+        XCTAssertNotNil(sut.tableView.delegate)
+    }
+    
+    // MARK: Cell init tests
+    
+    func testCellInit() {
+        let cell = sut.tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId") as! FeedListTableViewCell
+        XCTAssertNotNil(cell.titleLabel)
+        XCTAssertNotNil(cell.detailsLabel)
+        XCTAssertNotNil(cell.imgView)
+    }
 
     // MARK: Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
-        XCTAssertTrue(hasSegueWithIdentifier(id: "FeedDetailsSegue"))
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "FeedDetailsSegue"))
     }
     
     func testHasSegueToSourceListViewController() {
-        XCTAssertTrue(hasSegueWithIdentifier(id: "SourceListSegue"))
-    }
-    
-    // utility for finding segues
-    func hasSegueWithIdentifier(id: String) -> Bool {
-        let segues = sut.value(forKey: "storyboardSegueTemplates") as? [NSObject]
-        let filtered = segues?.filter({ $0.value(forKey: "identifier") as? String == id })
-        return !(filtered?.isEmpty ?? true)
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "SourceListSegue"))
     }
     
 }

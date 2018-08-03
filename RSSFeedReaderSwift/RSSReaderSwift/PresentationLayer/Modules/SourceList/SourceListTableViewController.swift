@@ -37,7 +37,7 @@ class SourceListTableViewController: UITableViewController {
          tableView.reloadData()
      }
 
-     @IBAction func editButtonPressed(_ sender: Any) {
+     @IBAction func editButtonTapped(_ sender: Any) {
          tableView.isEditing = !tableView.isEditing
      }
     

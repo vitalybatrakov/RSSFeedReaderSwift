@@ -10,15 +10,19 @@ import Foundation
 @testable import RSSReaderSwift
 
 class FeedServiceMock: FeedService {
-    var isNeedToSucceed = true
+    var isGetFeedsCompleted = false
+    var isGetFeedsWithUrlCompleted = false
+    var isNeedToSucceed = false
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
     
     func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
+        isGetFeedsCompleted = true
         complition([isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage)])
     }
     
     func getFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
+        isGetFeedsWithUrlCompleted = true
         complition(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
     }
     

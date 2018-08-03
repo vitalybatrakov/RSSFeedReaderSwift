@@ -61,7 +61,8 @@ class AddSourceViewController: UIViewController {
                 case .success(let feed):
                     let source = FeedSource(title: feed.title, url: text)
                     self.feedSourceStorage.add(source: source)
-                    self.dismiss(animated: true, completion: { self.onAddNewSource() })
+                    self.onAddNewSource()
+                    self.dismiss(animated: true, completion: nil)
                 case .error(let message):
                     self.showAlert(title: "Error", msg: message)
                     self.hideProgressIndicator()

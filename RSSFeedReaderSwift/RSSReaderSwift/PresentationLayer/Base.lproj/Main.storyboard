@@ -133,7 +133,7 @@
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="xf2-P4-Hdr">
                                 <connections>
-                                    <action selector="editButtonPressed:" destination="uQI-i7-spl" id="acv-5X-9l3"/>
+                                    <action selector="editButtonTapped:" destination="uQI-i7-spl" id="acv-5X-9l3"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -162,7 +162,7 @@
         <!--Feed Item Details View Controller-->
         <scene sceneID="Cit-ZI-iAO">
             <objects>
-                <viewController storyboardIdentifier="FeedDetailsViewControllerID" id="FZT-gK-nnh" customClass="FeedItemDetailsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FeedItemDetailsViewControllerID" id="FZT-gK-nnh" customClass="FeedItemDetailsViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5CX-XK-03t"/>
                         <viewControllerLayoutGuide type="bottom" id="4sa-Jp-nYR"/>
@@ -248,7 +248,7 @@
         <!--Add Source View Controller-->
         <scene sceneID="wWf-Xk-oxw">
             <objects>
-                <viewController id="TBD-Ac-JvI" customClass="AddSourceViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddSourceViewControllerID" id="TBD-Ac-JvI" customClass="AddSourceViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7rf-re-pip"/>
                         <viewControllerLayoutGuide type="bottom" id="yvW-q6-Khk"/>

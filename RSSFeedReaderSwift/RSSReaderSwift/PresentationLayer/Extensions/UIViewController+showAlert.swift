@@ -1,5 +1,5 @@
 //
-//  UIViewController+Extension.swift
+//  UIViewController+ShowAlerts.swift
 //  RSSReaderSwift
 //
 //  Created by Vitaly Batrakov on 19.07.2018.
@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func showAlert(title : String?,
                    msg : String,
                    style: UIAlertControllerStyle = .alert) {
@@ -23,4 +24,5 @@ extension UIViewController {
             self.present(ac, animated: true, completion: nil)
         }
     }
+    
 }

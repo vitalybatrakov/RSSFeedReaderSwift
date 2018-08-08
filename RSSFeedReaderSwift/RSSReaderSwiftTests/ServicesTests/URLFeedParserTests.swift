@@ -30,11 +30,11 @@ class URLFeedParserTests: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
-        guard case .error? = feedResult else {
+        if case .error? = feedResult {
+            XCTAssertTrue(true)
+        } else {
             XCTAssertTrue(false)
-            return
         }
-        XCTAssertTrue(true)
     }
     
     func testParseFeedWithURLCompletesWithSuccess() {
@@ -49,11 +49,11 @@ class URLFeedParserTests: XCTestCase {
             expectation.fulfill()
         }
         waitForExpectations(timeout: 5, handler: nil)
-        guard case .success? = feedResult else {
+        if case .success? = feedResult {
+            XCTAssertTrue(true)
+        } else {
             XCTAssertTrue(false)
-            return
         }
-        XCTAssertTrue(true)
     }
         
 }

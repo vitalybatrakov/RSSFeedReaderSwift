@@ -22,6 +22,18 @@ class FeedItemDetailsViewControllerTests: XCTestCase {
         sut.loadViewIfNeeded()
     }
     
+    func testTitleLabelNotNil() {
+        XCTAssertNotNil(sut.titleLabel)
+    }
+    
+    func testDescriptionLabelNotNil() {
+        XCTAssertNotNil(sut.descriptionLabel)
+    }
+    
+    func testImageViewIsNotNil() {
+        XCTAssertNotNil(sut.imageView)
+    }
+    
     func testTitleLabelIsCorrect() {
         XCTAssertNotNil(sut.titleLabel)
         let title = sut.titleLabel.text
@@ -32,10 +44,6 @@ class FeedItemDetailsViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.descriptionLabel)
         let description = sut.descriptionLabel.text
         XCTAssertEqual(description, expectedFeedItem.body)
-    }
-    
-    func testImageViewIsNotNil() {
-        XCTAssertNotNil(sut.imageView)
     }
     
     // MARK: Navigation tests

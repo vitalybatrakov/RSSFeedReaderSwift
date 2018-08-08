@@ -44,7 +44,11 @@ class AddSourceViewControllerTests: XCTestCase {
         XCTAssertNotNil(sut.progessIndicator)
     }
     
-    func testAddButtonTappedCompletesWithSuccess() {
+    func testProgressIndicatorIsNotAnimatingBeforeAdding() {
+        XCTAssertFalse(sut.progessIndicator.isAnimating)
+    }
+    
+    func addNewSourceWithSuccess() {
         let expectation = self.expectation(description: "Adding source with success")
         sut.onAddNewSource = { [weak self] in
             self?.onAddNewSourceCalled = true
@@ -53,12 +57,24 @@ class AddSourceViewControllerTests: XCTestCase {
         sut.sourceTextField.text = "https://medium.com/feed/tag/swift"
         sut.addButtonTapped(sut)
         waitForExpectations(timeout: 5, handler: nil)
+    }
+    
+    func testGetFeedsCompletesOnAddButtonTapped() {
+        addNewSourceWithSuccess()
         XCTAssertTrue(feedServiceMock.isGetFeedsWithUrlCompleted)
+    }
+    
+    func testAddSourceCalledOnAddButtonTapped() {
+        addNewSourceWithSuccess()
         XCTAssertTrue(feedSourceStorageMock.addSourceCalled)
+    }
+    
+    func testOnAddSourceBloackCallesOnAddButtonTapped() {
+        addNewSourceWithSuccess()
         XCTAssertTrue(onAddNewSourceCalled)
     }
     
-    func testAddButtonTappedCompletesWithError() {
+    func addNewSourceWithError() {
         feedServiceMock.isNeedToSucceed = false
         let expectation = self.expectation(description: "Adding source with error")
         sut.sourceTextField.text = "https://test.com"
@@ -67,7 +83,15 @@ class AddSourceViewControllerTests: XCTestCase {
             expectation.fulfill()
         })
         waitForExpectations(timeout: 1.5, handler: nil)
+    }
+    
+    func testGetFeedsCompletesWithErrorOnAddButtonTapped() {
+        addNewSourceWithError()
         XCTAssertTrue(feedServiceMock.isGetFeedsWithUrlCompleted)
+    }
+    
+    func testPrgressIndicatorNotAnimatingAfterAddNewSourceCompletesWithError() {
+        addNewSourceWithError()
         XCTAssertFalse(sut.progessIndicator.isAnimating)
     }
 

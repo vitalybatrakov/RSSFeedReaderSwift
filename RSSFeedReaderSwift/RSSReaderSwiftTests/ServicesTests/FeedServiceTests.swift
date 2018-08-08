@@ -12,15 +12,19 @@ import XCTest
 class FeedServiceTests: XCTestCase {
     
     var feedService: FeedService!
+    var feedParserMock: URLFeedParserMock!
     
     let expectedFeed = Feed(title: "Test Feed", items: [FeedItem]())
     let expectedFeedSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
                                FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
+    let expectedErrorMessage = "TestError"
+    let testUrl = URL(string: "https://testlink.com/test")!
     
     override func setUp() {
         super.setUp()
-        let feedParserMock = URLFeedParserMock()
+        feedParserMock = URLFeedParserMock()
         feedParserMock.expectedFeed = expectedFeed
+        feedParserMock.expectedErrorMessage = expectedErrorMessage
         let sourceStorageMock = FeedSourceStorageMock()
         sourceStorageMock.expectedFeedSources = expectedFeedSources
         feedService = FeedServiceImpl(with: sourceStorageMock, feedParser: feedParserMock)
@@ -37,16 +41,21 @@ class FeedServiceTests: XCTestCase {
         XCTAssertEqual(feedResults?.count, expectedFeedSources.count)
     }
     
-    func testGetFeedWithTestUrlSuccess() {
-        guard let url = URL(string: "https://testlink.com/test") else {
-            XCTFail("invalid url")
-            return
-        }
+    func testGetFeedCompletesWithSuccess() {
+        feedParserMock.isNeedToSucceed = true
         var feedResult: Result<Feed>?
-        feedService.getFeed(with: url) { (result) in
+        feedService.getFeed(with: testUrl) { (result) in
             feedResult = result
         }
-        XCTAssertEqual(feedResult, .success(expectedFeed), "Get feed with url returns invalid result")
+        XCTAssertEqual(feedResult, .success(expectedFeed))
+    }
+    
+    func testGetFeedCompletesWithError() {
+        var feedResult: Result<Feed>?
+        feedService.getFeed(with: testUrl) { (result) in
+            feedResult = result
+        }
+        XCTAssertEqual(feedResult, .error(expectedErrorMessage))
     }
 
 }

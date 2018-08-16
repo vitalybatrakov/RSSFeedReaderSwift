@@ -23,11 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func createRootNavigationController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let navigationController = storyboard.instantiateViewController(withIdentifier: "FeedNavigationController") as! UINavigationController
-        setupServices(for: navigationController.viewControllers.first as! FeedListTableViewController)
+        setupServices(for: navigationController.viewControllers.first as! FeedListViewController)
         return navigationController
     }
     
-    func setupServices(for fltvc: FeedListTableViewController) {
+    func setupServices(for fltvc: FeedListViewController) {
         fltvc.feedSourceStorage = FeedSourceStorageImpl(with: UserDefaults.standard)
         fltvc.feedService = FeedServiceImpl(with: fltvc.feedSourceStorage, feedParser: URLFeedParserImpl())
     }

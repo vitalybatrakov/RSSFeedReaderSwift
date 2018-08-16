@@ -1,5 +1,5 @@
 //
-//  FeedListTableViewControllerTests.swift
+//  FeedListViewControllerTests.swift
 //  RSSReaderSwiftTests
 //
 //  Created by Vitaly Batrakov on 31.07.2018.
@@ -9,9 +9,9 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class FeedListTableViewControllerTests: XCTestCase {
+class FeedListViewControllerTests: XCTestCase {
     
-    var sut: FeedListTableViewController!
+    var sut: FeedListViewController!
     var feedServiceMock: FeedServiceMock!
     var expectedFeed: Feed!
     let expectedFeedSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
@@ -22,12 +22,12 @@ class FeedListTableViewControllerTests: XCTestCase {
         super.setUp()
         expectedFeed = Feed(title: "Test title", items: [expectedFeedItem])
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "FeedListTableViewControllerID") as! FeedListTableViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "FeedListViewControllerID") as! FeedListViewController
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
     }
     
-    private func setUpMocks(for sut: FeedListTableViewController) {
+    private func setUpMocks(for sut: FeedListViewController) {
         feedServiceMock = FeedServiceMock()
         sut.feedService = feedServiceMock
         feedServiceMock.expectedFeed = expectedFeed

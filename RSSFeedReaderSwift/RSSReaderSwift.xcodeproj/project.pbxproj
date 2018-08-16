@@ -19,7 +19,7 @@
 		BC534F3C21100B1B00F9C407 /* UserDefaults+StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */; };
 		BC534F3E21100DC300F9C407 /* UserDefaultsMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */; };
 		BC534F402110117200F9C407 /* StringWithoutHTMLTagsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */; };
-		BC534F4721101E9200F9C407 /* FeedListTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */; };
+		BC534F4721101E9200F9C407 /* FeedListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4621101E9200F9C407 /* FeedListViewControllerTests.swift */; };
 		BC534F4A2110216A00F9C407 /* FeedSourceStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F492110216A00F9C407 /* FeedSourceStorageMock.swift */; };
 		BC534F4C211021B000F9C407 /* FeedServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4B211021B000F9C407 /* FeedServiceMock.swift */; };
 		BC534F4E211023F400F9C407 /* URLFeedParserMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F4D211023F400F9C407 /* URLFeedParserMock.swift */; };
@@ -47,7 +47,7 @@
 		BCD6852C210AE02E00B404AD /* FeedServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6852B210AE02E00B404AD /* FeedServiceTests.swift */; };
 		BCD6852E210B07B600B404AD /* URLFeedParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD6852D210B07B600B404AD /* URLFeedParser.swift */; };
 		BCD68532210B1ED400B404AD /* URLFeedParserImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD68531210B1ED400B404AD /* URLFeedParserImpl.swift */; };
-		BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */; };
+		BCE5A58620EF75BF00CAE9F0 /* FeedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE5A58520EF75BF00CAE9F0 /* FeedListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +73,7 @@
 		BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+StorageTests.swift"; sourceTree = "<group>"; };
 		BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMock.swift; sourceTree = "<group>"; };
 		BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWithoutHTMLTagsTests.swift; sourceTree = "<group>"; };
-		BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewControllerTests.swift; sourceTree = "<group>"; };
+		BC534F4621101E9200F9C407 /* FeedListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewControllerTests.swift; sourceTree = "<group>"; };
 		BC534F492110216A00F9C407 /* FeedSourceStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageMock.swift; sourceTree = "<group>"; };
 		BC534F4B211021B000F9C407 /* FeedServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceMock.swift; sourceTree = "<group>"; };
 		BC534F4D211023F400F9C407 /* URLFeedParserMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFeedParserMock.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		BCD6852B210AE02E00B404AD /* FeedServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedServiceTests.swift; sourceTree = "<group>"; };
 		BCD6852D210B07B600B404AD /* URLFeedParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFeedParser.swift; sourceTree = "<group>"; };
 		BCD68531210B1ED400B404AD /* URLFeedParserImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFeedParserImpl.swift; sourceTree = "<group>"; };
-		BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewController.swift; sourceTree = "<group>"; };
+		BCE5A58520EF75BF00CAE9F0 /* FeedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 		BC534F412110190100F9C407 /* FeedListTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC534F4621101E9200F9C407 /* FeedListTableViewControllerTests.swift */,
+				BC534F4621101E9200F9C407 /* FeedListViewControllerTests.swift */,
 			);
 			path = FeedListTests;
 			sourceTree = "<group>";
@@ -373,7 +373,7 @@
 		BCE5A58420EF758800CAE9F0 /* FeedList */ = {
 			isa = PBXGroup;
 			children = (
-				BCE5A58520EF75BF00CAE9F0 /* FeedListTableViewController.swift */,
+				BCE5A58520EF75BF00CAE9F0 /* FeedListViewController.swift */,
 				BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */,
 			);
 			path = FeedList;
@@ -502,7 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4BC0122100E3F80063211B /* Result.swift in Sources */,
-				BCE5A58620EF75BF00CAE9F0 /* FeedListTableViewController.swift in Sources */,
+				BCE5A58620EF75BF00CAE9F0 /* FeedListViewController.swift in Sources */,
 				BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */,
 				BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */,
@@ -530,7 +530,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD6852A210AC8C200B404AD /* FeedItemTests.swift in Sources */,
-				BC534F4721101E9200F9C407 /* FeedListTableViewControllerTests.swift in Sources */,
+				BC534F4721101E9200F9C407 /* FeedListViewControllerTests.swift in Sources */,
 				BC534F50211063F100F9C407 /* FeedItemDetailsViewControllerTests.swift in Sources */,
 				BC534F36210EF87600F9C407 /* FeedSourceStorageTests.swift in Sources */,
 				BC534F4C211021B000F9C407 /* FeedServiceMock.swift in Sources */,

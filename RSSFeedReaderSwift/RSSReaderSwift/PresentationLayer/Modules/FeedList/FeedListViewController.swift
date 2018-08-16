@@ -1,5 +1,5 @@
 //
-//  FeedListTableViewController.swift
+//  FeedListViewController.swift
 //  RSSReaderSwift
 //
 //  Created by Vitaly Batrakov on 06.07.2018.
@@ -9,17 +9,23 @@
 import UIKit
 import Kingfisher
 
-class FeedListTableViewController: UITableViewController {
+class FeedListViewController: UIViewController {
     
     var feedService: FeedService!
     var feedSourceStorage: FeedSourceStorage!
     
+    @IBOutlet var tableView: UITableView!
     private var feeds = [Feed]()
     private let placeholderImage = UIImage(named: "placeholder-128")
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         fetchFeeds()
+    }
+    
+    private func setupTableView() {
+        tableView.dataSource = self
     }
     
     private func fetchFeeds() {
@@ -38,21 +44,23 @@ class FeedListTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view data source
+}
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+extension FeedListViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return feeds[section].title
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return feeds.count
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds[section].items.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId", for: indexPath) as! FeedListTableViewCell
         let feedItem = feeds[indexPath.section].items[indexPath.row]
         configure(cell: cell, with: feedItem)
@@ -71,7 +79,7 @@ class FeedListTableViewController: UITableViewController {
     }
 }
 
-extension FeedListTableViewController {
+extension FeedListViewController {
     
     // MARK: - Navigation
     

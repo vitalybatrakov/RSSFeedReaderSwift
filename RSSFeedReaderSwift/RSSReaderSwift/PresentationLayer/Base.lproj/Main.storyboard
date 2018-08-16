@@ -91,7 +91,7 @@
         <!--Sources-->
         <scene sceneID="UzY-em-W2s">
             <objects>
-                <tableViewController storyboardIdentifier="SourceListTableViewControllerID" title="Sources" id="uQI-i7-spl" customClass="SourceListTableViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SourceListViewControllerID" title="Sources" id="uQI-i7-spl" customClass="SourceListViewController" customModule="RSSReaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YQo-CI-yfm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,6 +141,9 @@
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="YQo-CI-yfm" id="wrA-4m-6ZL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qO0-Sp-JfB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -11,7 +11,7 @@ import XCTest
 
 class SourceListViewControllerTests: XCTestCase {
     
-    var sut: SourceListTableViewController!
+    var sut: SourceListViewController!
     var feedSourceStorageMock: FeedSourceStorageMock!
     
     var onBackActionCalled = false
@@ -24,12 +24,12 @@ class SourceListViewControllerTests: XCTestCase {
         expectedFeedSources.append(expectedFeedSource)
         expectedFeedSources.append(expectedSecondFeedSource)
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "SourceListTableViewControllerID") as! SourceListTableViewController
+        sut = storyboard.instantiateViewController(withIdentifier: "SourceListViewControllerID") as! SourceListViewController
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
     }
     
-    private func setUpMocks(for sut: SourceListTableViewController) {
+    private func setUpMocks(for sut: SourceListViewController) {
         feedSourceStorageMock = FeedSourceStorageMock()
         feedSourceStorageMock.expectedFeedSources = expectedFeedSources
         sut.feedSourceStorage = feedSourceStorageMock
@@ -61,7 +61,7 @@ class SourceListViewControllerTests: XCTestCase {
     }
     
     func testNumberOfSections() {
-        let sectionCount = sut.numberOfSections(in: sut.tableView)
+        let sectionCount = sut.tableView.numberOfSections
         XCTAssertEqual(sectionCount, 1)
     }
     

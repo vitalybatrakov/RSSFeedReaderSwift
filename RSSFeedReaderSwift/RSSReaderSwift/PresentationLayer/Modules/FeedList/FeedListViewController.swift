@@ -91,7 +91,7 @@ extension FeedListViewController {
                 viewController.feedItem = feeds[indexPath.section].items[indexPath.row]
             }
         case "SourceListSegue":
-            let viewController = segue.destination as! SourceListTableViewController
+            let viewController = segue.destination as! SourceListViewController
             viewController.feedSourceStorage = feedSourceStorage
             viewController.feedService = feedService
             viewController.onBackAction = {

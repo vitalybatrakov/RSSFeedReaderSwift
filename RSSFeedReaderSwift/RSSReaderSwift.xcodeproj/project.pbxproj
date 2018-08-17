@@ -27,6 +27,8 @@
 		BC534F542110642200F9C407 /* SourceListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F532110642200F9C407 /* SourceListViewControllerTests.swift */; };
 		BC534F562110653800F9C407 /* AddSourceViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F552110653800F9C407 /* AddSourceViewControllerTests.swift */; };
 		BC534F5A2111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */; };
+		BC534F5C21277A7200F9C407 /* Bool+Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F5B21277A7200F9C407 /* Bool+Toggle.swift */; };
+		BC534F5E21277B1100F9C407 /* Bool+ToggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */; };
 		BC5D040520F4E06000075D2E /* SourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040420F4E06000075D2E /* SourceListViewController.swift */; };
 		BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
@@ -81,6 +83,8 @@
 		BC534F532110642200F9C407 /* SourceListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceListViewControllerTests.swift; sourceTree = "<group>"; };
 		BC534F552110653800F9C407 /* AddSourceViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceViewControllerTests.swift; sourceTree = "<group>"; };
 		BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hasSegueWithIdentifier.swift"; sourceTree = "<group>"; };
+		BC534F5B21277A7200F9C407 /* Bool+Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Toggle.swift"; sourceTree = "<group>"; };
+		BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+ToggleTests.swift"; sourceTree = "<group>"; };
 		BC5D040420F4E06000075D2E /* SourceListViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -279,6 +283,7 @@
 			children = (
 				BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Storage.swift */,
 				BC4BC00C2100B1EA0063211B /* String+WithoutHTMLTags.swift */,
+				BC534F5B21277A7200F9C407 /* Bool+Toggle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -343,6 +348,7 @@
 				BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */,
 				BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */,
 				BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */,
+				BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */,
 			);
 			path = ExtensionsTests;
 			sourceTree = "<group>";
@@ -516,6 +522,7 @@
 				BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */,
 				BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */,
 				BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */,
+				BC534F5C21277A7200F9C407 /* Bool+Toggle.swift in Sources */,
 				BC4BC0102100BA990063211B /* UIViewController+showAlert.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,
 				BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */,
@@ -542,6 +549,7 @@
 				BC534F3A210F0FB400F9C407 /* URLFeedParserTests.swift in Sources */,
 				BC534F4A2110216A00F9C407 /* FeedSourceStorageMock.swift in Sources */,
 				BC534F562110653800F9C407 /* AddSourceViewControllerTests.swift in Sources */,
+				BC534F5E21277B1100F9C407 /* Bool+ToggleTests.swift in Sources */,
 				BC534F542110642200F9C407 /* SourceListViewControllerTests.swift in Sources */,
 				BCD6852C210AE02E00B404AD /* FeedServiceTests.swift in Sources */,
 			);

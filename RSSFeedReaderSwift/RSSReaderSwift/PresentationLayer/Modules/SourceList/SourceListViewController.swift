@@ -43,7 +43,7 @@ class SourceListViewController: UIViewController {
      }
      
      @IBAction func editButtonTapped(_ sender: Any) {
-          tableView.isEditing = !tableView.isEditing
+          tableView.isEditing.toggle()
      }
      
 }

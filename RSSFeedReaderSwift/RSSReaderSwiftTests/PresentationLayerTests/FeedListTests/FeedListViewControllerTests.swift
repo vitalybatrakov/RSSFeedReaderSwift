@@ -78,7 +78,7 @@ class FeedListViewControllerTests: XCTestCase {
     // MARK: Cell init tests
     
     func testCellInit() {
-        let cell = sut.tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId") as! FeedListTableViewCell
+        let cell: FeedListTableViewCell = sut.tableView.dequeueReusableCell()
         XCTAssertNotNil(cell.titleLabel)
         XCTAssertNotNil(cell.detailsLabel)
         XCTAssertNotNil(cell.imgView)

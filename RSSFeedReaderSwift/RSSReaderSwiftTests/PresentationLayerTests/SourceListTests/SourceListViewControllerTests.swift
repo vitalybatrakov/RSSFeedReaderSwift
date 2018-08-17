@@ -98,7 +98,7 @@ class SourceListViewControllerTests: XCTestCase {
     // MARK: Cell init tests
     
     func testCellInit() {
-        let cell = sut.tableView.dequeueReusableCell(withIdentifier: "SourceListTableViewCellId")
+        let cell = sut.tableView.dequeueReusableCell(withIdentifier: "SourceListTableViewCell")
         XCTAssertNotNil(cell?.textLabel)
         XCTAssertNotNil(cell?.detailTextLabel)
     }

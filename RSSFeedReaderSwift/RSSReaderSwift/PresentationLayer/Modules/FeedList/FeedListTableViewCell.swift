@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FeedListTableViewCell: UITableViewCell {
+class FeedListTableViewCell: UITableViewCell, ReusableView {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var detailsLabel: UILabel!

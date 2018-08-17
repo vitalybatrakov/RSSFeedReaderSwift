@@ -61,7 +61,7 @@ extension FeedListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedListTableViewCellId", for: indexPath) as! FeedListTableViewCell
+        let cell: FeedListTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let feedItem = feeds[indexPath.section].items[indexPath.row]
         configure(cell: cell, with: feedItem)
         return cell

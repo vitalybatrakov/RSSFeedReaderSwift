@@ -29,6 +29,7 @@
 		BC534F5A2111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */; };
 		BC534F5C21277A7200F9C407 /* Bool+Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F5B21277A7200F9C407 /* Bool+Toggle.swift */; };
 		BC534F5E21277B1100F9C407 /* Bool+ToggleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */; };
+		BC534F612127833E00F9C407 /* UITableView+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */; };
 		BC5D040520F4E06000075D2E /* SourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040420F4E06000075D2E /* SourceListViewController.swift */; };
 		BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 		BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hasSegueWithIdentifier.swift"; sourceTree = "<group>"; };
 		BC534F5B21277A7200F9C407 /* Bool+Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Toggle.swift"; sourceTree = "<group>"; };
 		BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+ToggleTests.swift"; sourceTree = "<group>"; };
+		BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableView.swift"; sourceTree = "<group>"; };
 		BC5D040420F4E06000075D2E /* SourceListViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,6 +150,7 @@
 			children = (
 				BC4BC00F2100BA990063211B /* UIViewController+showAlert.swift */,
 				BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */,
+				BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,6 +197,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		BC534F5F212782F100F9C407 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BC676A5720261938009C527D /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		BC5D040220F4E03200075D2E /* SourceList */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,7 +243,7 @@
 		BC676A5620261938009C527D /* RSSReaderSwift */ = {
 			isa = PBXGroup;
 			children = (
-				BC676A5720261938009C527D /* AppDelegate.swift */,
+				BC534F5F212782F100F9C407 /* App */,
 				BC239656208F5BBA006275D7 /* Models */,
 				BCB21B43208E0B5B00FD865D /* Services */,
 				BC8EC21620EF7DEA008560F9 /* Extensions */,
@@ -523,6 +534,7 @@
 				BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */,
 				BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */,
 				BC534F5C21277A7200F9C407 /* Bool+Toggle.swift in Sources */,
+				BC534F612127833E00F9C407 /* UITableView+ReusableView.swift in Sources */,
 				BC4BC0102100BA990063211B /* UIViewController+showAlert.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,
 				BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */,

@@ -55,7 +55,7 @@ extension SourceListViewController: UITableViewDataSource {
      }
      
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "SourceListTableViewCellId", for: indexPath)
+          let cell = tableView.dequeueReusableCell(withIdentifier: "SourceListTableViewCell", for: indexPath)
           configure(cell: cell, with: sources[indexPath.row])
           return cell
      }

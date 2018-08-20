@@ -16,14 +16,14 @@ class FeedServiceMock: FeedService {
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
     
-    func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
+    func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
         isGetFeedsCompleted = true
-        complition([isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage)])
+        completion([isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage)])
     }
     
-    func getFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
+    func getFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
         isGetFeedsWithUrlCompleted = true
-        complition(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
+        completion(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
     }
     
 }

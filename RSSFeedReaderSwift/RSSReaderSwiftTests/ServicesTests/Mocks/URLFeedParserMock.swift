@@ -14,8 +14,8 @@ class URLFeedParserMock: URLFeedParser {
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
     
-    func parseFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
-        complition(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
+    func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
+        completion(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
     }
     
 }

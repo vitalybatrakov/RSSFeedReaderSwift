@@ -18,7 +18,7 @@ class FeedServiceImpl: FeedService {
         self.feedParser = feedParser
     }
     
-    func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
+    func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
         DispatchQueue.global().async {
             let sources = self.feedSourceStorage.getSources()
             var results = [Result<Feed>]()
@@ -32,13 +32,13 @@ class FeedServiceImpl: FeedService {
                 }
             }
             dispatchGroup.notify(queue: .main) {
-                complition(results)
+                completion(results)
             }
         }
     }
     
-    func getFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
-        feedParser.parseFeed(with: url, complition: complition)
+    func getFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
+        feedParser.parseFeed(with: url, completion: completion)
     }
 
 }

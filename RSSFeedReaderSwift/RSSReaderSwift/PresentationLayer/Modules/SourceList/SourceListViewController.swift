@@ -69,7 +69,6 @@ extension SourceListViewController: UITableViewDataSource {
           if editingStyle == .delete {
                removeSource(at: indexPath.row)
                tableView.deleteRows(at: [indexPath], with: .automatic)
-               
           }
      }
      

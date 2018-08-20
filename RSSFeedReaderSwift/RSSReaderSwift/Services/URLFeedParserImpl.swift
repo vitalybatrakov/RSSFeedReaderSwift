@@ -11,26 +11,26 @@ import FeedKit
 
 class URLFeedParserImpl: URLFeedParser {
     
-    func parseFeed(with url: URL, complition: @escaping (Result<Feed>) -> Void) {
+    func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
         guard let parser = FeedParser(URL: url) else {
-            complition(.error("Init parser error on: \(url)"))
+            completion(.error("Init parser error on: \(url)"))
             return
         }
         parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             guard let feed = result.rssFeed, result.isSuccess else {
                 let message = result.error?.localizedDescription ?? "Unknown feed parse error"
-                complition(.error(message))
+                completion(.error(message))
                 return
             }
-            self.process(feed: feed, with: complition)
+            self.process(feed: feed, with: completion)
         }
     }
     
-    private func process(feed: RSSFeed, with complition: @escaping (Result<Feed>) -> Void) {
+    private func process(feed: RSSFeed, with completion: @escaping (Result<Feed>) -> Void) {
         guard let feedTitle = feed.title,
             let feedItems = mapFeedItems(from: feed) else { return }
         let feed = Feed(title: feedTitle, items: feedItems)
-        complition(.success(feed))
+        completion(.success(feed))
     }
     
     private func mapFeedItems(from feed: RSSFeed) -> [FeedItem]? {

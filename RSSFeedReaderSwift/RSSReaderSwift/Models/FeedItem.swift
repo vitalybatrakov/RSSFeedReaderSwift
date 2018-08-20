@@ -14,6 +14,8 @@ struct FeedItem: Equatable {
     let link: String
     var imageUrl: String?
     
+    static var imageRegex = try? NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?", options: .caseInsensitive)
+    
     init(title: String, body: String, link: String) {
         self.title = title
         self.body = body.withoutHTMLTags
@@ -22,15 +24,9 @@ struct FeedItem: Equatable {
     }
     
     private func imageUrl(from body: String) -> String? {
-        do {
-            let regex = try NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?", options: .caseInsensitive)
-            let result = regex.firstMatch(in: body, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, body.count))
-            return result.map {
-                String(body[Range($0.range(at: 2), in: body)!])
-            }
-        } catch let error {
-            print("invalid regex: \(error.localizedDescription)")
-            return nil
+        let result = FeedItem.imageRegex?.firstMatch(in: body, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, body.count))
+        return result.map {
+            String(body[Range($0.range(at: 2), in: body)!])
         }
     }
 }

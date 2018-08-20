@@ -19,19 +19,21 @@ class FeedServiceImpl: FeedService {
     }
     
     func getFeeds(with complition: @escaping ([Result<Feed>]) -> Void) {
-        let sources = feedSourceStorage.getSources()
-        var results = [Result<Feed>]()
-        let dispatchGroup = DispatchGroup()
-        for source in sources {
-            dispatchGroup.enter()
-            guard let url = URL(string: source.url) else { continue }
-            getFeed(with: url) { result in
-                results.append(result)
-                dispatchGroup.leave()
+        DispatchQueue.global().async {
+            let sources = self.feedSourceStorage.getSources()
+            var results = [Result<Feed>]()
+            let dispatchGroup = DispatchGroup()
+            for source in sources {
+                dispatchGroup.enter()
+                guard let url = URL(string: source.url) else { continue }
+                self.getFeed(with: url) { result in
+                    results.append(result)
+                    dispatchGroup.leave()
+                }
             }
-        }
-        dispatchGroup.notify(queue: .main) {
-            complition(results)
+            dispatchGroup.notify(queue: .main) {
+                complition(results)
+            }
         }
     }
     

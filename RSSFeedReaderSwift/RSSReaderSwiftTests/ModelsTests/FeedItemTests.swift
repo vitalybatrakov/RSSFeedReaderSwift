@@ -38,6 +38,10 @@ class FeedItemTests: XCTestCase {
         XCTAssertEqual(feedItem.link, expectedLink)
     }
     
+    func testInitImageRegex() {
+        XCTAssertNotNil(FeedItem.imageRegex)
+    }
+    
     // MARK: - Initializing image url property tests
 
     func testInitImageUrlWithoutImageInBody() {

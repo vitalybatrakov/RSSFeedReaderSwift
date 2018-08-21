@@ -55,7 +55,7 @@ class AddSourceViewController: UIViewController {
     
     private func addSource() {
         guard let text = sourceTextField.text, let url = URL(string: text) else { return }
-        feedService.getFeed(with: url, complition: { result in
+        feedService.getFeed(with: url, completion: { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let feed):

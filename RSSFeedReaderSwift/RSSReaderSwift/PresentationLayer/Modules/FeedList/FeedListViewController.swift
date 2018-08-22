@@ -68,14 +68,9 @@ extension FeedListViewController: UITableViewDataSource {
     }
     
     private func configure(cell: FeedListTableViewCell, with feedItem: FeedItem) {
-        cell.detailsLabel?.text = feedItem.body
-        cell.titleLabel?.text = feedItem.title
-        if let imageUrl = feedItem.imageUrl {
-            cell.imgView?.kf.indicatorType = .activity
-            cell.imgView?.kf.setImage(with: URL(string: imageUrl), placeholder: placeholderImage)
-        } else {
-            cell.imgView.image = placeholderImage
-        }
+        cell.setDetails(with: feedItem.body)
+        cell.setTitle(with: feedItem.title)
+        cell.setImageView(with: feedItem.imageUrl, placeholder: placeholderImage)
     }
 }
 

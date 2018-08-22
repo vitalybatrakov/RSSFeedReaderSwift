@@ -12,10 +12,7 @@ import FeedKit
 class URLFeedParserImpl: URLFeedParser {
     
     func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
-        guard let parser = FeedParser(URL: url) else {
-            completion(.error("Init parser error on: \(url)"))
-            return
-        }
+        let parser = FeedParser(URL: url)
         parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
             guard let feed = result.rssFeed, result.isSuccess else {
                 let message = result.error?.localizedDescription ?? "Unknown feed parse error"

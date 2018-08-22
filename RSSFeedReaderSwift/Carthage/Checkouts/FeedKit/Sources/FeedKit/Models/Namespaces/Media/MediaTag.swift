@@ -1,7 +1,7 @@
 //
 //  MediaTag.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -54,7 +54,7 @@ extension MediaTag {
     
     static func tagsFrom(string: String) -> [MediaTag]? {
         
-        return string.components(separatedBy: ",").flatMap({ (value) -> MediaTag? in
+        return string.components(separatedBy: ",").compactMap({ (value) -> MediaTag? in
             
             let mediaTag = MediaTag()
             let components = value.components(separatedBy: ":")

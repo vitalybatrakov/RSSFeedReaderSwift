@@ -1,7 +1,7 @@
 //
 //  JSONFeed.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -135,7 +135,7 @@ extension JSONFeed {
         self.expired        = dictionary["expired"] as? Bool
         
         if let items = dictionary["items"] as? [[String: Any?]] {
-            self.items = items.flatMap({ (item) -> JSONFeedItem? in
+            self.items = items.compactMap({ (item) -> JSONFeedItem? in
                 return JSONFeedItem(dictionary: item)
             })
         }
@@ -145,12 +145,12 @@ extension JSONFeed {
         }
         
         if let hubs = dictionary["hubs"] as? [[String: Any?]] {
-            self.hubs = hubs.flatMap({ (hub) -> JSONFeedHub? in
+            self.hubs = hubs.compactMap({ (hub) -> JSONFeedHub? in
                 return JSONFeedHub(dictionary: hub)
             })
         }
         
-        let privateExtensionKeys = dictionary.keys.flatMap { (key) -> String? in
+        let privateExtensionKeys = dictionary.keys.compactMap { (key) -> String? in
             return key.hasPrefix("_") ? key : nil
         }
         

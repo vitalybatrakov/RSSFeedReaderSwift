@@ -1,7 +1,7 @@
 //
 //  BaseTestCase.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,7 @@ class BaseTestCase: XCTestCase {
     let timeout: TimeInterval = 10.0
     
     func fileURL(_ name: String, type: String) -> URL {
-        let bundle = Bundle(for: type(of: self))
+        let bundle = Bundle(for: Swift.type(of: self))
         let filePath = bundle.path(forResource: name, ofType: type)!
         return URL(fileURLWithPath: filePath)
     }

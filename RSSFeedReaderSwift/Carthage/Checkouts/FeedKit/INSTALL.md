@@ -35,7 +35,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'MyApp' do
-  pod 'FeedKit', '~> 6.0'
+  pod 'FeedKit', '~> 8.0'
 end
 ```
 
@@ -58,7 +58,7 @@ $ brew install carthage
 To integrate FeedKit into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "nmdias/FeedKit" ~> 6.0
+github "nmdias/FeedKit" ~> 8.0
 ```
 Build the framework:
 
@@ -101,6 +101,9 @@ Drag `FeedKit.xcodeproj` into your Xcode project.
  > It should appear nested underneath your application's blue project icon.
  
 Click on the `+` button under the "Embedded Binaries" section of your app's target and select the `FeedKit.framework` that matches the desired platform.
+
+## Credits
+Similarities to [Alamofire](https://github.com/Alamofire/Alamofire)'s impecable setup instructions are not a coincidence 😃
 
 ## License
 

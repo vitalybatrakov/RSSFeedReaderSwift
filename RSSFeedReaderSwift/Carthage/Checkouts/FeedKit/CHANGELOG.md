@@ -1,4 +1,45 @@
 # Change Log
+## [8.0.0](https://github.com/nmdias/FeedParser/releases/tag/8.0.0)
+### Updated
+- FeedParser initializers no longer failable
+
+### Fixed
+- Null parser for feed:// protocol
+  - [#50](https://github.com/nmdias/FeedKit/pull/50) reported by [revolter](https://github.com/revolter)  
+- Fixed unexpected upfront fetching of data for url causing UI hang
+  - [#45](https://github.com/nmdias/FeedKit/pull/45) reported by [bhlvoong](https://github.com/bhlvoong)  
+
+## [7.1.1](https://github.com/nmdias/FeedParser/releases/tag/7.1.1)
+### Updated
+- Parse all RSS and ATOM dates permissively
+  - [#56](https://github.com/nmdias/FeedKit/pull/56) by [GarthSnyder](https://github.com/GarthSnyder)
+- Reattempt parsing of RFC822 dates without day prefix
+  - [#55](https://github.com/nmdias/FeedKit/pull/55) by [GarthSnyder](https://github.com/GarthSnyder)
+- Strip leading and trailing whitespace before parsing dates
+  - [#54](https://github.com/nmdias/FeedKit/pull/54) by [GarthSnyder](https://github.com/GarthSnyder)
+- Terminate XML parsing as soon as a complete feed is received
+  - [#53](https://github.com/nmdias/FeedKit/pull/53) by [GarthSnyder](https://github.com/GarthSnyder)
+- Allow parsing from an InputStream containing XML
+  - [#52](https://github.com/nmdias/FeedKit/pull/52) by [GarthSnyder](https://github.com/GarthSnyder)
+- Faster and more robust feed type determination
+  - [#51](https://github.com/nmdias/FeedKit/pull/51) by [GarthSnyder](https://github.com/GarthSnyder)
+
+### Fixed
+- Detect existing data encoding and convert to UTF-8 before parsing
+  - [#43](https://github.com/nmdias/FeedKit/pull/43) by [CD1212](https://github.com/CD1212)  
+
+## [7.1.0](https://github.com/nmdias/FeedParser/releases/tag/7.1.0)
+### Added
+- Support for Xcode 9.3 w/Swift 4.1
+
+## [7.0.1](https://github.com/nmdias/FeedParser/releases/tag/7.0.1)
+### Fixed
+- Fixed 'characters' is deprecated for Swift 4.0.2 #41
+
+## [7.0.0](https://github.com/nmdias/FeedParser/releases/tag/7.0.0)
+### Added
+- Support for Swift 4 and Xcode 9
+
 ## [6.2.0](https://github.com/nmdias/FeedParser/releases/tag/6.1.2)
 ### Added
 - Support for the RSS 0.90 specification

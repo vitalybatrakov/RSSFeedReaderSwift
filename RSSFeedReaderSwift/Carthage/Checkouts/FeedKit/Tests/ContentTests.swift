@@ -1,7 +1,7 @@
 //
 //  ContentTests.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ class ContentTests: BaseTestCase {
         
         // Given
         let URL = fileURL("Content", type: "xml")
-        let parser = FeedParser(URL: URL)!
+        let parser = FeedParser(URL: URL)
         
         // When
         let feed = parser.parse().rssFeed
@@ -50,7 +50,7 @@ class ContentTests: BaseTestCase {
             // Given
             let expectation = self.expectation(description: "Content Parsing Performance")
             let URL = self.fileURL("Content", type: "xml")
-            let parser = FeedParser(URL: URL)!
+            let parser = FeedParser(URL: URL)
             
             // When
             parser.parseAsync { (result) in

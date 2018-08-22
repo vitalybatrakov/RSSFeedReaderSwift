@@ -1,7 +1,7 @@
 //
 //  String + toDate.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ import Foundation
 extension String {
     
     /// Attempts to convert the textual representation of a date with
-    /// the specified `DateSpec` to an `Date` object.
+    /// the specified `DateSpec` to a `Date` object.
     ///
     /// - Parameter spec: The `DateSpec` to interpert the string.
     /// - Returns: A `Date` object, or nil if the conversion failed.
@@ -37,6 +37,16 @@ extension String {
         case .rfc3999:  return RFC3339DateFormatter().date(from: self)
         case .iso8601:  return ISO8601DateFormatter().date(from: self)
         }
+    }
+    
+    /// Attempts to convert the textual representation of a date to a
+    /// `Date` object according to several common schemes.
+    ///
+    /// - Returns: A `Date` object, or nil if the conversion failed.
+    func toPermissiveDate() -> Date? {
+        return RFC822DateFormatter().date(from: self) ??
+            (RFC3339DateFormatter().date(from: self) ??
+            ISO8601DateFormatter().date(from: self))
     }
     
 }

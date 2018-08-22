@@ -1,7 +1,7 @@
 //
 //  DateTests.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -132,7 +132,7 @@ class DateTests: BaseTestCase {
         ]
         
         // When
-        let dates = dateStrings.flatMap { (dateString) -> Date? in
+        let dates = dateStrings.compactMap { (dateString) -> Date? in
             return dateString.toDate(from: spec)
         }
         
@@ -161,7 +161,7 @@ class DateTests: BaseTestCase {
         ]
         
         // When
-        let dates = dateStrings.flatMap { (dateString) -> Date? in
+        let dates = dateStrings.compactMap { (dateString) -> Date? in
             return dateString.toDate(from: spec)
         }
         

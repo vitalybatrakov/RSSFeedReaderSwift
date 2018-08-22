@@ -1,7 +1,7 @@
 //
 //  RSS2Tests.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +31,7 @@ class RSS2Tests: BaseTestCase {
         
         // Given
         let URL = fileURL("RSS2", type: "xml")
-        let parser = FeedParser(URL: URL)!
+        let parser = FeedParser(URL: URL)
         
         // When
         let feed = parser.parse().rssFeed
@@ -105,7 +105,7 @@ class RSS2Tests: BaseTestCase {
         
         // Given
         let URL = fileURL("RSS2", type: "xml")
-        let parser = FeedParser(URL: URL)!
+        let parser = FeedParser(URL: URL)
         
         // When
         let feed = parser.parse().rssFeed
@@ -196,7 +196,7 @@ class RSS2Tests: BaseTestCase {
             // Given
             let expectation = self.expectation(description: "RSS2 Parsing Performance")
             let URL = self.fileURL("RSS2", type: "xml")
-            let parser = FeedParser(URL: URL)!
+            let parser = FeedParser(URL: URL)
             
             // When
             parser.parseAsync { (result) in

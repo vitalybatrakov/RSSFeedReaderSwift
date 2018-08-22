@@ -1,7 +1,7 @@
 //
-//  FeedKit.h
+//  FeedUriSchemeSanitizerTests.swift
 //
-//  Copyright (c) 2017 Nuno Manuel Dias
+//  Copyright (c) 2016 - 2018 Nuno Manuel Dias
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -22,14 +22,23 @@
 //  SOFTWARE.
 //
 
-@import Foundation;
+import XCTest
+@testable import FeedKit
 
-//! Project version number for FeedKit.
-FOUNDATION_EXPORT double FeedKitVersionNumber;
-
-//! Project version string for FeedKit.
-FOUNDATION_EXPORT const unsigned char FeedKitVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <FeedKit/PublicHeader.h>
-
-
+class FeedUriSchemeSanitizerTests: XCTestCase {
+    
+    func testFeedUriSchemeSanitizer() {
+        
+        // Given
+        let feedURL = URL(string: "feed://images.apple.com/main/rss/hotnews/hotnews.rss")!
+        let parser = FeedParser(URL: feedURL)
+        
+        // When
+        let feed = parser.parse().rssFeed
+        
+        // Then
+        XCTAssertNotNil(feed)
+        
+    }
+    
+}

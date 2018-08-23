@@ -30,6 +30,7 @@ class FeedListTableViewCell: UITableViewCell, ReusableView {
         }
         imgView?.kf.indicatorType = .activity
         imgView?.kf.setImage(with: URL(string: url), placeholder: placeholder)
+        imgView.layer.roundCorners(corners: [.allCorners], radius: 10) //faster than cornerRadius
     }
     
 }

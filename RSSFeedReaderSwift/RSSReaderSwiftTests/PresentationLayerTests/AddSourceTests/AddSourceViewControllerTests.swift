@@ -20,8 +20,7 @@ class AddSourceViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "AddSourceViewControllerID") as! AddSourceViewController
+        sut = AddSourceViewController.initFromStoryboard()
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
     }

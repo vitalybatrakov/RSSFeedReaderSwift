@@ -23,8 +23,7 @@ class SourceListViewControllerTests: XCTestCase {
         super.setUp()
         expectedFeedSources.append(expectedFeedSource)
         expectedFeedSources.append(expectedSecondFeedSource)
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "SourceListViewControllerID") as! SourceListViewController
+        sut = SourceListViewController.initFromStoryboard()
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
     }

@@ -16,8 +16,7 @@ class FeedItemDetailsViewControllerTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "FeedItemDetailsViewControllerID") as! FeedItemDetailsViewController
+        sut = FeedItemDetailsViewController.initFromStoryboard()
         sut.feedItem = expectedFeedItem
         sut.loadViewIfNeeded()
     }

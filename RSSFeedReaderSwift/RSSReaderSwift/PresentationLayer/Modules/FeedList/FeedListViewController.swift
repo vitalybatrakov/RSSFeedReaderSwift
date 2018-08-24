@@ -97,3 +97,5 @@ extension FeedListViewController {
         }
     }
 }
+
+extension FeedListViewController: StoryboardInitializable {}

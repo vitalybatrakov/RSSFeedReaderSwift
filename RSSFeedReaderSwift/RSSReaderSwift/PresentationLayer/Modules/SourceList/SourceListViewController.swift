@@ -98,3 +98,5 @@ extension SourceListViewController {
           }
      }
 }
+
+extension SourceListViewController: StoryboardInitializable {}

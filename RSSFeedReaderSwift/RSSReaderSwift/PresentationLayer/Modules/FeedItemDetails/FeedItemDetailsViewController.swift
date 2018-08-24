@@ -43,3 +43,5 @@ extension FeedItemDetailsViewController {
         }
     }
 }
+
+extension FeedItemDetailsViewController: StoryboardInitializable {}

@@ -33,6 +33,8 @@
 		BC534F642127894C00F9C407 /* UITableView+ReusableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F632127894C00F9C407 /* UITableView+ReusableViewTests.swift */; };
 		BC534F66212789C600F9C407 /* UIViewController+hasSegueWithIdentifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F65212789C600F9C407 /* UIViewController+hasSegueWithIdentifierTests.swift */; };
 		BC534F68212E5D9900F9C407 /* CALayer+roundCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F67212E5D9900F9C407 /* CALayer+roundCorners.swift */; };
+		BC534F8B212FB5D100F9C407 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F8A212FB5D100F9C407 /* StoryboardInitializable.swift */; };
+		BC534F8D212FBB8400F9C407 /* StoryboardInitializableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F8C212FBB8400F9C407 /* StoryboardInitializableTests.swift */; };
 		BC5D040520F4E06000075D2E /* SourceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040420F4E06000075D2E /* SourceListViewController.swift */; };
 		BC5D040720F4E09900075D2E /* FeedItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */; };
 		BC676A5820261938009C527D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC676A5720261938009C527D /* AppDelegate.swift */; };
@@ -93,6 +95,8 @@
 		BC534F632127894C00F9C407 /* UITableView+ReusableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableViewTests.swift"; sourceTree = "<group>"; };
 		BC534F65212789C600F9C407 /* UIViewController+hasSegueWithIdentifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+hasSegueWithIdentifierTests.swift"; sourceTree = "<group>"; };
 		BC534F67212E5D9900F9C407 /* CALayer+roundCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+roundCorners.swift"; sourceTree = "<group>"; };
+		BC534F8A212FB5D100F9C407 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		BC534F8C212FBB8400F9C407 /* StoryboardInitializableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializableTests.swift; sourceTree = "<group>"; };
 		BC5D040420F4E06000075D2E /* SourceListViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = SourceListViewController.swift; sourceTree = "<group>"; };
 		BC5D040620F4E09900075D2E /* FeedItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemDetailsViewController.swift; sourceTree = "<group>"; };
 		BC676A5420261938009C527D /* RSSReaderSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSReaderSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +162,7 @@
 				BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */,
 				BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */,
 				BC534F67212E5D9900F9C407 /* CALayer+roundCorners.swift */,
+				BC534F8A212FB5D100F9C407 /* StoryboardInitializable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 			children = (
 				BC534F632127894C00F9C407 /* UITableView+ReusableViewTests.swift */,
 				BC534F65212789C600F9C407 /* UIViewController+hasSegueWithIdentifierTests.swift */,
+				BC534F8C212FBB8400F9C407 /* StoryboardInitializableTests.swift */,
 			);
 			path = ExtensionsTests;
 			sourceTree = "<group>";
@@ -536,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC4BC0122100E3F80063211B /* Result.swift in Sources */,
+				BC534F8B212FB5D100F9C407 /* StoryboardInitializable.swift in Sources */,
 				BCE5A58620EF75BF00CAE9F0 /* FeedListViewController.swift in Sources */,
 				BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */,
@@ -567,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCD6852A210AC8C200B404AD /* FeedItemTests.swift in Sources */,
+				BC534F8D212FBB8400F9C407 /* StoryboardInitializableTests.swift in Sources */,
 				BC534F4721101E9200F9C407 /* FeedListViewControllerTests.swift in Sources */,
 				BC534F50211063F100F9C407 /* FeedItemDetailsViewControllerTests.swift in Sources */,
 				BC534F36210EF87600F9C407 /* FeedSourceStorageTests.swift in Sources */,

@@ -21,8 +21,7 @@ class FeedListViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         expectedFeed = Feed(title: "Test title", items: [expectedFeedItem])
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = storyboard.instantiateViewController(withIdentifier: "FeedListViewControllerID") as! FeedListViewController
+        sut = FeedListViewController.initFromStoryboard()
         setUpMocks(for: sut)
         sut.loadViewIfNeeded()
     }

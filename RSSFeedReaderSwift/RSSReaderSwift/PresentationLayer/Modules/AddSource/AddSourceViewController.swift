@@ -71,3 +71,5 @@ class AddSourceViewController: UIViewController {
         })
     }
 }
+
+extension AddSourceViewController: StoryboardInitializable {}

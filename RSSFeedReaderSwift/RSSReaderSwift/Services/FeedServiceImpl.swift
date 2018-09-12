@@ -23,9 +23,9 @@ class FeedServiceImpl: FeedService {
             let sources = self.feedSourceStorage.getSources()
             var results = [Result<Feed>]()
             let dispatchGroup = DispatchGroup()
-            for source in sources {
+            let urls = sources.compactMap({ URL(string: $0.url) })
+            for url in urls {
                 dispatchGroup.enter()
-                guard let url = URL(string: source.url) else { continue }
                 self.getFeed(with: url) { result in
                     results.append(result)
                     dispatchGroup.leave()

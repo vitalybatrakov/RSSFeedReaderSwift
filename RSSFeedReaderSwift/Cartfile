@@ -1,2 +1,3 @@
 github "onevcat/Kingfisher" ~> 5.0
 github "nmdias/FeedKit" ~> 8.0
+github "mac-cain13/R.swift.Library" ~> 5.0

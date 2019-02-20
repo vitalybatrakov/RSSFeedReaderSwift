@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Rswift
 
 class FeedItemDetailsViewController: UIViewController {
 
@@ -26,7 +27,7 @@ class FeedItemDetailsViewController: UIViewController {
         descriptionLabel.text = feedItem.body
         if let imageUrl = feedItem.imageUrl {
             imageView.kf.indicatorType = .activity
-            let image = UIImage(named: "placeholder-128")
+            let image = R.image.placeholder128()
             imageView.kf.setImage(with: URL(string: imageUrl), placeholder: image)
         }
     }

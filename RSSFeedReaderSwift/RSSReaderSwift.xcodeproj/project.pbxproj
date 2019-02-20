@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1B9507221DA5AF0040E34B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B9506221DA5AF0040E34B /* R.generated.swift */; };
 		BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */; };
 		BC239658208F5BD3006275D7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239657208F5BD3006275D7 /* Feed.swift */; };
 		BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239659208F5BDD006275D7 /* FeedItem.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC1B9506221DA5AF0040E34B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
 		BC239657208F5BD3006275D7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -266,11 +268,11 @@
 			isa = PBXGroup;
 			children = (
 				BC534F5F212782F100F9C407 /* App */,
-				BC239656208F5BBA006275D7 /* Models */,
-				BCB21B43208E0B5B00FD865D /* Services */,
 				BC8EC21620EF7DEA008560F9 /* Extensions */,
+				BC239656208F5BBA006275D7 /* Models */,
 				BC676A8820308972009C527D /* PresentationLayer */,
 				BC676A8C203089DE009C527D /* Resources */,
+				BCB21B43208E0B5B00FD865D /* Services */,
 			);
 			path = RSSReaderSwift;
 			sourceTree = "<group>";
@@ -289,6 +291,7 @@
 		BC676A8C203089DE009C527D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC1B9506221DA5AF0040E34B /* R.generated.swift */,
 				BC676A6120261938009C527D /* Assets.xcassets */,
 				BC676A6620261938009C527D /* Info.plist */,
 			);
@@ -346,10 +349,10 @@
 		BCD6851C210ABFA300B404AD /* RSSReaderSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				BCD68525210AC80E00B404AD /* ModelsTests */,
-				BCD68528210AC83E00B404AD /* ServicesTests */,
 				BCD68527210AC83500B404AD /* ExtensionsTests */,
+				BCD68525210AC80E00B404AD /* ModelsTests */,
 				BCD68526210AC82500B404AD /* PresentationLayerTests */,
+				BCD68528210AC83E00B404AD /* ServicesTests */,
 				BCD6851F210ABFA300B404AD /* Info.plist */,
 			);
 			path = RSSReaderSwiftTests;
@@ -426,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC676A7F20261938009C527D /* Build configuration list for PBXNativeTarget "RSSReaderSwift" */;
 			buildPhases = (
+				BC1B9505221DA3A90040E34B /* ShellScript */,
 				BC676A5020261938009C527D /* Sources */,
 				BC676A5120261938009C527D /* Frameworks */,
 				BC676A5220261938009C527D /* Resources */,
@@ -519,6 +523,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BC1B9505221DA3A90040E34B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		BCA5A7602085FABB00F1703D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -527,12 +550,13 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/FeedKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -560,6 +584,7 @@
 				BC534F5C21277A7200F9C407 /* Bool+Toggle.swift in Sources */,
 				BC534F612127833E00F9C407 /* UITableView+ReusableView.swift in Sources */,
 				BC4BC0102100BA990063211B /* UIViewController+showAlert.swift in Sources */,
+				BC1B9507221DA5AF0040E34B /* R.generated.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,
 				BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */,
 				BC676A5820261938009C527D /* AppDelegate.swift in Sources */,

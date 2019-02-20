@@ -64,3 +64,9 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
+
+# R.swift
+#
+# Generated resources file
+
+*.generated.swift

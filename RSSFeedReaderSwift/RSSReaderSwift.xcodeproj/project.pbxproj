@@ -160,11 +160,11 @@
 		BC4BC00E2100BA510063211B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BC4BC00F2100BA990063211B /* UIViewController+showAlert.swift */,
-				BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */,
-				BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */,
 				BC534F67212E5D9900F9C407 /* CALayer+roundCorners.swift */,
 				BC534F8A212FB5D100F9C407 /* StoryboardInitializable.swift */,
+				BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */,
+				BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */,
+				BC4BC00F2100BA990063211B /* UIViewController+showAlert.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,8 +282,8 @@
 			children = (
 				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
 				BC676A5B20261938009C527D /* Main.storyboard */,
-				BCE5A58320EF755A00CAE9F0 /* Modules */,
 				BC4BC00E2100BA510063211B /* Extensions */,
+				BCE5A58320EF755A00CAE9F0 /* Modules */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -370,11 +370,11 @@
 		BCD68526210AC82500B404AD /* PresentationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BC534F412110190100F9C407 /* FeedListTests */,
-				BC534F452110193E00F9C407 /* FeedItemDetailsTests */,
-				BC534F432110191C00F9C407 /* SourceListTests */,
 				BC534F422110190D00F9C407 /* AddSourceTests */,
 				BC534F622127890D00F9C407 /* ExtensionsTests */,
+				BC534F452110193E00F9C407 /* FeedItemDetailsTests */,
+				BC534F412110190100F9C407 /* FeedListTests */,
+				BC534F432110191C00F9C407 /* SourceListTests */,
 			);
 			path = PresentationLayerTests;
 			sourceTree = "<group>";
@@ -382,10 +382,10 @@
 		BCD68527210AC83500B404AD /* ExtensionsTests */ = {
 			isa = PBXGroup;
 			children = (
+				BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */,
+				BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */,
 				BC534F3B21100B1B00F9C407 /* UserDefaults+StorageTests.swift */,
 				BC534F3D21100DC300F9C407 /* UserDefaultsMock.swift */,
-				BC534F3F2110117200F9C407 /* StringWithoutHTMLTagsTests.swift */,
-				BC534F5D21277B1100F9C407 /* Bool+ToggleTests.swift */,
 			);
 			path = ExtensionsTests;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				BC534F482110215300F9C407 /* Mocks */,
-				BCD6852B210AE02E00B404AD /* FeedServiceTests.swift */,
 				BC534F35210EF87600F9C407 /* FeedSourceStorageTests.swift */,
+				BCD6852B210AE02E00B404AD /* FeedServiceTests.swift */,
 				BC534F39210F0FB400F9C407 /* URLFeedParserTests.swift */,
 			);
 			path = ServicesTests;
@@ -404,11 +404,11 @@
 		BCE5A58320EF755A00CAE9F0 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BC7B690020FDD50C0047D5AE /* AddSource */,
 				BCE5A58420EF758800CAE9F0 /* FeedList */,
 				BC5D040320F4E03A00075D2E /* FeedItemDetails */,
-				BC7B68FB20FC9D840047D5AE /* WebPage */,
 				BC5D040220F4E03200075D2E /* SourceList */,
-				BC7B690020FDD50C0047D5AE /* AddSource */,
+				BC7B68FB20FC9D840047D5AE /* WebPage */,
 			);
 			path = Modules;
 			sourceTree = "<group>";

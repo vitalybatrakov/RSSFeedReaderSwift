@@ -16,7 +16,7 @@ class FeedListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     private var feeds = [Feed]()
-    private let placeholderImage = UIImage(named: "placeholder-128")
+    private let placeholderImage = R.image.placeholder128()
 
     override func viewDidLoad() {
         super.viewDidLoad()

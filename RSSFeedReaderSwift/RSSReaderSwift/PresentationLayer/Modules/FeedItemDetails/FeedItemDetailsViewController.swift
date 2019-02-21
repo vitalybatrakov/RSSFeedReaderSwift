@@ -27,8 +27,8 @@ class FeedItemDetailsViewController: UIViewController {
         descriptionLabel.text = feedItem.body
         if let imageUrl = feedItem.imageUrl {
             imageView.kf.indicatorType = .activity
-            let image = R.image.placeholder128()
-            imageView.kf.setImage(with: URL(string: imageUrl), placeholder: image)
+            imageView.kf.setImage(with: URL(string: imageUrl),
+                                  placeholder: R.image.placeholder128())
         }
     }
 }

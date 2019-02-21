@@ -9,20 +9,37 @@
 import UIKit
 import Kingfisher
 
-class FeedListViewController: UIViewController {
+final class FeedListViewController: UIViewController {
     
-    var feedService: FeedService!
-    var feedSourceStorage: FeedSourceStorage!
+    // MARK: - Services
     
-    @IBOutlet var tableView: UITableView!
+    private var feedService: FeedService!
+    private var feedSourceStorage: FeedSourceStorage!
+    
+    // MARK: - Properties
+    
+    @IBOutlet private var tableView: UITableView!
     private var feeds = [Feed]()
     private let placeholderImage = R.image.placeholder128()
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         fetchFeeds()
     }
+    
+    // MARK: - Services DI
+    
+    typealias Dependencies = (feedService: FeedService, feedSourceStorage: FeedSourceStorage)
+    
+    func setupServices(dependencies: Dependencies) {
+        feedService = dependencies.feedService
+        feedSourceStorage = dependencies.feedSourceStorage
+    }
+    
+    // MARK: - Private methods
     
     private func setupTableView() {
         tableView.dataSource = self
@@ -45,6 +62,8 @@ class FeedListViewController: UIViewController {
     }
     
 }
+
+// MARK: - UITableViewDataSource
     
 extension FeedListViewController: UITableViewDataSource {
     
@@ -74,9 +93,9 @@ extension FeedListViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Navigation
+
 extension FeedListViewController {
-    
-    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -97,5 +116,7 @@ extension FeedListViewController {
         }
     }
 }
+
+// MARK: - StoryboardInitializable
 
 extension FeedListViewController: StoryboardInitializable {}

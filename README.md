@@ -1,10 +1,15 @@
 # RSSFeedReader
 
-The simple app that fetches and displays RSS feeds.
+The simple app that fetches and displays RSS feeds. 
+
+Сreated mostly for educational purposes.
 
 App is written in Swift.
 
-Kingfisher and FeedKit are used.
+Dependencies:
+- Kingfisher for work with images;
+- FeedKit for rss parsing;
+- R.swift for work with resources.
 
 ## <a name="description"/> UI Description
 
@@ -15,8 +20,8 @@ Kingfisher and FeedKit are used.
 
 ## <a name="requirements"/> Requirements
 
-- iOS 8.0+
-- Xcode 9.0+
+- iOS 10.0+
+- Xcode 10.0+
 
 ## <a name="licence"/> Licence
 MIT

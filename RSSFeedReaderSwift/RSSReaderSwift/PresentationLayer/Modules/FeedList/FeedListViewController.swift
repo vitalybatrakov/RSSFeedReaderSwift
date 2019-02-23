@@ -18,7 +18,7 @@ final class FeedListViewController: UIViewController {
     
     // MARK: - Properties
     
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
     private var feeds = [Feed]()
     private let placeholderImage = R.image.placeholder128()
     

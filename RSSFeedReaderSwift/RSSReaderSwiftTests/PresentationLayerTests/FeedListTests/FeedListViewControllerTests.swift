@@ -28,13 +28,14 @@ class FeedListViewControllerTests: XCTestCase {
     
     private func setUpMocks(for sut: FeedListViewController) {
         feedServiceMock = FeedServiceMock()
-        sut.feedService = feedServiceMock
         feedServiceMock.expectedFeed = expectedFeed
         feedServiceMock.isNeedToSucceed = true
         feedServiceMock.expectedErrorMessage = "TestError" 
         let feedSourceStorage = FeedSourceStorageMock()
         feedSourceStorage.expectedFeedSources = expectedFeedSources
-        sut.feedSourceStorage = feedSourceStorage
+        
+        sut.setupServices(dependencies: (feedService: feedServiceMock,
+                                         feedSourceStorage: feedSourceStorage))
     }
     
     func testViewDidLoadFeedsCompleted() {

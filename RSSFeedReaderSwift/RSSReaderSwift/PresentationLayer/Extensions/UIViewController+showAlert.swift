@@ -13,7 +13,7 @@ extension UIViewController {
     
     func showAlert(title : String?,
                    msg : String,
-                   style: UIAlertControllerStyle = .alert) {
+                   style: UIAlertController.Style = .alert) {
         let ac = UIAlertController.init(title: title,
                                         message: msg,
                                         preferredStyle: style)

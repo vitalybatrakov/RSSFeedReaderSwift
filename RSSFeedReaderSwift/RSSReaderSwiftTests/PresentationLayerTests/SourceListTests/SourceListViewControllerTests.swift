@@ -49,7 +49,7 @@ class SourceListViewControllerTests: XCTestCase {
     }
     
     func testBackAction() {
-        sut.willMove(toParentViewController: nil)
+        sut.willMove(toParent: nil)
         XCTAssertTrue(onBackActionCalled)
     }
     

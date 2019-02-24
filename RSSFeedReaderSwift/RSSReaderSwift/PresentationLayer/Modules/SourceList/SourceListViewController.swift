@@ -30,8 +30,8 @@ class SourceListViewController: UIViewController {
           sources = feedSourceStorage.getSources()
      }
      
-     override func willMove(toParentViewController parent: UIViewController?) {
-          super.willMove(toParentViewController: parent)
+     override func willMove(toParent parent: UIViewController?) {
+          super.willMove(toParent: parent)
           if parent == nil {
                onBackAction()
           }
@@ -65,7 +65,7 @@ extension SourceListViewController: UITableViewDataSource {
           cell.textLabel?.text = source.title
      }
      
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
           if editingStyle == .delete {
                removeSource(at: indexPath.row)
                tableView.deleteRows(at: [indexPath], with: .automatic)

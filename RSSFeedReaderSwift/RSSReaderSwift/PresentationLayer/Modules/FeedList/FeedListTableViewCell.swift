@@ -9,11 +9,21 @@
 import UIKit
 import Kingfisher
 
-class FeedListTableViewCell: UITableViewCell, ReusableView {
+final class FeedListTableViewCell: UITableViewCell, ReusableView {
     
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var detailsLabel: UILabel!
-    @IBOutlet var imgView: UIImageView!
+    // MARK: - Properties
+    
+    @IBOutlet private(set) var titleLabel: UILabel!
+    @IBOutlet private(set) var detailsLabel: UILabel!
+    @IBOutlet private(set) var imgView: UIImageView!
+    
+    // MARK: - Layout constants
+    
+    private enum LayoutConstants {
+        static let imageCornerRadius: CGFloat  = 10.0
+    }
+    
+    // MARK: - Public methods
     
     func setTitle(with string: String) {
         titleLabel?.text = string
@@ -30,7 +40,8 @@ class FeedListTableViewCell: UITableViewCell, ReusableView {
         }
         imgView?.kf.indicatorType = .activity
         imgView?.kf.setImage(with: URL(string: url), placeholder: placeholder)
-        imgView.layer.roundCorners(corners: [.allCorners], radius: 10) //faster than cornerRadius
+        imgView.layer.roundCorners(corners: [.allCorners],
+                                   radius: LayoutConstants.imageCornerRadius) //faster than cornerRadius
     }
     
 }

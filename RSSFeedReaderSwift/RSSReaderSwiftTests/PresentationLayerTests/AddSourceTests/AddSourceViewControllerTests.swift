@@ -21,18 +21,21 @@ class AddSourceViewControllerTests: XCTestCase {
     override func setUp() {
         super.setUp()
         sut = AddSourceViewController.initFromStoryboard()
-        setUpMocks(for: sut)
+        setupMocks(for: sut)
         sut.loadViewIfNeeded()
     }
     
-    private func setUpMocks(for sut: AddSourceViewController) {
+    private func setupMocks(for sut: AddSourceViewController) {
         feedServiceMock = FeedServiceMock()
-        sut.feedService = feedServiceMock
         feedServiceMock.expectedFeed = expectedFeed
         feedServiceMock.isNeedToSucceed = true
         feedServiceMock.expectedErrorMessage = "TestError"
+        
         feedSourceStorageMock = FeedSourceStorageMock()
-        sut.feedSourceStorage = feedSourceStorageMock
+        
+        sut.setup(dependencies: (feedService: feedServiceMock,
+                                 feedSourceStorage: feedSourceStorageMock,
+                                 onAddNewSource: {}))
     }
     
     func testInitSourceTextField() {
@@ -49,10 +52,14 @@ class AddSourceViewControllerTests: XCTestCase {
     
     func addNewSourceWithSuccess() {
         let expectation = self.expectation(description: "Adding source with success")
-        sut.onAddNewSource = { [weak self] in
+        let onAddNewSource = { [weak self] in
             self?.onAddNewSourceCalled = true
             expectation.fulfill()
         }
+        sut.setup(dependencies: (feedService: feedServiceMock,
+                                 feedSourceStorage: feedSourceStorageMock,
+                                 onAddNewSource: onAddNewSource))
+        
         sut.sourceTextField.text = "https://medium.com/feed/tag/swift"
         sut.addButtonTapped(sut)
         waitForExpectations(timeout: 5, handler: nil)

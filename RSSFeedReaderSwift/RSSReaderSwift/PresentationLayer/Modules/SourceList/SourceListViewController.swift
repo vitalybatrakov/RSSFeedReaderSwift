@@ -91,10 +91,12 @@ extension SourceListViewController {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "AddSourceSegue" {
                let viewController = segue.destination as! AddSourceViewController
-               viewController.feedSourceStorage = feedSourceStorage
-               viewController.feedService = feedService
-               viewController.onAddNewSource = {
-                    self.updateTable()}
+               let onAddNewSource = {
+                    self.updateTable()
+               }
+               viewController.setup(dependencies: (feedService: feedService,
+                                                   feedSourceStorage: feedSourceStorage,
+                                                   onAddNewSource: onAddNewSource))
           }
      }
 }

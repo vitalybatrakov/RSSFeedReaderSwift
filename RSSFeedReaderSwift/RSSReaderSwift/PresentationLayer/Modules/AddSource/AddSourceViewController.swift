@@ -8,32 +8,59 @@
 
 import UIKit
 
-class AddSourceViewController: UIViewController {
+final class AddSourceViewController: UIViewController {
     
-    var feedSourceStorage: FeedSourceStorage!
-    var feedService: FeedService!
-    var onAddNewSource: (() -> Void)!
+    // MARK: - Services
     
-    @IBOutlet var sourceTextField: UITextField!
-    @IBOutlet var progessIndicator: UIActivityIndicatorView!
+    private var feedSourceStorage: FeedSourceStorage!
+    private var feedService: FeedService!
+    
+    // MARK: - Callback actions
+    
+    private var onAddNewSource: (() -> Void)!
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet private(set) var sourceTextField: UITextField!
+    @IBOutlet private(set) var progessIndicator: UIActivityIndicatorView!
+    
+    // MARK: - Dependencies DI
+    
+    typealias Dependencies = (feedService: FeedService, feedSourceStorage: FeedSourceStorage, onAddNewSource: () -> Void)
+    
+    func setup(dependencies: Dependencies) {
+        feedService = dependencies.feedService
+        feedSourceStorage = dependencies.feedSourceStorage
+        onAddNewSource = dependencies.onAddNewSource
+    }
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sourceTextField.becomeFirstResponder()
     }
+    
+    // MARK: - Actions
 
     @IBAction func addButtonTapped(_ sender: Any) {
-        if validateUrl(urlString: sourceTextField.text) {
-            showProgressIndicator()
-            addSource()
-        } else {
+        guard validateUrl(urlString: sourceTextField.text) else {
             showAlert(title: "Error", msg: "Invalid url")
+            return
         }
+        showProgressIndicator()
+        addSource()
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+}
+
+// MARK: - Private methods
+
+extension AddSourceViewController {
     
     private func validateUrl(urlString: String?) -> Bool {
         guard let string = urlString,
@@ -71,5 +98,7 @@ class AddSourceViewController: UIViewController {
         })
     }
 }
+
+// MARK: - StoryboardInitializable
 
 extension AddSourceViewController: StoryboardInitializable {}

@@ -16,9 +16,12 @@ final class FeedListViewController: UIViewController {
     private var feedService: FeedService!
     private var feedSourceStorage: FeedSourceStorage!
     
-    // MARK: - Properties
+    // MARK: - IBOutlets
     
     @IBOutlet private(set) var tableView: UITableView!
+    
+    // MARK: - Properties
+    
     private var feeds = [Feed]()
     private let placeholderImage = R.image.placeholder128()
     
@@ -108,8 +111,8 @@ extension FeedListViewController {
             let viewController = segue.destination as! SourceListViewController
             viewController.feedSourceStorage = feedSourceStorage
             viewController.feedService = feedService
-            viewController.onBackAction = {
-                self.fetchFeeds()
+            viewController.onBackAction = { [weak self] in
+                self?.fetchFeeds()
             }
         default:
             break

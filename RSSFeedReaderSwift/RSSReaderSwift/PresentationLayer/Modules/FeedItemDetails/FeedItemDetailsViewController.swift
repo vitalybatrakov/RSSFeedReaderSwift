@@ -7,20 +7,27 @@
 //
 
 import UIKit
-import Rswift
 
-class FeedItemDetailsViewController: UIViewController {
+final class FeedItemDetailsViewController: UIViewController {
+    
+    // MARK: - IBOutlet
 
-    @IBOutlet var imageView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet private(set) var imageView: UIImageView!
+    @IBOutlet private(set) var titleLabel: UILabel!
+    @IBOutlet private(set) var descriptionLabel: UILabel!
+    
+    // MARK: - Properties
     
     var feedItem: FeedItem!
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewWithFeedItem()
     }
+    
+    // MARK: - Private methods
     
     private func setupViewWithFeedItem() {
         titleLabel.text = feedItem.title
@@ -33,9 +40,9 @@ class FeedItemDetailsViewController: UIViewController {
     }
 }
 
+// MARK: - Navigation
+
 extension FeedItemDetailsViewController {
-    
-    // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "WebPageSegue" {
@@ -44,5 +51,7 @@ extension FeedItemDetailsViewController {
         }
     }
 }
+
+// MARK: - StoryboardInitializable
 
 extension FeedItemDetailsViewController: StoryboardInitializable {}

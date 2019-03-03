@@ -65,7 +65,7 @@ class AddSourceViewControllerTests: XCTestCase {
     
     private enum Constants {
         static let addNewSourceDelay: Double = 1.0
-        static let addNewSourceExpectedDelay: Double = 1.5
+        static let addNewSourceWaitDelay: Double = 3.0
     }
     
     func addNewSourceWithSuccess() {
@@ -98,6 +98,17 @@ class AddSourceViewControllerTests: XCTestCase {
         XCTAssertTrue(onAddNewSourceCalled)
     }
     
+    func testGetFeedsCompletesWithErrorOnAddButtonTapped() {
+        addNewSourceWithError()
+        print(feedServiceMock.isGetFeedsWithUrlCompleted)
+        XCTAssertTrue(feedServiceMock.isGetFeedsWithUrlCompleted)
+    }
+    
+    func testProgressIndicatorNotAnimatingAfterAddNewSourceCompletesWithError() {
+        addNewSourceWithError()
+        XCTAssertFalse(sut.progessIndicator.isAnimating)
+    }
+    
     func addNewSourceWithError() {
         feedServiceMock.isNeedToSucceed = false
         let expectation = self.expectation(description: "Adding source with error")
@@ -106,17 +117,8 @@ class AddSourceViewControllerTests: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.addNewSourceDelay, execute: {
             expectation.fulfill()
         })
-        waitForExpectations(timeout: Constants.addNewSourceExpectedDelay, handler: nil)
+        waitForExpectations(timeout: Constants.addNewSourceWaitDelay, handler: nil)
     }
     
-    func testGetFeedsCompletesWithErrorOnAddButtonTapped() {
-        addNewSourceWithError()
-        XCTAssertTrue(feedServiceMock.isGetFeedsWithUrlCompleted)
-    }
-    
-    func testProgressIndicatorNotAnimatingAfterAddNewSourceCompletesWithError() {
-        addNewSourceWithError()
-        XCTAssertFalse(sut.progessIndicator.isAnimating)
-    }
 
 }

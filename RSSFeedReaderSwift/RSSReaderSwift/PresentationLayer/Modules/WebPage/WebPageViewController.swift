@@ -9,14 +9,20 @@
 import UIKit
 import WebKit
 
-class WebPageViewController: UIViewController {
+final class WebPageViewController: UIViewController {
+    
+    // MARK: - Properties
     
     var pageUrl: URL!
+    
+     // MARK: - Lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupWebView()
     }
+    
+    // MARK: - Setup
 
     private func setupWebView() {
         let webView = WKWebView(frame: view.frame)

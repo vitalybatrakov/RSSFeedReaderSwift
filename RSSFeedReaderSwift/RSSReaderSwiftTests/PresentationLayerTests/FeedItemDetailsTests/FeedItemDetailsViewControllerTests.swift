@@ -9,10 +9,17 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class FeedItemDetailsViewControllerTests: XCTestCase {
+final class FeedItemDetailsViewControllerTests: XCTestCase {
+    
+    // MARK: - Subject under test
     
     var sut: FeedItemDetailsViewController!
+    
+    // MARK: - Properties
+    
     let expectedFeedItem = FeedItem(title: "Test item title", body: "Test body", link: "Test link")
+    
+    // MARK: - Setup
     
     override func setUp() {
         super.setUp()
@@ -20,6 +27,8 @@ class FeedItemDetailsViewControllerTests: XCTestCase {
         sut.feedItem = expectedFeedItem
         sut.loadViewIfNeeded()
     }
+    
+    // MARK: - IBOutlets tests
     
     func testTitleLabelNotNil() {
         XCTAssertNotNil(sut.titleLabel)
@@ -45,7 +54,7 @@ class FeedItemDetailsViewControllerTests: XCTestCase {
         XCTAssertEqual(description, expectedFeedItem.body)
     }
     
-    // MARK: Navigation tests
+    // MARK: - Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
         XCTAssertTrue(sut.hasSegueWithIdentifier(id: "WebPageSegue"))

@@ -9,7 +9,7 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class AddSourceViewControllerTests: XCTestCase {
+final class AddSourceViewControllerTests: XCTestCase {
     
     // MARK: - Subject under test
     

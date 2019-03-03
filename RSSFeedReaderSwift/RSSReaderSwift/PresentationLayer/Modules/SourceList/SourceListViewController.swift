@@ -8,19 +8,44 @@
 
 import UIKit
 
-class SourceListViewController: UIViewController {
+final class SourceListViewController: UIViewController {
+     
+     // MARK: - Properties
      
      var feedSourceStorage: FeedSourceStorage!
      var feedService: FeedService!
      var onBackAction: (() -> Void)!
      
-     @IBOutlet var tableView: UITableView!
      private var sources = [FeedSource]()
+     
+     // MARK: - IBOutlets
+     
+     @IBOutlet private(set) var tableView: UITableView!
+     
+     // MARK: - Lifecycle
      
      override func viewDidLoad() {
           super.viewDidLoad()
           updateSources()
      }
+     
+     override func willMove(toParent parent: UIViewController?) {
+          super.willMove(toParent: parent)
+          guard parent == nil else { return }
+          onBackAction()
+     }
+     
+     // MARK: - Actions
+     
+     @IBAction func editButtonTapped(_ sender: Any) {
+          tableView.isEditing.toggle()
+     }
+     
+}
+
+// MARK: - Private methods
+
+extension SourceListViewController {
      
      private func setupTableView() {
           tableView.dataSource = self
@@ -30,23 +55,14 @@ class SourceListViewController: UIViewController {
           sources = feedSourceStorage.getSources()
      }
      
-     override func willMove(toParent parent: UIViewController?) {
-          super.willMove(toParent: parent)
-          if parent == nil {
-               onBackAction()
-          }
-     }
-     
      private func updateTable() {
           updateSources()
           tableView.reloadData()
      }
      
-     @IBAction func editButtonTapped(_ sender: Any) {
-          tableView.isEditing.toggle()
-     }
-     
 }
+
+// MARK: - UITableViewDataSource
 
 extension SourceListViewController: UITableViewDataSource {
      
@@ -66,10 +82,9 @@ extension SourceListViewController: UITableViewDataSource {
      }
      
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-          if editingStyle == .delete {
-               removeSource(at: indexPath.row)
-               tableView.deleteRows(at: [indexPath], with: .automatic)
-          }
+          guard editingStyle == .delete else { return }
+          removeSource(at: indexPath.row)
+          tableView.deleteRows(at: [indexPath], with: .automatic)
      }
      
      private func removeSource(at index: Int) {
@@ -84,9 +99,9 @@ extension SourceListViewController: UITableViewDataSource {
      }
 }
 
+// MARK: - Navigation
+
 extension SourceListViewController {
-     
-     // MARK: - Navigation
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           if segue.identifier == "AddSourceSegue" {

@@ -9,15 +9,22 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class SourceListViewControllerTests: XCTestCase {
+final class SourceListViewControllerTests: XCTestCase {
+    
+    // MARK: - Subject under test
     
     var sut: SourceListViewController!
+    
+    // MARK: - Properties
+    
     var feedSourceStorageMock: FeedSourceStorageMock!
     
     var onBackActionCalled = false
     var expectedFeedSources = [FeedSource]()
     let expectedFeedSource = FeedSource(title: "Test title", url: "test url")
     let expectedSecondFeedSource = FeedSource(title: "Second title ", url: "Second url")
+    
+    // MARK: - Setup methods
     
     override func setUp() {
         super.setUp()
@@ -37,9 +44,13 @@ class SourceListViewControllerTests: XCTestCase {
         }
     }
     
+    // MARK: - Get sources test
+    
     func testViewDidLoadSources() {
         XCTAssertTrue(feedSourceStorageMock.getSourcesCalled)
     }
+    
+    // MARK: - Actions tests
     
     func testEditButtonTapped() {
         let isEditingBefore = sut.tableView.isEditing
@@ -53,7 +64,7 @@ class SourceListViewControllerTests: XCTestCase {
         XCTAssertTrue(onBackActionCalled)
     }
     
-    // MARK: TableView dataSource tests
+    // MARK: - TableView dataSource tests
     
     func testTableViewHasDataSource() {
         XCTAssertNotNil(sut.tableView.dataSource)
@@ -94,7 +105,7 @@ class SourceListViewControllerTests: XCTestCase {
         XCTAssertEqual(toCellBefore.textLabel?.text, fromCellAfter.textLabel?.text)
     }
     
-    // MARK: Cell init tests
+    // MARK: - Cell init tests
     
     func testCellInit() {
         let cell = sut.tableView.dequeueReusableCell(withIdentifier: "SourceListTableViewCell")
@@ -102,7 +113,7 @@ class SourceListViewControllerTests: XCTestCase {
         XCTAssertNotNil(cell?.detailTextLabel)
     }
     
-    // MARK: Navigation tests
+    // MARK: - Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
         XCTAssertTrue(sut.hasSegueWithIdentifier(id: "AddSourceSegue"))

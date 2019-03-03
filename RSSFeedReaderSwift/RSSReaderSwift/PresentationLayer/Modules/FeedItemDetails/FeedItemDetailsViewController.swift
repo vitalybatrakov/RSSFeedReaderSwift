@@ -32,11 +32,10 @@ final class FeedItemDetailsViewController: UIViewController {
     private func setupViewWithFeedItem() {
         titleLabel.text = feedItem.title
         descriptionLabel.text = feedItem.body
-        if let imageUrl = feedItem.imageUrl {
-            imageView.kf.indicatorType = .activity
-            imageView.kf.setImage(with: URL(string: imageUrl),
-                                  placeholder: R.image.placeholder128())
-        }
+        guard let imageUrl = feedItem.imageUrl else { return }
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: URL(string: imageUrl),
+                              placeholder: R.image.placeholder128())
     }
 }
 

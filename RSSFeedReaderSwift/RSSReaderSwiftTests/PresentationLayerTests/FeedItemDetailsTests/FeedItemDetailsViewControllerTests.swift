@@ -57,7 +57,7 @@ final class FeedItemDetailsViewControllerTests: XCTestCase {
     // MARK: - Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
-        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "WebPageSegue"))
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: FeedItemDetailsViewController.SegueIdentifier.toWebPage.rawValue))
     }
     
 }

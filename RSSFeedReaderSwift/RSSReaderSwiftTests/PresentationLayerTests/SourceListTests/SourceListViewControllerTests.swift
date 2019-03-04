@@ -116,7 +116,7 @@ final class SourceListViewControllerTests: XCTestCase {
     // MARK: - Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
-        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "AddSourceSegue"))
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: SourceListViewController.SegueIdentifier.addSource.rawValue))
     }
     
 }

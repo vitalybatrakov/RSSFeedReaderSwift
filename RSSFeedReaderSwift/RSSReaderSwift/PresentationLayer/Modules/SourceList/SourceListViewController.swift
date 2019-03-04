@@ -101,10 +101,15 @@ extension SourceListViewController: UITableViewDataSource {
 
 // MARK: - Navigation
 
-extension SourceListViewController {
+extension SourceListViewController: SeguePerformerType {
+     
+     enum SegueIdentifier: String {
+          case addSource
+     }
      
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if segue.identifier == "AddSourceSegue" {
+          switch segueIdentifier(for: segue) {
+          case .addSource:
                let viewController = segue.destination as! AddSourceViewController
                let onAddNewSource = {
                     self.updateTable()

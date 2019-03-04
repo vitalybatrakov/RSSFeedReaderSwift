@@ -110,11 +110,11 @@ final class FeedListViewControllerTests: XCTestCase {
     // MARK: - Navigation tests
     
     func testHasSegueToFeedItemDetailsViewController() {
-        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "FeedDetailsSegue"))
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: FeedListViewController.SegueIdentifier.feedDetails.rawValue))
     }
     
     func testHasSegueToSourceListViewController() {
-        XCTAssertTrue(sut.hasSegueWithIdentifier(id: "SourceListSegue"))
+        XCTAssertTrue(sut.hasSegueWithIdentifier(id: FeedListViewController.SegueIdentifier.sourceList.rawValue))
     }
     
 }

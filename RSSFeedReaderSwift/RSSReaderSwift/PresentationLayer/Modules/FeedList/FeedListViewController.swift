@@ -98,24 +98,27 @@ extension FeedListViewController: UITableViewDataSource {
 
 // MARK: - Navigation
 
-extension FeedListViewController {
+extension FeedListViewController: SeguePerformerType {
+    
+    enum SegueIdentifier: String {
+        case feedDetails
+        case sourceList
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "FeedDetailsSegue":
+        switch segueIdentifier(for: segue) {
+        case .feedDetails:
             let viewController = segue.destination as! FeedItemDetailsViewController
             if let indexPath = tableView.indexPathForSelectedRow {
                 viewController.feedItem = feeds[indexPath.section].items[indexPath.row]
             }
-        case "SourceListSegue":
+        case .sourceList:
             let viewController = segue.destination as! SourceListViewController
             viewController.feedSourceStorage = feedSourceStorage
             viewController.feedService = feedService
             viewController.onBackAction = { [weak self] in
                 self?.fetchFeeds()
             }
-        default:
-            break
         }
     }
 }

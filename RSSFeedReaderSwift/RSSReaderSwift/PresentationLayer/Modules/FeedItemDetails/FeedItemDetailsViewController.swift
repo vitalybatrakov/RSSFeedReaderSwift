@@ -41,10 +41,15 @@ final class FeedItemDetailsViewController: UIViewController {
 
 // MARK: - Navigation
 
-extension FeedItemDetailsViewController {
+extension FeedItemDetailsViewController: SeguePerformerType {
+
+    enum SegueIdentifier: String {
+        case toWebPage
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "WebPageSegue" {
+        switch segueIdentifier(for: segue) {
+        case .toWebPage:
             let viewController = segue.destination as! WebPageViewController
             viewController.pageUrl = URL(string: feedItem.link)
         }

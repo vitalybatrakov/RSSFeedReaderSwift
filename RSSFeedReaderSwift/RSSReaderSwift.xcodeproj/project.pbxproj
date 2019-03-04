@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC1B9507221DA5AF0040E34B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B9506221DA5AF0040E34B /* R.generated.swift */; };
+		BC1B9519222D8F200040E34B /* SeguePerformerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B9518222D8F200040E34B /* SeguePerformerType.swift */; };
 		BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */; };
 		BC239658208F5BD3006275D7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239657208F5BD3006275D7 /* Feed.swift */; };
 		BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239659208F5BDD006275D7 /* FeedItem.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		BC1B9506221DA5AF0040E34B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		BC1B9518222D8F200040E34B /* SeguePerformerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguePerformerType.swift; sourceTree = "<group>"; };
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
 		BC239657208F5BD3006275D7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				BC534F67212E5D9900F9C407 /* CALayer+roundCorners.swift */,
+				BC1B9518222D8F200040E34B /* SeguePerformerType.swift */,
 				BC534F8A212FB5D100F9C407 /* StoryboardInitializable.swift */,
 				BC534F602127833E00F9C407 /* UITableView+ReusableView.swift */,
 				BC534F592111EF1E00F9C407 /* UIViewController+hasSegueWithIdentifier.swift */,
@@ -563,6 +566,7 @@
 			files = (
 				BC4BC0122100E3F80063211B /* Result.swift in Sources */,
 				BC534F8B212FB5D100F9C407 /* StoryboardInitializable.swift in Sources */,
+				BC1B9519222D8F200040E34B /* SeguePerformerType.swift in Sources */,
 				BCE5A58620EF75BF00CAE9F0 /* FeedListViewController.swift in Sources */,
 				BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */,
 				BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */,

@@ -9,14 +9,26 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class URLFeedParserTests: XCTestCase {
+final class URLFeedParserTests: XCTestCase {
+    
+    // MARK: - Properties
     
     var parser: URLFeedParser!
+    
+    // MARK: - Setup
     
     override func setUp() {
         super.setUp()
         parser = URLFeedParserImpl()
     }
+    
+    // MARK: - Constants
+    
+    private enum Constants {
+        static let parseFeedExpectedTimeout: Double = 5.0
+    }
+    
+    // MARK: - Tests
     
     func testParseFeedWithURLCompletesWithError() {
         let expectation = self.expectation(description: "Parsing feeds")
@@ -29,7 +41,7 @@ class URLFeedParserTests: XCTestCase {
             feedResult = result
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: Constants.parseFeedExpectedTimeout, handler: nil)
         if case .error? = feedResult {
             XCTAssertTrue(true)
         } else {
@@ -48,7 +60,7 @@ class URLFeedParserTests: XCTestCase {
             feedResult = result
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: Constants.parseFeedExpectedTimeout, handler: nil)
         if case .success? = feedResult {
             XCTAssertTrue(true)
         } else {

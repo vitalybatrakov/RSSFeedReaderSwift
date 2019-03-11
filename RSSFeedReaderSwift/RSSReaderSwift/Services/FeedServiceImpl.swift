@@ -8,15 +8,21 @@
 
 import Foundation
 
-class FeedServiceImpl: FeedService {
+final class FeedServiceImpl: FeedService {
+    
+    // MARK: - Properties
     
     private var feedSourceStorage: FeedSourceStorage!
     private var feedParser: URLFeedParser!
+    
+    // MARK: - Initializers
     
     init(with feedSourceStorage: FeedSourceStorage, feedParser: URLFeedParser) {
         self.feedSourceStorage = feedSourceStorage
         self.feedParser = feedParser
     }
+    
+    // MARK: - Public methods
     
     func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
         DispatchQueue.global().async {

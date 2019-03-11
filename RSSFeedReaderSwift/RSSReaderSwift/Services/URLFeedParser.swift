@@ -10,6 +10,8 @@ import Foundation
 import FeedKit
 
 protocol URLFeedParser {
+    
     func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void)
+    
 }
 

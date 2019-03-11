@@ -9,11 +9,16 @@
 import Foundation
 @testable import RSSReaderSwift
 
-class FeedSourceStorageMock: FeedSourceStorage {
+final class FeedSourceStorageMock: FeedSourceStorage {
+    
+    // MARK: - Properties
+    
     var expectedFeedSources: [FeedSource]!
     var getSourcesCalled = false
     var saveSourceCalled = false
     var addSourceCalled = false
+    
+    // MARK: - FeedSourceStorage methods
     
     func getSources() -> [FeedSource] {
         getSourcesCalled = true

@@ -8,17 +8,23 @@
 
 import Foundation
 
-class FeedSourceStorageImpl: FeedSourceStorage {
+final class FeedSourceStorageImpl: FeedSourceStorage {
+    
+    // MARK: - Properties
     
     private var storage: Storage!
     
     private let sourceListKey = "FeedSourceListKey"
-    private let defaultSources = [FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
-                                  FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
+    private let defaultSources = [ FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
+                                   FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift") ]
+    
+    // MARK: - Initilizers
     
     init(with storage: Storage) {
         self.storage = storage
     }
+    
+    // MARK: - Public methods
     
     func getSources() -> [FeedSource] {
         do {
@@ -44,4 +50,5 @@ class FeedSourceStorageImpl: FeedSourceStorage {
         sources.append(source)
         save(sources: sources)
     }
+    
 }

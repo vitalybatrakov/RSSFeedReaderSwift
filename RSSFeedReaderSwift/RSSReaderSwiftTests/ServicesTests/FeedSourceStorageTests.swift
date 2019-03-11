@@ -9,7 +9,7 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class FeedSourceStorageTests: XCTestCase {
+final class FeedSourceStorageTests: XCTestCase {
     
     func testGetSources() {
         let feedSourceStorage = FeedSourceStorageImpl(with: UserDefaultsMock())

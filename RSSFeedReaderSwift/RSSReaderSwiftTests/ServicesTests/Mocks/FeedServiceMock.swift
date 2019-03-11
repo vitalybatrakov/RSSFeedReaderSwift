@@ -9,12 +9,17 @@
 import Foundation
 @testable import RSSReaderSwift
 
-class FeedServiceMock: FeedService {
+final class FeedServiceMock: FeedService {
+    
+    // MARK: - Properties
+    
     var isGetFeedsCompleted = false
     var isGetFeedsWithUrlCompleted = false
     var isNeedToSucceed = false
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
+    
+    // MARK: - FeedService methods
     
     func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
         isGetFeedsCompleted = true

@@ -9,7 +9,9 @@
 import XCTest
 @testable import RSSReaderSwift
 
-class FeedServiceTests: XCTestCase {
+final class FeedServiceTests: XCTestCase {
+    
+    // MARK: - Properties
     
     var feedService: FeedService!
     var feedParserMock: URLFeedParserMock!
@@ -19,6 +21,8 @@ class FeedServiceTests: XCTestCase {
                                FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift")]
     let expectedErrorMessage = "TestError"
     let testUrl = URL(string: "https://testlink.com/test")!
+    
+    // MARK: - Setup
     
     override func setUp() {
         super.setUp()
@@ -30,6 +34,12 @@ class FeedServiceTests: XCTestCase {
         feedService = FeedServiceImpl(with: sourceStorageMock, feedParser: feedParserMock)
     }
     
+    // MARK: - Tests
+    
+    private enum Constants {
+        static let getFeedExpectedTimeout: Double = 5.0
+    }
+    
     func testGetFeedsWithSourcesFromStorage() {
         let expectation = self.expectation(description: "Getting feeds")
         var feedResults: [Result<Feed>]?
@@ -37,7 +47,7 @@ class FeedServiceTests: XCTestCase {
             feedResults = results
             expectation.fulfill()
         }
-        waitForExpectations(timeout: 5, handler: nil)
+        waitForExpectations(timeout: Constants.getFeedExpectedTimeout, handler: nil)
         XCTAssertEqual(feedResults?.count, expectedFeedSources.count)
     }
     

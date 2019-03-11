@@ -9,7 +9,9 @@
 import Foundation
 import FeedKit
 
-class URLFeedParserImpl: URLFeedParser {
+final class URLFeedParserImpl: URLFeedParser {
+    
+    // MARK: - Public methods
     
     func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
         let parser = FeedParser(URL: url)
@@ -23,9 +25,13 @@ class URLFeedParserImpl: URLFeedParser {
         }
     }
     
+    // MARK: - Private methods
+    
     private func process(feed: RSSFeed, with completion: @escaping (Result<Feed>) -> Void) {
         guard let feedTitle = feed.title,
-            let feedItems = mapFeedItems(from: feed) else { return }
+            let feedItems = mapFeedItems(from: feed) else {
+                return
+        }
         let feed = Feed(title: feedTitle, items: feedItems)
         completion(.success(feed))
     }
@@ -34,9 +40,11 @@ class URLFeedParserImpl: URLFeedParser {
         return feed.items?.compactMap({ (item) -> FeedItem? in
             guard let title = item.title,
                 let description = item.description,
-                let link = item.link else { return nil }
-            
+                let link = item.link else {
+                    return nil
+            }
             return FeedItem(title: title, body: description, link: link)
         })
     }
+    
 }

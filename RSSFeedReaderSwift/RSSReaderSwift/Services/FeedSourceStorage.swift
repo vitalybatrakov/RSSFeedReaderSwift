@@ -9,7 +9,9 @@
 import Foundation
 
 protocol FeedSourceStorage {
+    
     func getSources() -> [FeedSource]
     func save(sources: [FeedSource])
     func add(source: FeedSource)
+    
 }

@@ -9,10 +9,15 @@
 import Foundation
 @testable import RSSReaderSwift
 
-class URLFeedParserMock: URLFeedParser {
+final class URLFeedParserMock: URLFeedParser {
+    
+    // MARK: - Propeties
+    
     var isNeedToSucceed = false
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
+    
+    // MARK: - URLFeedParser methods
     
     func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
         completion(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))

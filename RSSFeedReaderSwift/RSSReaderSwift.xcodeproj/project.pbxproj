@@ -290,9 +290,9 @@
 		BC676A8C203089DE009C527D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BC1B9506221DA5AF0040E34B /* R.generated.swift */,
 				BC676A6120261938009C527D /* Assets.xcassets */,
 				BC676A6620261938009C527D /* Info.plist */,
+				BC1B9506221DA5AF0040E34B /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

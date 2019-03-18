@@ -11,6 +11,10 @@ import Foundation
 extension String {
     
     public var withoutHTMLTags: String {
-        return self.replacingOccurrences(of: "<[^>]+>|&[^;]+;", with: "", options: .regularExpression, range: nil).trimmingCharacters(in: .whitespacesAndNewlines )
+        return self.replacingOccurrences(of: "<[^>]+>|&[^;]+;",
+                                         with: "",
+                                         options: .regularExpression,
+                                         range: nil)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

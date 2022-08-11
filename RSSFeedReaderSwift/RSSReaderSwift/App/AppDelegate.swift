@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupServices(for fltvc: FeedListViewController) {
         let feedSourceStorage = FeedSourceStorageImpl(with: UserDefaults.standard)
-        let feedService = FeedServiceImpl(with: feedSourceStorage, feedParser: URLFeedParserImpl())
+        let feedService = FeedServiceImpl(with: feedSourceStorage, feedParser: URLFeedParser())
         fltvc.setupServices(dependencies: (feedService: feedService,
                                            feedSourceStorage: feedSourceStorage))
     }

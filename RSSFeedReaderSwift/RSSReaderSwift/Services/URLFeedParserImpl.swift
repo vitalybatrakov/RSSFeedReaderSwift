@@ -15,13 +15,20 @@ final class URLFeedParserImpl: URLFeedParser {
     
     func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
         let parser = FeedParser(URL: url)
-        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { (result) in
-            guard let feed = result.rssFeed, result.isSuccess else {
-                let message = result.error?.localizedDescription ?? "Unknown feed parse error"
-                completion(.error(message))
-                return
+        
+        parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let feed):
+                guard let rssfeed = feed.rssFeed else {
+                    completion(.error("Invalid rss data recieved"))
+                    return
+                }
+                self.process(feed: rssfeed, with: completion)
+            case .failure(let error):
+                completion(.error(error.localizedDescription))
             }
-            self.process(feed: feed, with: completion)
         }
     }
     

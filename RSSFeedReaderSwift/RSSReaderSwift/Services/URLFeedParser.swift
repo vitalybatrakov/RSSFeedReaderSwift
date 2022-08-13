@@ -9,11 +9,15 @@
 import Foundation
 import FeedKit
 
+enum URLFeedParseError: Error {
+    case feedTypeIsInvalid
+}
+
 final class URLFeedParser: URLFeedParserProtocol {
     
     // MARK: - Public methods
     
-    func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
+    func parseFeed(with url: URL, completion: @escaping (Result<Feed, Error>) -> Void) {
         let parser = FeedParser(URL: url)
         
         parser.parseAsync(queue: DispatchQueue.global(qos: .default)) { [weak self] result in
@@ -21,21 +25,21 @@ final class URLFeedParser: URLFeedParserProtocol {
             
             switch result {
             case .success(let feed):
-                guard let rssfeed = feed.rssFeed else {
-                    completion(.error("Invalid rss data recieved"))
+                guard let rssFeed = feed.rssFeed else {
+                    completion(.failure(URLFeedParseError.feedTypeIsInvalid))
                     return
                 }
-                self.process(feed: rssfeed, with: completion)
+                self.process(feed: rssFeed, with: completion)
                 
             case .failure(let error):
-                completion(.error(error.localizedDescription))
+                completion(.failure(error))
             }
         }
     }
     
     // MARK: - Private methods
     
-    private func process(feed: RSSFeed, with completion: @escaping (Result<Feed>) -> Void) {
+    private func process(feed: RSSFeed, with completion: @escaping (Result<Feed, Error>) -> Void) {
         guard
             let feedTitle = feed.title,
             let feedItems = mapFeedItems(from: feed)

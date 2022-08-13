@@ -24,10 +24,10 @@ final class FeedServiceImpl: FeedService {
     
     // MARK: - Public methods
     
-    func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
+    func getFeeds(with completion: @escaping ([Result<Feed, Error>]) -> Void) {
         DispatchQueue.global().async {
             let sources = self.feedSourceStorage.getSources()
-            var results = [Result<Feed>]()
+            var results = [Result<Feed, Error>]()
             let dispatchGroup = DispatchGroup()
             let urls = sources.compactMap({ URL(string: $0.url) })
             for url in urls {
@@ -43,7 +43,7 @@ final class FeedServiceImpl: FeedService {
         }
     }
     
-    func getFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
+    func getFeed(with url: URL, completion: @escaping (Result<Feed, Error>) -> Void) {
         feedParser.parseFeed(with: url, completion: completion)
     }
 

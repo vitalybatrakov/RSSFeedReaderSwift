@@ -54,8 +54,8 @@ final class FeedListViewController: UIViewController {
                 switch $0 {
                 case .success(let feed):
                     return feed
-                case .error(let message):
-                    return Feed(title: message, items: [])
+                case .failure(let error):
+                    return Feed(title: error.localizedDescription, items: [])
                 }
             }
             DispatchQueue.main.async {

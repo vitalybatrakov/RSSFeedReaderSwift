@@ -11,7 +11,7 @@ import FeedKit
 
 protocol URLFeedParserProtocol {
     
-    func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void)
+    func parseFeed(with url: URL, completion: @escaping (Result<Feed, Error>) -> Void)
     
 }
 

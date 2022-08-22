@@ -3,18 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC1B9507221DA5AF0040E34B /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B9506221DA5AF0040E34B /* R.generated.swift */; };
 		BC1B9519222D8F200040E34B /* SeguePerformerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1B9518222D8F200040E34B /* SeguePerformerType.swift */; };
 		BC239655208F5A74006275D7 /* FeedSourceStorageImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */; };
 		BC239658208F5BD3006275D7 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239657208F5BD3006275D7 /* Feed.swift */; };
 		BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC239659208F5BDD006275D7 /* FeedItem.swift */; };
 		BC4BC00D2100B1EB0063211B /* String+WithoutHTMLTags.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC00C2100B1EA0063211B /* String+WithoutHTMLTags.swift */; };
 		BC4BC0102100BA990063211B /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC00F2100BA990063211B /* UIViewController+showAlert.swift */; };
-		BC4BC0122100E3F80063211B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4BC0112100E3F80063211B /* Result.swift */; };
 		BC534F36210EF87600F9C407 /* FeedSourceStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F35210EF87600F9C407 /* FeedSourceStorageTests.swift */; };
 		BC534F38210F0AE900F9C407 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F37210F0AE900F9C407 /* ResultTests.swift */; };
 		BC534F3A210F0FB400F9C407 /* URLFeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC534F39210F0FB400F9C407 /* URLFeedParserTests.swift */; };
@@ -45,9 +43,11 @@
 		BC7B68FD20FC9DD00047D5AE /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */; };
 		BC7B68FF20FCB7BD0047D5AE /* UserDefaults+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Storage.swift */; };
 		BC7B690220FDD5260047D5AE /* AddSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */; };
+		BC84580C28A55D9500FAA033 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC84580B28A55D9500FAA033 /* R.generated.swift */; };
+		BC84580E28A55F7D00FAA033 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = BC84580D28A55F7D00FAA033 /* Kingfisher */; };
+		BC84581028A55F8100FAA033 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = BC84580F28A55F8100FAA033 /* FeedKit */; };
+		BC84581228A55F8500FAA033 /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = BC84581128A55F8500FAA033 /* Rswift */; };
 		BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */; };
-		BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75A2085BC0900F1703D /* FeedKit.framework */; };
-		BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA5A75B2085BC0900F1703D /* Kingfisher.framework */; };
 		BCB21B45208E0C4200FD865D /* FeedService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B44208E0C4200FD865D /* FeedService.swift */; };
 		BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B46208F504000FD865D /* FeedSourceStorage.swift */; };
 		BCB21B49208F50B600FD865D /* FeedServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB21B48208F50B600FD865D /* FeedServiceImpl.swift */; };
@@ -69,14 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BC1B9506221DA5AF0040E34B /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		BC1B9518222D8F200040E34B /* SeguePerformerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeguePerformerType.swift; sourceTree = "<group>"; };
 		BC239654208F5A74006275D7 /* FeedSourceStorageImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageImpl.swift; sourceTree = "<group>"; };
 		BC239657208F5BD3006275D7 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		BC239659208F5BDD006275D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		BC4BC00C2100B1EA0063211B /* String+WithoutHTMLTags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+WithoutHTMLTags.swift"; sourceTree = "<group>"; };
 		BC4BC00F2100BA990063211B /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
-		BC4BC0112100E3F80063211B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		BC534F35210EF87600F9C407 /* FeedSourceStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSourceStorageTests.swift; sourceTree = "<group>"; };
 		BC534F37210F0AE900F9C407 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		BC534F39210F0FB400F9C407 /* URLFeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFeedParserTests.swift; sourceTree = "<group>"; };
@@ -109,6 +107,7 @@
 		BC7B68FC20FC9DD00047D5AE /* WebPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 		BC7B68FE20FCB7BD0047D5AE /* UserDefaults+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Storage.swift"; sourceTree = "<group>"; };
 		BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSourceViewController.swift; sourceTree = "<group>"; };
+		BC84580B28A55D9500FAA033 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		BC8EC21B20F4D246008560F9 /* FeedListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedListTableViewCell.swift; sourceTree = "<group>"; };
 		BCA5A75A2085BC0900F1703D /* FeedKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FeedKit.framework; path = Carthage/Build/iOS/FeedKit.framework; sourceTree = "<group>"; };
 		BCA5A75B2085BC0900F1703D /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
@@ -129,8 +128,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA5A75D2085BC0900F1703D /* FeedKit.framework in Frameworks */,
-				BCA5A75E2085BC0900F1703D /* Kingfisher.framework in Frameworks */,
+				BC84581228A55F8500FAA033 /* Rswift in Frameworks */,
+				BC84580E28A55F7D00FAA033 /* Kingfisher in Frameworks */,
+				BC84581028A55F8100FAA033 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +150,6 @@
 				BC239657208F5BD3006275D7 /* Feed.swift */,
 				BC239659208F5BDD006275D7 /* FeedItem.swift */,
 				BC7B68F920FC996B0047D5AE /* FeedSource.swift */,
-				BC4BC0112100E3F80063211B /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -279,10 +278,9 @@
 		BC676A8820308972009C527D /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
-				BC676A5B20261938009C527D /* Main.storyboard */,
 				BC4BC00E2100BA510063211B /* Extensions */,
 				BCE5A58320EF755A00CAE9F0 /* Modules */,
+				BC84581328A7C8B100FAA033 /* Storyboards */,
 			);
 			path = PresentationLayer;
 			sourceTree = "<group>";
@@ -290,9 +288,9 @@
 		BC676A8C203089DE009C527D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BC84580B28A55D9500FAA033 /* R.generated.swift */,
 				BC676A6120261938009C527D /* Assets.xcassets */,
 				BC676A6620261938009C527D /* Info.plist */,
-				BC1B9506221DA5AF0040E34B /* R.generated.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -311,6 +309,15 @@
 				BC7B690120FDD5260047D5AE /* AddSourceViewController.swift */,
 			);
 			path = AddSource;
+			sourceTree = "<group>";
+		};
+		BC84581328A7C8B100FAA033 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BC676A6320261938009C527D /* LaunchScreen.storyboard */,
+				BC676A5B20261938009C527D /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		BC8EC21620EF7DEA008560F9 /* Extensions */ = {
@@ -430,13 +437,17 @@
 				BC676A5020261938009C527D /* Sources */,
 				BC676A5120261938009C527D /* Frameworks */,
 				BC676A5220261938009C527D /* Resources */,
-				BCA5A7602085FABB00F1703D /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = RSSReaderSwift;
+			packageProductDependencies = (
+				BC84580D28A55F7D00FAA033 /* Kingfisher */,
+				BC84580F28A55F8100FAA033 /* FeedKit */,
+				BC84581128A55F8500FAA033 /* Rswift */,
+			);
 			productName = RSSReaderSwift;
 			productReference = BC676A5420261938009C527D /* RSSReaderSwift.app */;
 			productType = "com.apple.product-type.application";
@@ -491,6 +502,11 @@
 				Base,
 			);
 			mainGroup = BC676A4B20261938009C527D;
+			packageReferences = (
+				BC8457FF28A55A9200FAA033 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				BC84580228A55ABB00FAA033 /* XCRemoteSwiftPackageReference "FeedKit" */,
+				BC84580828A55C2700FAA033 /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = BC676A5520261938009C527D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -524,6 +540,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		BC1B9505221DA3A90040E34B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -541,22 +558,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		BCA5A7602085FABB00F1703D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/FeedKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Rswift.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -564,7 +565,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC4BC0122100E3F80063211B /* Result.swift in Sources */,
 				BC534F8B212FB5D100F9C407 /* StoryboardInitializable.swift in Sources */,
 				BC1B9519222D8F200040E34B /* SeguePerformerType.swift in Sources */,
 				BCE5A58620EF75BF00CAE9F0 /* FeedListViewController.swift in Sources */,
@@ -583,7 +583,7 @@
 				BC23965A208F5BDD006275D7 /* FeedItem.swift in Sources */,
 				BC534F612127833E00F9C407 /* UITableView+ReusableView.swift in Sources */,
 				BC4BC0102100BA990063211B /* UIViewController+showAlert.swift in Sources */,
-				BC1B9507221DA5AF0040E34B /* R.generated.swift in Sources */,
+				BC84580C28A55D9500FAA033 /* R.generated.swift in Sources */,
 				BC8EC21C20F4D246008560F9 /* FeedListTableViewCell.swift in Sources */,
 				BCB21B47208F504000FD865D /* FeedSourceStorage.swift in Sources */,
 				BC676A5820261938009C527D /* AppDelegate.swift in Sources */,
@@ -698,7 +698,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -751,10 +751,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -769,8 +770,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReaderSwift/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -788,8 +792,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/RSSReaderSwift/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -805,7 +812,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSReaderSwiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -822,7 +833,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSReaderSwiftTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = vbat.RSSReaderSwiftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -862,6 +877,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BC8457FF28A55A9200FAA033 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		BC84580228A55ABB00FAA033 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		BC84580828A55C2700FAA033 /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BC84580D28A55F7D00FAA033 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC8457FF28A55A9200FAA033 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		BC84580F28A55F8100FAA033 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC84580228A55ABB00FAA033 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
+		BC84581128A55F8500FAA033 /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BC84580828A55C2700FAA033 /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BC676A4C20261938009C527D /* Project object */;
 }

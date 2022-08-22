@@ -9,12 +9,20 @@
 import Foundation
 
 struct FeedItem: Equatable {
+    
+    // MARK: Internal properties
+    
     let title: String
     let body: String
     let link: String
     var imageUrl: String?
     
-    static var imageRegex = try? NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?", options: .caseInsensitive)
+    // MARK: Private properties
+    
+    private let imageRegex = try? NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?",
+                                                      options: .caseInsensitive)
+    
+    // MARK: Initializers
     
     init(title: String, body: String, link: String) {
         self.title = title
@@ -23,8 +31,12 @@ struct FeedItem: Equatable {
         self.imageUrl = imageUrl(from: body)
     }
     
+    // MARK: - Private methods
+    
     private func imageUrl(from body: String) -> String? {
-        let result = FeedItem.imageRegex?.firstMatch(in: body, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, body.count))
+        let result = imageRegex?.firstMatch(in: body,
+                                            options: NSRegularExpression.MatchingOptions(rawValue: 0),
+                                            range: NSMakeRange(0, body.count))
         return result.map {
             String(body[Range($0.range(at: 2), in: body)!])
         }

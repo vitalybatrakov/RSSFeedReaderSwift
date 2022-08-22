@@ -1,6 +1,6 @@
 # RSSFeedReader
 
-The simple app that fetches and displays RSS feeds. 
+The simple iOS app that fetches and displays RSS feeds. 
 
 Сreated mostly for educational purposes.
 
@@ -11,6 +11,8 @@ Dependencies:
 - FeedKit for rss parsing;
 - R.swift for work with resources.
 
+SPM used as a dependency manager.
+
 ## <a name="description"/> UI Description
 
 - User can add/remove/modify RSS feed sources.
@@ -20,8 +22,8 @@ Dependencies:
 
 ## <a name="requirements"/> Requirements
 
-- iOS 10.0+
-- Xcode 10.0+
+- Target version of iOS: 15.5
+- Xcode 13.4.1
 
 ## <a name="licence"/> Licence
 MIT

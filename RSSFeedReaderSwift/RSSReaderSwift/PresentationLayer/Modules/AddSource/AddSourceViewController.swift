@@ -65,9 +65,11 @@ final class AddSourceViewController: UIViewController {
 extension AddSourceViewController {
     
     private func validateUrl(urlString: String?) -> Bool {
-        guard let string = urlString,
-            let url = URL(string: string) else {
-                return false
+        guard
+            let string = urlString,
+            let url = URL(string: string)
+        else {
+            return false
         }
         return UIApplication.shared.canOpenURL(url)
     }
@@ -83,11 +85,16 @@ extension AddSourceViewController {
     }
     
     private func addSource() {
-        guard let text = sourceTextField.text,
-            let url = URL(string: text) else {
+        Task {
+            guard
+                let text = sourceTextField.text,
+                let url = URL(string: text)
+            else {
                 return
-        }
-        feedService.getFeed(with: url) { result in
+            }
+            
+            let result = await feedService.getFeed(with: url)
+            
             DispatchQueue.main.async {
                 switch result {
                 case .success(let feed):
@@ -95,8 +102,8 @@ extension AddSourceViewController {
                     self.feedSourceStorage.add(source: source)
                     self.onAddNewSource()
                     self.dismiss(animated: true, completion: nil)
-                case .error(let message):
-                    self.showAlert(title: "Error", msg: message)
+                case .failure(let error):
+                    self.showAlert(title: "Error", msg: error.localizedDescription)
                     self.hideProgressIndicator()
                 }
             }

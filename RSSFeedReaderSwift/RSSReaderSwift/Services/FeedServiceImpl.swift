@@ -22,29 +22,37 @@ final class FeedServiceImpl: FeedService {
         self.feedParser = feedParser
     }
     
-    // MARK: - Public methods
+    // MARK: - Internal methods
     
-    func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
-        DispatchQueue.global().async {
+    func getFeeds() async -> [Result<Feed, Error>] {
+        await withTaskGroup(
+            of: Result<Feed, Error>.self,
+            returning: [Result<Feed, Error>].self
+        ) { group in
             let sources = self.feedSourceStorage.getSources()
-            var results = [Result<Feed>]()
-            let dispatchGroup = DispatchGroup()
             let urls = sources.compactMap({ URL(string: $0.url) })
             for url in urls {
-                dispatchGroup.enter()
-                self.getFeed(with: url) { result in
-                    results.append(result)
-                    dispatchGroup.leave()
+                group.addTask(priority: .medium) {
+                    return await self.getFeed(with: url)
                 }
             }
-            dispatchGroup.notify(queue: .main) {
-                completion(results)
+            
+            var results = [Result<Feed, Error>]()
+            
+            for await result in group {
+                results.append(result)
             }
+            
+            return results
         }
     }
     
-    func getFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
-        feedParser.parseFeed(with: url, completion: completion)
+    func getFeed(with url: URL) async -> Result<Feed, Error> {
+        do {
+            let feed = try await feedParser.parseFeed(with: url)
+            return .success(feed)
+        } catch let error {
+            return .failure(error)
+        }
     }
-
 }

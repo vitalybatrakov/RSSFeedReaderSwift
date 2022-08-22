@@ -20,11 +20,12 @@ extension SeguePerformerType where Self: UIViewController, SegueIdentifier.RawVa
     }
     
     func segueIdentifier(for segue: UIStoryboardSegue) -> SegueIdentifier {
-        guard let identifier = segue.identifier,
-            let segueIdentifier = SegueIdentifier(rawValue: identifier) else {
-                fatalError("\(type(of: self)): undefined segue identifier \(segue.identifier!).")
+        guard
+            let identifier = segue.identifier,
+            let segueIdentifier = SegueIdentifier(rawValue: identifier)
+        else {
+            fatalError("\(type(of: self)): undefined segue identifier \(segue.identifier!).")
         }
         return segueIdentifier
     }
-    
 }

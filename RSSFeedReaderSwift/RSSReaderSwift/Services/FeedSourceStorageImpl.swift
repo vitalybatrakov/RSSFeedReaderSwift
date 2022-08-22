@@ -15,8 +15,10 @@ final class FeedSourceStorageImpl: FeedSourceStorage {
     private var storage: Storage!
     
     private let sourceListKey = "FeedSourceListKey"
-    private let defaultSources = [ FeedSource(title: "Habrahabr", url: "https://habrahabr.ru/rss/interesting/"),
-                                   FeedSource(title: "Swift on Medium", url: "https://medium.com/feed/tag/swift") ]
+    private let defaultSources = [ FeedSource(title: "iOS Development on Medium",
+                                              url: "https://medium.com/feed/tag/ios-development"),
+                                   FeedSource(title: "Swift on Medium",
+                                              url: "https://medium.com/feed/tag/swift") ]
     
     // MARK: - Initilizers
     
@@ -24,7 +26,7 @@ final class FeedSourceStorageImpl: FeedSourceStorage {
         self.storage = storage
     }
     
-    // MARK: - Public methods
+    // MARK: - Internal methods
     
     func getSources() -> [FeedSource] {
         do {

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol FeedService {
-    func getFeeds(with completion: @escaping ([Result<Feed, Error>]) -> Void)
-    func getFeed(with url: URL, completion: @escaping (Result<Feed, Error>) -> Void)
+    func getFeeds() async -> [Result<Feed, Error>]
+    func getFeed(with url: URL) async -> Result<Feed, Error>
 }

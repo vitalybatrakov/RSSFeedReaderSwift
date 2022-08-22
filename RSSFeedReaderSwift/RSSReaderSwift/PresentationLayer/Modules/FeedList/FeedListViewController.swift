@@ -49,7 +49,9 @@ final class FeedListViewController: UIViewController {
     }
     
     private func fetchFeeds() {
-        feedService.getFeeds { (results) in
+        Task {
+            let results = try await feedService.getFeeds()
+            
             self.feeds = results.map {
                 switch $0 {
                 case .success(let feed):

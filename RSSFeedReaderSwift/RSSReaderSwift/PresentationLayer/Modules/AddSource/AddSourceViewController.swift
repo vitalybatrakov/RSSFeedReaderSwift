@@ -85,13 +85,16 @@ extension AddSourceViewController {
     }
     
     private func addSource() {
-        guard
-            let text = sourceTextField.text,
-            let url = URL(string: text)
-        else {
-            return
-        }
-        feedService.getFeed(with: url) { result in
+        Task {
+            guard
+                let text = sourceTextField.text,
+                let url = URL(string: text)
+            else {
+                return
+            }
+            
+            let result = await feedService.getFeed(with: url)
+            
             DispatchQueue.main.async {
                 switch result {
                 case .success(let feed):

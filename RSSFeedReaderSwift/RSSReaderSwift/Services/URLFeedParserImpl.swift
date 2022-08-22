@@ -1,5 +1,5 @@
 //
-//  URLFeedParser.swift
+//  URLFeedParserImpl.swift
 //  RSSReaderSwift
 //
 //  Created by Vitaly Batrakov on 27.07.2018.
@@ -10,7 +10,7 @@ import Foundation
 import FeedKit
 
 enum URLFeedParseError: Error {
-    case feedIsInvalid
+    case invalidFeed
 }
 
 final class URLFeedParserImpl: URLFeedParser {
@@ -30,7 +30,7 @@ final class URLFeedParserImpl: URLFeedParser {
                         let feedTitle = rssFeed.title,
                         let feedItems = self.mapFeedItems(from: rssFeed)
                     else {
-                        continuation.resume(with: .failure(URLFeedParseError.feedIsInvalid))
+                        continuation.resume(with: .failure(URLFeedParseError.invalidFeed))
                         return
                     }
                     let feed = Feed(title: feedTitle, items: feedItems)

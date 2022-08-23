@@ -15,12 +15,20 @@ final class URLFeedParserMock: URLFeedParser {
     
     var isNeedToSucceed = false
     var expectedFeed: Feed!
-    var expectedErrorMessage: String!
+    
+    // MARK: - Errors
+    
+    enum MockedParserError: Error {
+        case invalidFeed
+    }
     
     // MARK: - URLFeedParser methods
     
-    func parseFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
-        completion(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
+    func parseFeed(with url: URL) async throws -> Feed {
+        if isNeedToSucceed {
+            return expectedFeed
+        } else {
+            throw MockedParserError.invalidFeed
+        }
     }
-    
 }

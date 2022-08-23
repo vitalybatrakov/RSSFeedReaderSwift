@@ -50,12 +50,13 @@ final class FeedListViewController: UIViewController {
     
     private func fetchFeeds() {
         Task {
-            let results = try await feedService.getFeeds()
+            let results = await feedService.getFeeds()
             
             self.feeds = results.map {
                 switch $0 {
                 case .success(let feed):
                     return feed
+                    
                 case .failure(let error):
                     return Feed(title: error.localizedDescription, items: [])
                 }

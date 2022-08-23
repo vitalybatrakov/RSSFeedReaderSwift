@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FeedItem: Equatable {
+public struct FeedItem: Equatable {
     
     // MARK: Internal properties
     
@@ -17,9 +17,9 @@ struct FeedItem: Equatable {
     let link: String
     var imageUrl: String?
     
-    // MARK: Private properties
+    // MARK: Public properties
     
-    private let imageRegex = try? NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?",
+    public let imageRegex = try? NSRegularExpression(pattern: "(<img\\s[\\s\\S]*?src\\s*?=\\s*?['\"](.*?)['\"][\\s\\S]*?>)+?",
                                                       options: .caseInsensitive)
     
     // MARK: Initializers

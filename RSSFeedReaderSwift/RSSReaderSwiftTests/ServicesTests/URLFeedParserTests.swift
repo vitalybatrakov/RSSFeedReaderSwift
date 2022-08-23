@@ -22,50 +22,35 @@ final class URLFeedParserTests: XCTestCase {
         parser = URLFeedParserImpl()
     }
     
-    // MARK: - Constants
-    
-    private enum Constants {
-        static let parseFeedExpectedTimeout: Double = 5.0
-    }
-    
     // MARK: - Tests
     
     func testParseFeedWithURLCompletesWithError() {
-        let expectation = self.expectation(description: "Parsing feeds")
         guard let url = URL(string: "https://testlink.com/test") else {
             XCTFail("invalid url")
             return
         }
-        var feedResult: Result<Feed>?
-        parser.parseFeed(with: url) { (result) in
-            feedResult = result
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: Constants.parseFeedExpectedTimeout, handler: nil)
-        if case .error? = feedResult {
-            XCTAssertTrue(true)
-        } else {
-            XCTAssertTrue(false)
+        Task {
+            do {
+                let _ = try await parser.parseFeed(with: url)
+                XCTAssertTrue(true)
+            } catch {
+                XCTAssertTrue(false)
+            }
         }
     }
     
     func testParseFeedWithURLCompletesWithSuccess() {
-        let expectation = self.expectation(description: "Parsing feeds")
         guard let url = URL(string: "https://habrahabr.ru/rss/interesting/") else {
             XCTFail("invalid url")
             return
         }
-        var feedResult: Result<Feed>?
-        parser.parseFeed(with: url) { (result) in
-            feedResult = result
-            expectation.fulfill()
-        }
-        waitForExpectations(timeout: Constants.parseFeedExpectedTimeout, handler: nil)
-        if case .success? = feedResult {
-            XCTAssertTrue(true)
-        } else {
-            XCTAssertTrue(false)
+        Task {
+            do {
+                let _ = try await parser.parseFeed(with: url)
+                XCTAssertTrue(true)
+            } catch {
+                XCTAssertTrue(false)
+            }
         }
     }
-        
 }

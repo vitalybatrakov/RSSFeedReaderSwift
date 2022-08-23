@@ -28,7 +28,6 @@ final class FeedServiceTests: XCTestCase {
         super.setUp()
         feedParserMock = URLFeedParserMock()
         feedParserMock.expectedFeed = expectedFeed
-        feedParserMock.expectedErrorMessage = expectedErrorMessage
         let sourceStorageMock = FeedSourceStorageMock()
         sourceStorageMock.expectedFeedSources = expectedFeedSources
         feedService = FeedServiceImpl(with: sourceStorageMock, feedParser: feedParserMock)
@@ -41,31 +40,37 @@ final class FeedServiceTests: XCTestCase {
     }
     
     func testGetFeedsWithSourcesFromStorage() {
-        let expectation = self.expectation(description: "Getting feeds")
-        var feedResults: [Result<Feed>]?
-        feedService.getFeeds { (results) in
-            feedResults = results
-            expectation.fulfill()
+        Task {
+            let feedResults = await feedService.getFeeds()
+            XCTAssertEqual(feedResults.count, expectedFeedSources.count)
         }
-        waitForExpectations(timeout: Constants.getFeedExpectedTimeout, handler: nil)
-        XCTAssertEqual(feedResults?.count, expectedFeedSources.count)
     }
     
     func testGetFeedCompletesWithSuccess() {
-        feedParserMock.isNeedToSucceed = true
-        var feedResult: Result<Feed>?
-        feedService.getFeed(with: testUrl) { (result) in
-            feedResult = result
+        Task {
+            feedParserMock.isNeedToSucceed = true
+            let feedResult = await feedService.getFeed(with: testUrl)
+            switch feedResult {
+            case .success(let feed):
+                XCTAssertEqual(feed, expectedFeed)
+                
+            case .failure:
+                XCTFail()
+            }
         }
-        XCTAssertEqual(feedResult, .success(expectedFeed))
     }
     
     func testGetFeedCompletesWithError() {
-        var feedResult: Result<Feed>?
-        feedService.getFeed(with: testUrl) { (result) in
-            feedResult = result
+        Task {
+            let feedResult = await feedService.getFeed(with: testUrl)
+            switch feedResult {
+            case .success:
+                XCTFail()
+                
+            case .failure:
+                break
+            }
         }
-        XCTAssertEqual(feedResult, .error(expectedErrorMessage))
     }
 
 }

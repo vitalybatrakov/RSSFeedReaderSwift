@@ -39,7 +39,7 @@ class FeedItemTests: XCTestCase {
     }
     
     func testInitImageRegex() {
-        XCTAssertNotNil(FeedItem.imageRegex)
+        XCTAssertNotNil(feedItem.imageRegex)
     }
     
     // MARK: - Initializing image url property tests

@@ -19,16 +19,21 @@ final class FeedServiceMock: FeedService {
     var expectedFeed: Feed!
     var expectedErrorMessage: String!
     
+    // MARK: - Errors
+    
+    enum FeedServiceMockError: Error {
+        case error
+    }
+    
     // MARK: - FeedService methods
-    
-    func getFeeds(with completion: @escaping ([Result<Feed>]) -> Void) {
+
+    func getFeeds() async -> [Result<Feed, Error>] {
         isGetFeedsCompleted = true
-        completion([isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage)])
+        return [isNeedToSucceed ? .success(expectedFeed) : .failure(FeedServiceMockError.error)]
     }
     
-    func getFeed(with url: URL, completion: @escaping (Result<Feed>) -> Void) {
+    func getFeed(with url: URL) async -> Result<Feed, Error> {
         isGetFeedsWithUrlCompleted = true
-        completion(isNeedToSucceed ? .success(expectedFeed) : .error(expectedErrorMessage))
+        return isNeedToSucceed ? .success(expectedFeed) : .failure(FeedServiceMockError.error)
     }
-    
 }
